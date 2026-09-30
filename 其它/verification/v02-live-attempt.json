@@ -1,0 +1,13 @@
+{
+  "api_called": false,
+  "model": "deepseek-flash",
+  "max_cost_cny": "0.20",
+  "synthetic_demo_only": true,
+  "estimated_upper_cny": "0.10903600",
+  "files": [
+    "main.py",
+    "presentation.py",
+    "pricing.py"
+  ],
+  "evidence_count": 6
+}

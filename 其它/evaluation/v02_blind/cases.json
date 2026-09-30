@@ -1,0 +1,74 @@
+{
+  "cases": [
+    {
+      "id": "C01",
+      "title": "订单摘要",
+      "files": [
+        {
+          "path": "main.py",
+          "content": "from pricing import build_report\n\n\ndef main():\n    orders = [\n        {\"sku\": \"A\", \"qty\": 2, \"unit\": 40, \"active\": True},\n        {\"sku\": \"B\", \"qty\": 1, \"unit\": 30, \"active\": False},\n        {\"sku\": \"C\", \"qty\": 3, \"unit\": 10, \"active\": True},\n    ]\n    report = build_report(orders, limit=100)\n    print(report[\"total\"], report[\"category\"])\n    print(\",\".join(report[\"codes\"]))\n    return report\n\n\nif __name__ == \"__main__\":\n    main()\n"
+        },
+        {
+          "path": "pricing.py",
+          "content": "def line_total(order):\n    qty = order.get(\"qty\", 0)\n    return max(qty, 0) * order[\"unit\"]\n\n\ndef build_report(orders, limit=100):\n    total = 0\n    codes = []\n    for order in orders:\n        if not order.get(\"active\", False):\n            continue\n        amount = line_total(order)\n        total += amount\n        codes.append(order[\"sku\"])\n    if total >= limit:\n        category = \"bulk\"\n        total -= 10\n    else:\n        category = \"standard\"\n    return {\n        \"total\": total,\n        \"category\": category,\n        \"codes\": codes,\n    }\n"
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "title": "记录面板",
+      "files": [
+        {
+          "path": "main.py",
+          "content": "from state import make_session, revise\n\n\ndef main():\n    state, record = make_session()\n    record(\"seed\")\n    saved = state.copy()\n    edited = revise(state[\"items\"])\n    record(\"done\")\n    saved[\"items\"].append(\"seen\")\n    print(state)\n    print(saved)\n    print(edited)\n    return state, saved, edited\n\n\nif __name__ == \"__main__\":\n    main()\n"
+        },
+        {
+          "path": "state.py",
+          "content": "def make_session():\n    state = {\"items\": [], \"calls\": 0}\n\n    def record(label):\n        state[\"calls\"] += 1\n        state[\"items\"].append(label)\n        return state[\"calls\"]\n\n    return state, record\n\n\ndef revise(items):\n    mirror = items\n    mirror.append(\"queued\")\n    items = items + [\"local\"]\n    items[0] = \"draft\"\n    return items\n"
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "title": "批次处理",
+      "files": [
+        {
+          "path": "main.py",
+          "content": "from processor import collect\n\n\ndef main():\n    results, events = collect([None, \"-2\", \"0\", \"3\"])\n    print([item[\"status\"] for item in results])\n    print(results[-1][\"value\"])\n    print(events)\n    return results, events\n\n\nif __name__ == \"__main__\":\n    main()\n"
+        },
+        {
+          "path": "processor.py",
+          "content": "def handle(value, events):\n    events.append(f\"start:{value}\")\n    try:\n        if value is None:\n            return {\"status\": \"empty\", \"events\": events}\n        number = int(value)\n        if number < 0:\n            return {\"status\": \"skip\", \"events\": events}\n        if number == 0:\n            raise ValueError(\"zero\")\n        return {\"status\": \"ok\", \"value\": 12 // number, \"events\": events}\n    except ValueError:\n        events.append(\"invalid\")\n        return {\"status\": \"invalid\", \"events\": events}\n    finally:\n        events.append(\"end\")\n\n\ndef collect(values):\n    results = []\n    events = []\n    for value in values:\n        item = handle(value, events)\n        results.append(item)\n    return results, events\n"
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "title": "数据摘录",
+      "files": [
+        {
+          "path": "main.py",
+          "content": "from stream import read_values, take_until\n\n\ndef main():\n    trace = []\n    values = read_values([\"2\", \"#note\", \"5\", \"9\", \"4\"], trace)\n    before = list(trace)\n    total = take_until(values, limit=6)\n    paused = list(trace)\n    next_value = next(values)\n    values.close()\n    print(total, next_value)\n    print(before, paused, trace)\n    return total, next_value, trace\n\n\nif __name__ == \"__main__\":\n    main()\n"
+        },
+        {
+          "path": "stream.py",
+          "content": "def read_values(raw, trace):\n    trace.append(\"open\")\n    try:\n        for text in raw:\n            trace.append(f\"read:{text}\")\n            if text.startswith(\"#\"):\n                continue\n            number = int(text)\n            yield number\n    finally:\n        trace.append(\"close\")\n\n\ndef take_until(values, limit):\n    total = 0\n    for number in values:\n        if number > limit:\n            return total\n        total += number\n    return total\n"
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "title": "条目合并",
+      "files": [
+        {
+          "path": "main.py",
+          "content": "import asyncio\nfrom worker import assemble, summarize\n\n\ndef main():\n    rows, before, log = asyncio.run(assemble())\n    print(summarize(rows))\n    print(before)\n    print(log)\n    return rows, before, log\n\n\nif __name__ == \"__main__\":\n    main()\n"
+        },
+        {
+          "path": "worker.py",
+          "content": "import asyncio\n\n\nasync def transform(name, amount, log):\n    log.append(f\"start:{name}\")\n    await asyncio.sleep(0)\n    log.append(f\"finish:{name}\")\n    return {\"name\": name, \"amount\": amount * 2}\n\n\nasync def assemble():\n    log = []\n    pending = transform(\"A\", 3, log)\n    before = list(log)\n    second = await transform(\"B\", 2, log)\n    first = await pending\n    return [first, second], before, log\n\n\ndef summarize(rows):\n    return sum(row[\"amount\"] for row in rows if row[\"amount\"] >= 5)\n"
+        }
+      ]
+    }
+  ]
+}

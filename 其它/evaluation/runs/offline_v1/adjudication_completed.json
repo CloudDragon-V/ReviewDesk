@@ -1,0 +1,85 @@
+{
+  "judgments": [
+    {
+      "item_id": "Cba368fc52a-A-001",
+      "verdict": "valid",
+      "reason": "第 2 行把调用者提供的 text 直接交给 eval，表达式可以包含函数调用并产生副作用，因此确认输入信任边界是有价值且有源码依据的建议。包中没有调用方，不能据此断言已有外部可利用漏洞；这里只支持条件性的动态执行风险。"
+    },
+    {
+      "item_id": "Cba368fc52a-B-001",
+      "verdict": "valid",
+      "reason": "eval(text) 确实允许执行超出普通数据解析范围的 Python 表达式；建议先确认输入可信，并仅在普通数据解析场景换用受限解析器，符合代码证据。外部输入来源未给出，不能认定实际注入已发生；json.loads 或 literal_eval 也不是任意表达式求值的等价替换。"
+    },
+    {
+      "item_id": "C3cd7bcd96d-A-001",
+      "verdict": "valid",
+      "reason": "entries=[] 在函数定义时创建，函数又原地 append：连续省略 entries 调用 remember(1)、remember(2) 会使用同一列表，第二次含有两项，第一次返回的列表也会变化。逐次创建默认列表能消除可复现的跨调用共享状态；未见说明这种共享是刻意的接口约定。"
+    },
+    {
+      "item_id": "C3cd7bcd96d-B-001",
+      "verdict": "valid",
+      "reason": "默认列表只创建一次，append 会修改它；两次不传 entries 的调用共享同一对象并累计条目。因此所述语义和定位正确，使用 None 并在函数内创建列表可隔离默认调用，同时保留显式传入列表的行为。"
+    },
+    {
+      "item_id": "C9012599ecc-A-001",
+      "verdict": "valid",
+      "reason": "第 4 行裸 except 捕获 BaseException，包括终止信号；这会将 int 转换期间的 KeyboardInterrupt 等转成普通的 -1 返回值。建议只捕获预期的转换异常有实际行为价值，不能仅当作风格调整。"
+    },
+    {
+      "item_id": "C9012599ecc-B-001",
+      "verdict": "valid",
+      "reason": "裸 except 确实也捕获 KeyboardInterrupt 和 SystemExit。例如传入一个 __int__ 抛出 SystemExit 的对象时，当前函数会返回 -1 而阻止退出；将捕获范围限于约定的转换失败能避免吞掉终止信号。源码没有保证输入必须是内置字符串。"
+    },
+    {
+      "item_id": "Cb6dc45f001-A-001",
+      "verdict": "valid",
+      "reason": "name 被直接拼接进 shell=True 的命令文本。Windows shell 会解释 name 中的 & 等控制符，带空格的名称也会被重新分词；检查命令插值具有具体依据。未给出 name 的来源，故支持注入及引用错误的条件性风险，不断言外部攻击者已经可控。"
+    },
+    {
+      "item_id": "C3e94dec6aa-B-001",
+      "verdict": "valid",
+      "reason": "print 位于同一函数块中无条件 return 之后。sum 正常完成则函数立即返回，sum 抛异常也不会执行后面的 print，所以该语句不可达；删除它或放到 return 前的建议直接对应证据。"
+    },
+    {
+      "item_id": "C403f2b1871-A-001",
+      "verdict": "valid",
+      "reason": "def broken(: 的参数列表没有合法参数语法及右括号，模块无法完成 Python 语法解析。第 1 行定位和先修复语法的建议正确；evidence 字段是解析错误描述，而非源码摘录，但源码本身足以支持判断。"
+    },
+    {
+      "item_id": "C403f2b1871-B-001",
+      "verdict": "valid",
+      "reason": "第 1 行 def broken(: 不是合法函数定义，解析会在执行前失败。所引源码准确，先修复语法才能进行结构审查的建议成立。"
+    },
+    {
+      "item_id": "Cd9db0b42a1-B-001",
+      "verdict": "valid",
+      "reason": "同一字典字面量两次出现字符串键 start，后面的 blue 会覆盖前面的 green，最终不可能保留 start 对应的 green。建议确认键名并删除或合并重复项针对确定的覆盖行为，没有臆测哪一个颜色才是预期值。"
+    },
+    {
+      "item_id": "C5510707e8d-B-001",
+      "verdict": "valid",
+      "reason": "is 检查对象身份，不检查字符串内容。动态构造的内容为 ready 的另一字符串对象可以与字面量内容相等而身份不同，is_ok 因而可能错误返回 False；字符串驻留不能保证所有调用可靠。改用 == 对状态内容判定有实际意义。"
+    },
+    {
+      "item_id": "C6f12ef6e00-B-001",
+      "verdict": "valid",
+      "reason": "括号内是包含条件结果和消息的二元组；只要条件求值成功，该非空元组即为真。例如 value=0 时条件为 False，但整个 assert 仍通过。建议使用 assert condition, message 能修复这一确定缺陷；条件表达式自身仍可能抛异常。"
+    },
+    {
+      "item_id": "C084bb29ddc-B-001",
+      "verdict": "valid",
+      "reason": "分母直接写死为整数 0；传入普通整数或浮点数（例如 value=1）会抛 ZeroDivisionError，无法得到分数结果。建议检查实际分母成立。自定义对象可以重载除法，故不把结论扩大为所有可能对象都必然以同一种异常失败。"
+    },
+    {
+      "item_id": "Cd8f1ba2b02-A-001",
+      "verdict": "valid",
+      "reason": "exec(text) 会按 Python 语句执行参数内容，并拥有当前进程的执行权限；避免让外部不可信文本到达此处是有源码依据的安全建议。函数名表明动态执行可能是其用途，包中也没有调用方，故不认定所有调用都是错误或已经存在外部可利用漏洞。"
+    },
+    {
+      "item_id": "Cd8f1ba2b02-B-001",
+      "verdict": "valid",
+      "reason": "第 2 行确实直接执行 text；输入不可信时会产生代码注入风险，建议确认信任边界成立。未提供来源，风险成立的条件不能省略；受限解析器只适用于普通数据解析，不能保持 run_text 执行任意脚本的现有功能。"
+    }
+  ]
+}
+

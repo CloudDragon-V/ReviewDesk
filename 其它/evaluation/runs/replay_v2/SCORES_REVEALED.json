@@ -1,0 +1,176 @@
+{
+  "schema": 1,
+  "independent_adjudication": true,
+  "grading_note": "Location plus frozen concept-pattern matching. Independent valid extras count toward precision but do not alter frozen recall targets. Uncertain unmatched findings count conservatively as FP. This is a small synthetic evaluation, not a population estimate.",
+  "scores": {
+    "Candidate-A": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "valid_extra": 0,
+      "uncertain": 0,
+      "predictions": 3,
+      "cases": [
+        {
+          "case_id": "Cba368fc52a",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C3cd7bcd96d",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C300d5c1919",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C3775d56ef9",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "valid_extra": 0,
+          "missed_concepts": [
+            "Silenced I/O failure"
+          ]
+        },
+        {
+          "case_id": "C4eaef273c6",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C9012599ecc",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C074b095eb9",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C73393d18ef",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        }
+      ],
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571428571428571,
+      "score_100": 85.71
+    },
+    "Candidate-B": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 1,
+      "valid_extra": 0,
+      "uncertain": 0,
+      "predictions": 3,
+      "cases": [
+        {
+          "case_id": "Cba368fc52a",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C3cd7bcd96d",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C300d5c1919",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C3775d56ef9",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "valid_extra": 0,
+          "missed_concepts": [
+            "Silenced I/O failure"
+          ]
+        },
+        {
+          "case_id": "C4eaef273c6",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C9012599ecc",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C074b095eb9",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C73393d18ef",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        }
+      ],
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1": 0.8571428571428571,
+      "score_100": 85.71
+    }
+  },
+  "probe_passed": 0,
+  "probe_total": 0,
+  "probes": [],
+  "errors": [],
+  "identities": {
+    "Candidate-A": "reviewdesk_local",
+    "Candidate-B": "reviewdesk_hybrid_deepseek"
+  },
+  "usage": []
+}

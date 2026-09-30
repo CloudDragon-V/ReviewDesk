@@ -1,0 +1,18 @@
+✔ untrusted report HTML, scripts, image requests and dangerous links remain inert (5.0767ms)
+✔ TOC ids are generated locally and duplicate titles remain distinct (0.9773ms)
+✔ symbol filtering combines text and file scope (0.5415ms)
+✔ call graph never draws an unresolved or missing target as a known relation (0.378ms)
+✔ graph bounding reports hidden nodes rather than silently dropping them (0.2265ms)
+✔ Python tokenization preserves exact source text including HTML characters (0.5923ms)
+✔ count includes unicode codepoints, excludes whitespace and is strict above 5000 (0.2095ms)
+✔ download token can only be attached to the dedicated same-origin API route (0.3572ms)
+✔ a million-character manual is paginated with bounded rendering and complete retained content (10.9532ms)
+✔ usage displays actual tokens only with an API receipt and reads estimated_cost_cny (0.3073ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 127.3629

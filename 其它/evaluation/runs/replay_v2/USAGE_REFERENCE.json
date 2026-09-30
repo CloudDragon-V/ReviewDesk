@@ -1,0 +1,23 @@
+{
+  "new_api_requests": 0,
+  "new_api_usage_records": 0,
+  "new_estimated_cost_cny": "0",
+  "historical_usage_file": "../online_v1/sealed/usage.json",
+  "historical_usage_sha256": "90079d5c5ef2757949b249a69fb4a3398789bf72fa3d1da7e9a3b5f0e54f2704",
+  "historical_summary": {
+    "captured_utc": "2026-09-12T14:04:26.700661+00:00",
+    "completed_api_reviews": 8,
+    "actual_api_usage_records": 8,
+    "prompt_tokens": 2848,
+    "completion_tokens": 1038,
+    "cache_hit_tokens": 1024,
+    "estimated_cost_cny": "0.00599648",
+    "official_balance_before_cny": "4.99",
+    "official_balance_after_cny": "4.99",
+    "official_balance_display_delta_cny": "0.00",
+    "cost_note": "Token counts are API usage; cost is dated price estimate; account balances can be rounded and include concurrent use.",
+    "anonymous_packet_sha256": "0cd2da9961202235e1919ab737fb6d353a72b3807b182bd09e3c123815f32271",
+    "raw_usage_evidence_sha256": "90079d5c5ef2757949b249a69fb4a3398789bf72fa3d1da7e9a3b5f0e54f2704"
+  },
+  "note": "All token and cost values in historical_summary belong to the original online_v1 run; none are new consumption."
+}

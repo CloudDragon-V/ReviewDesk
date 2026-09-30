@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reviewdesk"
+version = "0.2.0"
+description = "Evidence-oriented Python code review desktop for Windows"
+requires-python = ">=3.14,<3.15"
+dependencies = ["PySide6-Essentials==6.11.2", "fastapi==0.141.1", "uvicorn==0.53.0"]
+
+[tool.setuptools]
+packages = ["reviewdesk", "reviewdesk_ui"]
+
+# Paths are relative to this file; the desktop installer is built by PyInstaller.
+[tool.setuptools.package-dir]
+reviewdesk = "../后端功能/reviewdesk"
+reviewdesk_ui = "../前端功能/reviewdesk_ui"

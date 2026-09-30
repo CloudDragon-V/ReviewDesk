@@ -1,0 +1,307 @@
+{
+  "schema": 1,
+  "cases": [
+    {
+      "id": "Cba368fc52a",
+      "files": {
+        "sample.py": "def parse_expression(text):\n    return eval(text)\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "C3cd7bcd96d",
+      "files": {
+        "sample.py": "def remember(item, entries=[]):\n    entries.append(item)\n    return entries\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "C300d5c1919",
+      "files": {
+        "sample.py": "def run_text(text):\n    return text.upper()\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "C3775d56ef9",
+      "files": {
+        "sample.py": "def save(callback):\n    try:\n        callback()\n    except OSError:\n        pass\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "C4eaef273c6",
+      "files": {
+        "sample.py": "def require(value):\n    assert value > 0, 'must be positive'\n    return value\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "C9012599ecc",
+      "files": {
+        "sample.py": "def parse(text):\n    try:\n        return int(text)\n    except:\n        return -1\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "C51f1c29f12",
+      "files": {
+        "sample.py": "ACCESS_TOKEN = 'sk-11111111111111111111111111111111'\n\ndef token():\n    return ACCESS_TOKEN\n"
+      },
+      "kind": "probe",
+      "probe": {
+        "type": "redaction",
+        "needle": "sk-11111111111111111111111111111111"
+      }
+    },
+    {
+      "id": "C074b095eb9",
+      "files": {
+        "sample.py": "def save(callback):\n    try:\n        callback()\n    except OSError as exc:\n        raise RuntimeError('save failed') from exc\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "C73393d18ef",
+      "files": {
+        "sample.py": "def parse(text):\n    try:\n        return int(text)\n    except ValueError:\n        return -1\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "Cb6dc45f001",
+      "files": {
+        "sample.py": "import subprocess\n\ndef locate(name):\n    return subprocess.run('where ' + name, shell=True, check=True)\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "C3e94dec6aa",
+      "files": {
+        "sample.py": "def total(values):\n    return sum(values)\n    print('finished')\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "C403f2b1871",
+      "files": {
+        "sample.py": "def broken(:\n    return 1\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "Cd9db0b42a1",
+      "files": {
+        "sample.py": "def palette():\n    return {'start': 'green', 'stop': 'red', 'start': 'blue'}\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "C5510707e8d",
+      "files": {
+        "sample.py": "def is_ok(status):\n    return status is 'ready'\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "C7de7f419b7",
+      "files": {
+        "sample.py": "import ast\n\ndef parse_expression(text):\n    return ast.literal_eval(text)\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "Cde4b30aac6",
+      "files": {
+        "sample.py": "PASSWORD = 'synthetic-test-password-only-0941'\n\ndef password():\n    return PASSWORD\n"
+      },
+      "kind": "probe",
+      "probe": {
+        "type": "redaction",
+        "needle": "synthetic-test-password-only-0941"
+      }
+    },
+    {
+      "id": "Cc96767cf18",
+      "files": {
+        "sample.py": "def remember(item, entries=None):\n    if entries is None:\n        entries = []\n    entries.append(item)\n    return entries\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "C6f12ef6e00",
+      "files": {
+        "sample.py": "def require(value):\n    assert (value > 0, 'must be positive')\n    return value\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "C084bb29ddc",
+      "files": {
+        "sample.py": "def fraction(value):\n    return value / 0\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "C08a26d267e",
+      "files": {
+        "sample.py": "def intact():\n    return 1\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "C9d90219bc5",
+      "files": {
+        "main.py": "import helper\n\ndef run(value):\n    return helper.double(value)\n",
+        "helper.py": "def double(value):\n    return value * 2\n"
+      },
+      "kind": "probe",
+      "probe": {
+        "type": "cross_file_graph"
+      }
+    },
+    {
+      "id": "Cf97723ecba",
+      "files": {
+        "sample.py": "def total(values):\n    result = sum(values)\n    print('finished')\n    return result\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "Cec7ec26ca1",
+      "files": {
+        "sample.py": "import os\n\ndef headers():\n    return {'Authorization': 'Bearer ' + os.environ['SERVICE_TOKEN']}\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "Cfae6fb8f1e",
+      "files": {
+        "sample.py": "def is_ok(status):\n    return status == 'ready'\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "Ce1c872d5f7",
+      "files": {
+        "sample.py": "API_KEY = 'sk-00000000000000000000000000000000'\n\ndef headers():\n    return {'Authorization': 'Bearer ' + API_KEY}\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "Cbc47b2afab",
+      "files": {
+        "main.py": "def safe():\n    return 1\n",
+        ".env": "TOKEN=synthetic-only\n",
+        ".venv/ignored.py": "raise RuntimeError('must not execute')\n",
+        "build/generated.py": "raise RuntimeError('must not execute')\n"
+      },
+      "kind": "probe",
+      "probe": {
+        "type": "scan_exclusions",
+        "expected_paths": [
+          "main.py"
+        ]
+      }
+    },
+    {
+      "id": "C0719887448",
+      "files": {
+        "sample.py": "def fraction(value, denominator):\n    if denominator == 0:\n        return None\n    return value / denominator\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "C61e3973d22",
+      "files": {
+        "main.py": "from helper import double\n\ndef run(value):\n    return double(value)\n",
+        "helper.py": "def double(value):\n    return value * 2\n"
+      },
+      "kind": "probe",
+      "probe": {
+        "type": "cross_file_graph"
+      }
+    },
+    {
+      "id": "C0760fc3f2a",
+      "files": {
+        "module_00.py": "def compute_0(value):\n    return value + 0\n",
+        "module_01.py": "def compute_1(value):\n    return value + 1\n",
+        "module_02.py": "def compute_2(value):\n    return value + 2\n",
+        "module_03.py": "def compute_3(value):\n    return value + 3\n",
+        "module_04.py": "def compute_4(value):\n    return value + 4\n",
+        "module_05.py": "def compute_5(value):\n    return value + 5\n",
+        "module_06.py": "def compute_6(value):\n    return value + 6\n",
+        "module_07.py": "def compute_7(value):\n    return value + 7\n",
+        "module_08.py": "def compute_8(value):\n    return value + 8\n",
+        "module_09.py": "def compute_9(value):\n    return value + 9\n",
+        "module_10.py": "def compute_10(value):\n    return value + 10\n",
+        "module_11.py": "def compute_11(value):\n    return value + 11\n",
+        "module_12.py": "def compute_12(value):\n    return value + 12\n",
+        "module_13.py": "def compute_13(value):\n    return value + 13\n",
+        "module_14.py": "def compute_14(value):\n    return value + 14\n",
+        "module_15.py": "def compute_15(value):\n    return value + 15\n",
+        "module_16.py": "def compute_16(value):\n    return value + 16\n",
+        "module_17.py": "def compute_17(value):\n    return value + 17\n",
+        "module_18.py": "def compute_18(value):\n    return value + 18\n",
+        "module_19.py": "def compute_19(value):\n    return value + 19\n",
+        "module_20.py": "def compute_20(value):\n    return value + 20\n",
+        "module_21.py": "def compute_21(value):\n    return value + 21\n",
+        "module_22.py": "def compute_22(value):\n    return value + 22\n",
+        "module_23.py": "def compute_23(value):\n    return value + 23\n"
+      },
+      "kind": "probe",
+      "probe": {
+        "type": "budget",
+        "budget": 120
+      }
+    },
+    {
+      "id": "Ca084145a88",
+      "files": {
+        "sample.py": "import subprocess\n\ndef locate(name):\n    return subprocess.run(['where', name], shell=False, check=True)\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "Cd8f1ba2b02",
+      "files": {
+        "sample.py": "def run_text(text):\n    exec(text)\n"
+      },
+      "kind": "detection",
+      "probe": null
+    },
+    {
+      "id": "C84da8e192f",
+      "files": {
+        "sample.py": "def palette():\n    return {'start': 'green', 'stop': 'red', 'pause': 'blue'}\n"
+      },
+      "kind": "detection",
+      "probe": null
+    }
+  ]
+}

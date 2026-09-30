@@ -1,0 +1,39 @@
+{
+  "judgments": [
+    {
+      "item_id": "Cba368fc52a-A-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "Cba368fc52a-B-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "C3cd7bcd96d-A-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "C3cd7bcd96d-B-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "C9012599ecc-A-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "C9012599ecc-B-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "C9012599ecc-B-002",
+      "verdict": "uncertain",
+      "reason": ""
+    }
+  ]
+}

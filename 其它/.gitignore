@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+构建缓存/
+运行文件/
+安装包/
+.tools/
+*.log
+.env
+*.db
+*.db-*

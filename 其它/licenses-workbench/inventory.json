@@ -1,0 +1,518 @@
+[
+  {
+    "ecosystem": "python",
+    "name": "fastapi",
+    "version": "0.141.1",
+    "role": "runtime",
+    "license": "MIT",
+    "files": [
+      "python-packages/fastapi/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "starlette",
+    "version": "1.6.0",
+    "role": "runtime",
+    "license": "BSD-3-Clause",
+    "files": [
+      "python-packages/starlette/LICENSE.md"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "pydantic",
+    "version": "2.13.5",
+    "role": "runtime",
+    "license": "MIT",
+    "files": [
+      "python-packages/pydantic/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "pydantic_core",
+    "version": "2.46.5",
+    "role": "runtime",
+    "license": "MIT",
+    "files": [
+      "python-packages/pydantic_core/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "annotated-types",
+    "version": "0.8.0",
+    "role": "runtime",
+    "license": "MIT",
+    "files": [
+      "python-packages/annotated-types/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "annotated-doc",
+    "version": "0.0.5",
+    "role": "runtime",
+    "license": "MIT",
+    "files": [
+      "python-packages/annotated-doc/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "typing_extensions",
+    "version": "4.16.0",
+    "role": "runtime",
+    "license": "PSF-2.0",
+    "files": [
+      "python-packages/typing_extensions/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "typing-inspection",
+    "version": "0.4.4",
+    "role": "runtime",
+    "license": "MIT",
+    "files": [
+      "python-packages/typing-inspection/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "anyio",
+    "version": "4.15.1",
+    "role": "runtime",
+    "license": "MIT",
+    "files": [
+      "python-packages/anyio/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "idna",
+    "version": "3.20",
+    "role": "runtime",
+    "license": "BSD-3-Clause",
+    "files": [
+      "python-packages/idna/LICENSE.md"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "uvicorn",
+    "version": "0.53.0",
+    "role": "runtime",
+    "license": "BSD-3-Clause",
+    "files": [
+      "python-packages/uvicorn/LICENSE.md"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "click",
+    "version": "8.5.0",
+    "role": "runtime",
+    "license": "BSD-3-Clause",
+    "files": [
+      "python-packages/click/LICENSE.txt"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "h11",
+    "version": "0.16.0",
+    "role": "runtime",
+    "license": "MIT",
+    "files": [
+      "python-packages/h11/LICENSE.txt"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "setuptools",
+    "version": "84.0.0",
+    "role": "runtime",
+    "license": "MIT",
+    "files": [
+      "python-packages/setuptools/00-LICENSE",
+      "python-packages/setuptools/01-LICENSE",
+      "python-packages/setuptools/02-LICENSE",
+      "python-packages/setuptools/03-LICENSE",
+      "python-packages/setuptools/04-LICENSE",
+      "python-packages/setuptools/05-LICENSE",
+      "python-packages/setuptools/06-LICENSE",
+      "python-packages/setuptools/07-LICENSE",
+      "python-packages/setuptools/08-LICENSE",
+      "python-packages/setuptools/09-LICENSE.APACHE",
+      "python-packages/setuptools/10-LICENSE.BSD",
+      "python-packages/setuptools/11-LICENSE",
+      "python-packages/setuptools/12-LICENSE",
+      "python-packages/setuptools/13-LICENSE.txt",
+      "python-packages/setuptools/14-LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "PyInstaller",
+    "version": "6.22.2",
+    "role": "build tool / bootloader",
+    "license": "GPLv2-or-later with a special exception which allows to use PyInstaller to build and distribute non-free programs (including commercial ones)",
+    "files": [
+      "python-packages/PyInstaller/COPYING.txt"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "pyinstaller-hooks-contrib",
+    "version": "2026.7",
+    "role": "build tool / bootloader",
+    "license": "See included text",
+    "files": [
+      "python-packages/pyinstaller-hooks-contrib/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "altgraph",
+    "version": "0.17.5",
+    "role": "build tool / bootloader",
+    "license": "MIT",
+    "files": [
+      "python-packages/altgraph/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "packaging",
+    "version": "26.3",
+    "role": "build tool / bootloader",
+    "license": "Apache-2.0 OR BSD-2-Clause",
+    "files": [
+      "python-packages/packaging/LICENSE",
+      "python-packages/packaging/LICENSE.APACHE",
+      "python-packages/packaging/LICENSE.BSD"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "pywin32-ctypes",
+    "version": "0.2.3",
+    "role": "build tool / bootloader",
+    "license": "BSD-3-Clause",
+    "files": [
+      "python-packages/pywin32-ctypes/LICENSE.txt"
+    ]
+  },
+  {
+    "ecosystem": "python",
+    "name": "pefile",
+    "version": "2024.8.26",
+    "role": "build tool / bootloader",
+    "license": "MIT",
+    "files": [
+      "python-packages/pefile/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@babel/helper-string-parser",
+    "version": "7.29.7",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/babel__helper-string-parser-7.29.7/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@babel/helper-validator-identifier",
+    "version": "7.29.7",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/babel__helper-validator-identifier-7.29.7/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@babel/parser",
+    "version": "7.29.9",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/babel__parser-7.29.9/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@babel/types",
+    "version": "7.29.8",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/babel__types-7.29.8/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@jridgewell/sourcemap-codec",
+    "version": "1.6.0",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/jridgewell__sourcemap-codec-1.6.0/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@vue/compiler-core",
+    "version": "3.5.43",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/vue__compiler-core-3.5.43/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "entities",
+    "version": "7.0.1",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "BSD-2-Clause",
+    "files": [
+      "frontend-packages/entities-7.0.1/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@vue/compiler-dom",
+    "version": "3.5.43",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/vue__compiler-dom-3.5.43/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@vue/compiler-sfc",
+    "version": "3.5.43",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/vue__compiler-sfc-3.5.43/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@vue/compiler-ssr",
+    "version": "3.5.43",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/vue__compiler-ssr-3.5.43/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@vue/reactivity",
+    "version": "3.5.43",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/vue__reactivity-3.5.43/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@vue/runtime-core",
+    "version": "3.5.43",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/vue__runtime-core-3.5.43/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@vue/runtime-dom",
+    "version": "3.5.43",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/vue__runtime-dom-3.5.43/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@vue/server-renderer",
+    "version": "3.5.43",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/vue__server-renderer-3.5.43/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "@vue/shared",
+    "version": "3.5.43",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/vue__shared-3.5.43/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "argparse",
+    "version": "3.0.2",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "PSF-2.0",
+    "files": [
+      "frontend-packages/argparse-3.0.2/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "csstype",
+    "version": "3.2.3",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/csstype-3.2.3/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "entities",
+    "version": "8.1.0",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "BSD-2-Clause",
+    "files": [
+      "frontend-packages/entities-8.1.0/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "estree-walker",
+    "version": "2.0.2",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/estree-walker-2.0.2/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "linkify-it",
+    "version": "6.1.0",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/linkify-it-6.1.0/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "magic-string",
+    "version": "0.30.21",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/magic-string-0.30.21/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "markdown-it",
+    "version": "15.0.2",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/markdown-it-15.0.2/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "mdurl",
+    "version": "2.1.0",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/mdurl-2.1.0/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "nanoid",
+    "version": "3.3.19",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/nanoid-3.3.19/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "picocolors",
+    "version": "1.1.1",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "ISC",
+    "files": [
+      "frontend-packages/picocolors-1.1.1/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "postcss",
+    "version": "8.5.28",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/postcss-8.5.28/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "punycode.js",
+    "version": "2.3.1",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/punycode.js-2.3.1/LICENSE-MIT.txt"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "source-map-js",
+    "version": "1.2.1",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "BSD-3-Clause",
+    "files": [
+      "frontend-packages/source-map-js-1.2.1/LICENSE"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "uc.micro",
+    "version": "3.0.0",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/uc.micro-3.0.0/LICENSE.txt"
+    ]
+  },
+  {
+    "ecosystem": "npm",
+    "name": "vue",
+    "version": "3.5.43",
+    "role": "production dependency closure; tree shaking may omit unused modules",
+    "license": "MIT",
+    "files": [
+      "frontend-packages/vue-3.5.43/LICENSE"
+    ]
+  }
+]

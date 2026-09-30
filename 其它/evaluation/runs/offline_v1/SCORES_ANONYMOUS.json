@@ -1,0 +1,521 @@
+{
+  "schema": 1,
+  "independent_adjudication": true,
+  "grading_note": "Location plus frozen concept-pattern matching. Independent valid extras count toward precision but do not alter frozen recall targets. Uncertain unmatched findings count conservatively as FP. This is a small synthetic evaluation, not a population estimate.",
+  "scores": {
+    "Candidate-A": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 7,
+      "valid_extra": 0,
+      "uncertain": 0,
+      "predictions": 6,
+      "cases": [
+        {
+          "case_id": "Cba368fc52a",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C3cd7bcd96d",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C300d5c1919",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C3775d56ef9",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "valid_extra": 0,
+          "missed_concepts": [
+            "Silenced I/O failure"
+          ]
+        },
+        {
+          "case_id": "C4eaef273c6",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C9012599ecc",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C074b095eb9",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C73393d18ef",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "Cb6dc45f001",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C3e94dec6aa",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "valid_extra": 0,
+          "missed_concepts": [
+            "Statement unreachable after return"
+          ]
+        },
+        {
+          "case_id": "C403f2b1871",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "Cd9db0b42a1",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "valid_extra": 0,
+          "missed_concepts": [
+            "Repeated dict key silently overwrites value"
+          ]
+        },
+        {
+          "case_id": "C5510707e8d",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "valid_extra": 0,
+          "missed_concepts": [
+            "Identity comparison with string literal"
+          ]
+        },
+        {
+          "case_id": "C7de7f419b7",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "Cc96767cf18",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C6f12ef6e00",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "valid_extra": 0,
+          "missed_concepts": [
+            "Nonempty tuple assertion always truthy"
+          ]
+        },
+        {
+          "case_id": "C084bb29ddc",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "valid_extra": 0,
+          "missed_concepts": [
+            "Literal zero divisor"
+          ]
+        },
+        {
+          "case_id": "C08a26d267e",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "Cf97723ecba",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "Cec7ec26ca1",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "Cfae6fb8f1e",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "Ce1c872d5f7",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "valid_extra": 0,
+          "missed_concepts": [
+            "Hardcoded synthetic credential"
+          ]
+        },
+        {
+          "case_id": "C0719887448",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "Ca084145a88",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "Cd8f1ba2b02",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C84da8e192f",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        }
+      ],
+      "precision": 1.0,
+      "recall": 0.46153846153846156,
+      "f1": 0.631578947368421,
+      "score_100": 63.16
+    },
+    "Candidate-B": {
+      "tp": 10,
+      "fp": 0,
+      "fn": 3,
+      "valid_extra": 0,
+      "uncertain": 0,
+      "predictions": 10,
+      "cases": [
+        {
+          "case_id": "Cba368fc52a",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C3cd7bcd96d",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C300d5c1919",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C3775d56ef9",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "valid_extra": 0,
+          "missed_concepts": [
+            "Silenced I/O failure"
+          ]
+        },
+        {
+          "case_id": "C4eaef273c6",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C9012599ecc",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C074b095eb9",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C73393d18ef",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "Cb6dc45f001",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "valid_extra": 0,
+          "missed_concepts": [
+            "Shell interpolation allows injection"
+          ]
+        },
+        {
+          "case_id": "C3e94dec6aa",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C403f2b1871",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "Cd9db0b42a1",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C5510707e8d",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C7de7f419b7",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "Cc96767cf18",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C6f12ef6e00",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C084bb29ddc",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C08a26d267e",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "Cf97723ecba",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "Cec7ec26ca1",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "Cfae6fb8f1e",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "Ce1c872d5f7",
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "valid_extra": 0,
+          "missed_concepts": [
+            "Hardcoded synthetic credential"
+          ]
+        },
+        {
+          "case_id": "C0719887448",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "Ca084145a88",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "Cd8f1ba2b02",
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        },
+        {
+          "case_id": "C84da8e192f",
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "valid_extra": 0,
+          "missed_concepts": []
+        }
+      ],
+      "precision": 1.0,
+      "recall": 0.7692307692307693,
+      "f1": 0.8695652173913044,
+      "score_100": 86.96
+    }
+  },
+  "probe_passed": 6,
+  "probe_total": 6,
+  "probes": [
+    {
+      "case_id": "C51f1c29f12",
+      "pass": true,
+      "raw_needle_present": false,
+      "source_included": true
+    },
+    {
+      "case_id": "Cde4b30aac6",
+      "pass": true,
+      "raw_needle_present": false,
+      "source_included": true
+    },
+    {
+      "case_id": "C9d90219bc5",
+      "pass": true,
+      "cross_file_edges": 2,
+      "edge_kinds": [
+        "calls",
+        "imports"
+      ]
+    },
+    {
+      "case_id": "Cbc47b2afab",
+      "pass": true,
+      "observed_paths": [
+        "main.py"
+      ]
+    },
+    {
+      "case_id": "C61e3973d22",
+      "pass": true,
+      "cross_file_edges": 2,
+      "edge_kinds": [
+        "calls",
+        "imports"
+      ]
+    },
+    {
+      "case_id": "C0760fc3f2a",
+      "pass": true,
+      "reported_tokens": 0,
+      "recomputed_tokens": 0,
+      "budget": 120,
+      "spans_valid": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "frozen_at_utc": "2026-09-20T02:40:31+00:00",
+  "evaluation_kind": "模拟盲评",
+  "human_participant_study": false,
+  "case_count": 5,
+  "pre_evaluation_freeze": true,
+  "artifacts": [
+    {
+      "path": "cases.json",
+      "sha256": "50b37e8e47fee782f1c55d5dfae17c9b6694bfa85495e66b5c06f3c551403964",
+      "bytes": 5828
+    },
+    {
+      "path": "sealed/oracle.json",
+      "sha256": "a13ba34d401eb537255968c91cde13f95e6b36be1ffec01a4e0c64b46ea2bd50",
+      "bytes": 18910
+    }
+  ],
+  "preparation_checks": {
+    "case_ids_unique": true,
+    "all_sources_ast_parse": true,
+    "sample_sources_executed": false,
+    "implementation_sources_read": false,
+    "external_api_called": false,
+    "evaluation_performed": false,
+    "case_line_counts": {
+      "C01": 41,
+      "C02": 35,
+      "C03": 38,
+      "C04": 38,
+      "C05": 35
+    }
+  },
+  "handling": {
+    "software_input": "cases.json only",
+    "sealed_reference": "sealed/oracle.json must not be provided to the evaluated software or its operator before outputs are frozen",
+    "after_freeze": "Treat both artifact byte sequences as immutable; any change requires a new evaluation version and commitment."
+  }
+}

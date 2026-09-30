@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-09-12T14:00:35.519517+00:00",
+  "mode": "offline",
+  "corpus_commitment_sha256": "470f5a764b72d9b0438877b6d436f7c64540d623fc8a711cb700bafecb225d8b",
+  "mapping_sha256": "738c18ff939200ac3d278b8074d4a95a325ceffd2ff85a83f1914da3550f2dad",
+  "harness_sha256": "cfbc9984ca0136469668847008a9bb2bdad83b60211c772083cf51d08f645707",
+  "candidate_hashes": {
+    "src/reviewdesk/__init__.py": "98adc9026b5cee983106b4eadd647180c6f3eb01486f85eaf86a61f1c3467c68",
+    "src/reviewdesk/analysis.py": "1c6fb32bbe6116a28a43662f77e32368f6cd5af5135687e43b9df651ca610b15",
+    "src/reviewdesk/api.py": "79cfb6c9543a4922a2bf496a3914aa8c3e14922b401875b35e8d8d02d826e76f",
+    "src/reviewdesk/context.py": "890f6919df8b8a997dbb60d72e01b8602d5ba6037d19c283e03f11ff24230347",
+    "src/reviewdesk/models.py": "47c1ffa86d58b9fb5556efc18924e89489ba0e9d26a7d8d480b55965c3307ec2",
+    "src/reviewdesk/service.py": "461b9843fc1c97c3139fe1f5c096512575a0b5f52ae67c272700986b724aa880",
+    "src/reviewdesk/storage.py": "4979356d7ed7c732983da8a9954536159b60d61c25212e830a558668e647dfe5",
+    "src/reviewdesk/ui.py": "7d0e42316b77775dc7245051db94c42792699032dddf6d23ba8e80688c9c5005",
+    "src/reviewdesk/widgets.py": "13e7b9a95777229a2a71dd747721fca5e50557dfe09a7981ed15129770f9ae21"
+  },
+  "online_protocol_sha256": null,
+  "online_per_call_cap_cny": "0",
+  "state": "frozen",
+  "packet_sha256": "13a6463b660efc000b97faa511b6807cf125b20f79b97b50b635b03abc6e67db",
+  "case_count": 26,
+  "probe_count": 6,
+  "error_count": 0
+}

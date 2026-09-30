@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "created_utc": "2026-09-12T14:44:59.457523+00:00",
+  "state": "frozen",
+  "mode": "known_sample_replay",
+  "case_count": 8,
+  "probe_count": 0,
+  "error_count": 0,
+  "candidate_hashes": {
+    "src/reviewdesk/__init__.py": "98adc9026b5cee983106b4eadd647180c6f3eb01486f85eaf86a61f1c3467c68",
+    "src/reviewdesk/analysis.py": "1c6fb32bbe6116a28a43662f77e32368f6cd5af5135687e43b9df651ca610b15",
+    "src/reviewdesk/api.py": "110605548a012803eefc62d31058e9ee9ad1e6451891d5ad84fd882a610c8cb2",
+    "src/reviewdesk/context.py": "890f6919df8b8a997dbb60d72e01b8602d5ba6037d19c283e03f11ff24230347",
+    "src/reviewdesk/models.py": "47c1ffa86d58b9fb5556efc18924e89489ba0e9d26a7d8d480b55965c3307ec2",
+    "src/reviewdesk/service.py": "0f9f92515eb8f561a061fc041c114364537ce6e78271c84c4e137434e4b595c1",
+    "src/reviewdesk/storage.py": "4979356d7ed7c732983da8a9954536159b60d61c25212e830a558668e647dfe5",
+    "src/reviewdesk/ui.py": "94822443c545d468d94266e1bece31a94b884ce1d0294fbbcb1049bb282079ce",
+    "src/reviewdesk/widgets.py": "99a78664b6cf09196b3bf56af71bbec510b08e589cd13f71e7b900041ce46ba4"
+  },
+  "harness_sha256": "cfbc9984ca0136469668847008a9bb2bdad83b60211c772083cf51d08f645707",
+  "packet_sha256": "63e665966fd244c6f8ed2776e2bf8dd87f44960f84fc4dcc129e1d826bee2198",
+  "mapping_sha256": "86eabdc8cf08d351b9e9a8eec00d6cf893499a08a4c2dc435dfed24e8c2981c9",
+  "corpus_commitment_sha256": "470f5a764b72d9b0438877b6d436f7c64540d623fc8a711cb700bafecb225d8b"
+}

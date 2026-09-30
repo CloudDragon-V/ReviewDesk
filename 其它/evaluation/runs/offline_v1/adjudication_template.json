@@ -1,0 +1,84 @@
+{
+  "judgments": [
+    {
+      "item_id": "Cba368fc52a-A-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "Cba368fc52a-B-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "C3cd7bcd96d-A-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "C3cd7bcd96d-B-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "C9012599ecc-A-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "C9012599ecc-B-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "Cb6dc45f001-A-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "C3e94dec6aa-B-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "C403f2b1871-A-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "C403f2b1871-B-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "Cd9db0b42a1-B-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "C5510707e8d-B-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "C6f12ef6e00-B-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "C084bb29ddc-B-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "Cd8f1ba2b02-A-001",
+      "verdict": "uncertain",
+      "reason": ""
+    },
+    {
+      "item_id": "Cd8f1ba2b02-B-001",
+      "verdict": "uncertain",
+      "reason": ""
+    }
+  ]
+}

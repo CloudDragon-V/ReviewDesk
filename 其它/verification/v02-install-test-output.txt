@@ -1,0 +1,28 @@
+{
+    "other_physical_computer_tested":  false,
+    "smoke":  {
+                  "ok":  true,
+                  "frozen":  true,
+                  "port":  59296,
+                  "files":  3,
+                  "symbols":  7,
+                  "calls":  14,
+                  "character_count":  13628,
+                  "auto_exported":  true,
+                  "download_verified":  true,
+                  "api_called":  false,
+                  "frontend_served":  true,
+                  "data_dir":  "D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\verification\\v02-installed-userdata"
+              },
+    "api_called":  false,
+    "pythonpath":  "C:\\ReviewDesk-No-Python",
+    "host_os":  "Microsoft Windows NT 10.0.26200.0",
+    "preserved_user_manuals":  true,
+    "installer_exit":  0,
+    "uninstall_exit":  0,
+    "preserved_user_knowledge":  true,
+    "legacy_v01_preserved":  true,
+    "application_removed":  true,
+    "isolated_path":  "C:\\WINDOWS\\System32;C:\\WINDOWS",
+    "application_exit":  0
+}

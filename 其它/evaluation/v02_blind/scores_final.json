@@ -1,0 +1,832 @@
+{
+  "schema_version": 1,
+  "candidate": "R41",
+  "evaluation_kind": "known-case final document regression",
+  "evaluation_date_local": "2026-09-20",
+  "reviewer_kind": "independent AI static reviewer",
+  "protocol": {
+    "anonymous_label_only": true,
+    "identity_inferred": false,
+    "allowed_input_files": [
+      "cases.json",
+      "sealed/oracle.json",
+      "COMMITMENT.json",
+      "final_packet/*"
+    ],
+    "read_other_candidates_or_implementation": false,
+    "read_existing_scores_or_reports": false,
+    "executed_sample_sources": false,
+    "called_external_model_api": false,
+    "modified_candidate_or_cases": false
+  },
+  "provenance_limits": [
+    "已知样本迭代后的最终文档回归，包含单独补充生成的文档。",
+    "评分对象是冻结后的五份完整说明，不代表一次请求的全部成功率。",
+    "不是新未见样本双盲、真人研究或泛化准确率。",
+    "独立性仅指本评阅未阅读实现、候选身份或其他评分；不能消除样本已知带来的偏差。"
+  ],
+  "integrity": {
+    "all_passed": true,
+    "verified_artifact_count": 7,
+    "commitment_and_manifest_are_reference_records_not_independently_authenticated": true,
+    "artifacts": [
+      {
+        "path": "cases.json",
+        "expected_sha256": "50b37e8e47fee782f1c55d5dfae17c9b6694bfa85495e66b5c06f3c551403964",
+        "observed_sha256": "50b37e8e47fee782f1c55d5dfae17c9b6694bfa85495e66b5c06f3c551403964",
+        "observed_bytes": 5828,
+        "matched": true
+      },
+      {
+        "path": "sealed/oracle.json",
+        "expected_sha256": "a13ba34d401eb537255968c91cde13f95e6b36be1ffec01a4e0c64b46ea2bd50",
+        "observed_sha256": "a13ba34d401eb537255968c91cde13f95e6b36be1ffec01a4e0c64b46ea2bd50",
+        "observed_bytes": 18910,
+        "matched": true
+      },
+      {
+        "path": "final_packet/C01_R41.md",
+        "expected_sha256": "f89a02aaebd58614adaf7bd67c4e4c1e7ebb9d5228526ab1639e9117651e451b",
+        "observed_sha256": "f89a02aaebd58614adaf7bd67c4e4c1e7ebb9d5228526ab1639e9117651e451b",
+        "observed_bytes": 36327,
+        "matched": true
+      },
+      {
+        "path": "final_packet/C02_R41.md",
+        "expected_sha256": "0cfe3a7c5aa84228422ea3c38370b32606ae9f5adf9d4fdd15ed2143eeed2d69",
+        "observed_sha256": "0cfe3a7c5aa84228422ea3c38370b32606ae9f5adf9d4fdd15ed2143eeed2d69",
+        "observed_bytes": 33372,
+        "matched": true
+      },
+      {
+        "path": "final_packet/C03_R41.md",
+        "expected_sha256": "4b2b8b4fd6e06e2d10bd7b06b8502a6dcea13887b06bea744e83ea6d4ed071a4",
+        "observed_sha256": "4b2b8b4fd6e06e2d10bd7b06b8502a6dcea13887b06bea744e83ea6d4ed071a4",
+        "observed_bytes": 37688,
+        "matched": true
+      },
+      {
+        "path": "final_packet/C04_R41.md",
+        "expected_sha256": "fd893320543156c2f4408ee6757ca2c3440e05395b2f5d4373a037d6710dfe1e",
+        "observed_sha256": "fd893320543156c2f4408ee6757ca2c3440e05395b2f5d4373a037d6710dfe1e",
+        "observed_bytes": 42482,
+        "matched": true
+      },
+      {
+        "path": "final_packet/C05_R41.md",
+        "expected_sha256": "d7b9a4733e7bbcd090b3a46e3c42eed61741eac4722f5a58ec036276dd5a7607",
+        "observed_sha256": "d7b9a4733e7bbcd090b3a46e3c42eed61741eac4722f5a58ec036276dd5a7607",
+        "observed_bytes": 36027,
+        "matched": true
+      }
+    ]
+  },
+  "rubric": {
+    "maxima": {
+      "fact_accuracy": 30,
+      "assertion_accuracy": 15,
+      "key_behavior_coverage": 15,
+      "calls_and_flow": 20,
+      "variables_and_conditions": 20,
+      "beginner_readability": 20,
+      "evidence_boundary": 10,
+      "total": 100
+    },
+    "checkpoint_credit": {
+      "covered": 1,
+      "partial": 0.5,
+      "absent": 0
+    },
+    "coverage_component": "round(15 * case_coverage_credit / 7, 1)",
+    "coverage_policy": "覆盖衡量参考要点是否已经解释；正确陈述存在但另处有冲突时保留覆盖、在陈述准确及相关流程/条件项扣分，并记录冲突。保守未知或缺项只影响覆盖或说明完整性，不当作错误断言。",
+    "blocking_definition": "会使给定样本关键最终值、对象关系、协程先后或 finally 实际结果得出错误结论的实质错误。局部措辞冲突及可直接修复的泛化边界不自动归为阻断。",
+    "score_character": "给定材料上的分析性文档质量评分，非测量的准确率或统计估计"
+  },
+  "cases": [
+    {
+      "id": "C01",
+      "title": "订单摘要",
+      "assertion_accuracy": 15,
+      "key_behavior_coverage": 15,
+      "calls_and_flow": 20,
+      "variables_and_conditions": 20,
+      "beginner_readability": 15,
+      "evidence_boundary": 10,
+      "total": 95,
+      "issue_ids": [
+        "F06"
+      ],
+      "notes": "给定结果与边界均正确，主要损失来自完整文档冗长。",
+      "fact_accuracy": 30,
+      "coverage_credit": 7,
+      "checkpoints": [
+        {
+          "id": "C01-1",
+          "criterion": "入口与跨文件路径",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            18,
+            26,
+            133
+          ],
+          "note": "main 守卫、build_report、line_total 与导入不调用 main 均说明。"
+        },
+        {
+          "id": "C01-2",
+          "criterion": "筛选",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            50,
+            74
+          ],
+          "note": "A、C 计入，B 由 continue 跳过。"
+        },
+        {
+          "id": "C01-3",
+          "criterion": "行金额",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            42,
+            50,
+            74
+          ],
+          "note": "缺 qty 按 0、负数截为 0，A=80、C=30。"
+        },
+        {
+          "id": "C01-4",
+          "criterion": "阈值顺序",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            58,
+            74
+          ],
+          "note": "110>=100 后定 bulk，再减 10；类别不重判。"
+        },
+        {
+          "id": "C01-5",
+          "criterion": "最终摘要",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            66,
+            74
+          ],
+          "note": "total=100、bulk、['A','C'] 及两行输出正确。"
+        },
+        {
+          "id": "C01-6",
+          "criterion": "数据边界",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            42,
+            50,
+            84,
+            93
+          ],
+          "note": "新字典、新 codes、不改原订单；缺 active 跳过，必需键缺失可传播 KeyError。"
+        },
+        {
+          "id": "C01-7",
+          "criterion": "推导与观察",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            9,
+            74,
+            430
+          ],
+          "note": "明确静态推演、未执行。"
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "title": "记录面板",
+      "assertion_accuracy": 15,
+      "key_behavior_coverage": 13.9,
+      "calls_and_flow": 20,
+      "variables_and_conditions": 19,
+      "beginner_readability": 15,
+      "evidence_boundary": 10,
+      "total": 92.9,
+      "issue_ids": [
+        "F05",
+        "F06"
+      ],
+      "notes": "三个最终对象正确；作用域因果解释不够完整。",
+      "fact_accuracy": 28.9,
+      "coverage_credit": 6.5,
+      "checkpoints": [
+        {
+          "id": "C02-1",
+          "criterion": "闭包与调用顺序",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            20,
+            27,
+            77
+          ],
+          "note": "make_session 返回字典和闭包，seed/copy/revise/done/seen 顺序正确。"
+        },
+        {
+          "id": "C02-2",
+          "criterion": "浅拷贝别名",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            43,
+            59
+          ],
+          "note": "不同字典共享 items，calls 后续独立。"
+        },
+        {
+          "id": "C02-3",
+          "criterion": "修改与重新绑定",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            51
+          ],
+          "note": "append 改共享列表，+ 创建新列表，draft 只进入 edited。"
+        },
+        {
+          "id": "C02-4",
+          "criterion": "最终字典",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            59,
+            68,
+            77
+          ],
+          "note": "两者 items=['seed','queued','done','seen']，calls 分别 2、1。"
+        },
+        {
+          "id": "C02-5",
+          "criterion": "独立列表",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            51,
+            68,
+            77
+          ],
+          "note": "edited=['draft','queued','local']，后续 done/seen 不进入。"
+        },
+        {
+          "id": "C02-6",
+          "criterion": "作用域",
+          "coverage_credit": 0.5,
+          "status": "partial",
+          "document_lines": [
+            27,
+            35,
+            51,
+            125
+          ],
+          "note": "说明了捕获、字典修改和 revise 局部重绑定，但没有把不重绑外层 state 与无需 global/nonlocal 的理由讲明；这是覆盖不足，不是错误断言。"
+        },
+        {
+          "id": "C02-7",
+          "criterion": "推导与观察",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            35,
+            68,
+            77,
+            439
+          ],
+          "note": "明确静态推演，不声称运行或真实对象 id。"
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "title": "批次处理",
+      "assertion_accuracy": 13,
+      "key_behavior_coverage": 15,
+      "calls_and_flow": 19,
+      "variables_and_conditions": 19,
+      "beginner_readability": 15,
+      "evidence_boundary": 10,
+      "total": 91,
+      "issue_ids": [
+        "F01",
+        "F06"
+      ],
+      "notes": "全部结果与实际 finally 顺序正确；通用前提对 except/finally 有局部内部冲突。",
+      "fact_accuracy": 28,
+      "coverage_credit": 7,
+      "checkpoints": [
+        {
+          "id": "C03-1",
+          "criterion": "批次调用",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            17,
+            25,
+            34
+          ],
+          "note": "按输入顺序逐项 handle 并收集返回字典。"
+        },
+        {
+          "id": "C03-2",
+          "criterion": "四种分支",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            50,
+            58,
+            95
+          ],
+          "note": "empty/skip/invalid/ok 和 value=4 正确，None 先于 int。"
+        },
+        {
+          "id": "C03-3",
+          "criterion": "return 与 finally",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            50,
+            104,
+            145,
+            310
+          ],
+          "note": "具体说明正确；通用条件另有冲突，见 F01，已在陈述/流程/条件扣分。"
+        },
+        {
+          "id": "C03-4",
+          "criterion": "异常边界",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            50,
+            95
+          ],
+          "note": "零主动 ValueError，只有 ValueError 被捕获，其他异常经 finally 传播。"
+        },
+        {
+          "id": "C03-5",
+          "criterion": "完整日志",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            58,
+            86
+          ],
+          "note": "九项日志及顺序正确。"
+        },
+        {
+          "id": "C03-6",
+          "criterion": "共享 events",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            67
+          ],
+          "note": "四字典共同引用完整日志，非快照。"
+        },
+        {
+          "id": "C03-7",
+          "criterion": "推导与观察",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            58,
+            86,
+            454
+          ],
+          "note": "明确静态推导，未声称执行/落盘。"
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "title": "数据摘录",
+      "assertion_accuracy": 13,
+      "key_behavior_coverage": 15,
+      "calls_and_flow": 18,
+      "variables_and_conditions": 19,
+      "beginner_readability": 14,
+      "evidence_boundary": 10,
+      "total": 89,
+      "issue_ids": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F06"
+      ],
+      "notes": "最终值和日志正确；请求次数、泛化 close 条件及副本主语需修正。",
+      "fact_accuracy": 28,
+      "coverage_credit": 7,
+      "checkpoints": [
+        {
+          "id": "C04-1",
+          "criterion": "惰性入口",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            19,
+            36,
+            53
+          ],
+          "note": "创建不执行，before=[]，迭代时才 append open。"
+        },
+        {
+          "id": "C04-2",
+          "criterion": "过滤与累计",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            36,
+            44,
+            62
+          ],
+          "note": "跳过 #note、单项阈值、2+5=7 已说明；L62 请求次数叙述错误见 F02，另外扣准确与流程分。"
+        },
+        {
+          "id": "C04-3",
+          "criterion": "停止项",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            44,
+            62
+          ],
+          "note": "9 被消费但不累计，返回 7。"
+        },
+        {
+          "id": "C04-4",
+          "criterion": "续读状态",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            71,
+            80
+          ],
+          "note": "take_until 不自动关闭，next 得 4。"
+        },
+        {
+          "id": "C04-5",
+          "criterion": "清理与日志",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            62,
+            80,
+            89
+          ],
+          "note": "给定路径 paused 与最终七项日志正确，显式 close 后追加 close；泛化条件遗漏见 F03。"
+        },
+        {
+          "id": "C04-6",
+          "criterion": "快照与资源",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            9,
+            27,
+            53,
+            89
+          ],
+          "note": "before/paused 独立快照；输入明示为字符串列表，open/read/close 明示为 trace 事件，未宣称真实文件操作。"
+        },
+        {
+          "id": "C04-7",
+          "criterion": "推导与观察",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            62,
+            89,
+            477
+          ],
+          "note": "明确静态推演，未执行。"
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "title": "条目合并",
+      "assertion_accuracy": 15,
+      "key_behavior_coverage": 15,
+      "calls_and_flow": 20,
+      "variables_and_conditions": 20,
+      "beginner_readability": 15,
+      "evidence_boundary": 10,
+      "total": 95,
+      "issue_ids": [
+        "F06"
+      ],
+      "notes": "B 先 A 后、rows A 在前、sum=6 均正确，未把裸协程当任务。",
+      "fact_accuracy": 30,
+      "coverage_credit": 7,
+      "checkpoints": [
+        {
+          "id": "C05-1",
+          "criterion": "同步/异步链",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            17,
+            40,
+            58,
+            76
+          ],
+          "note": "asyncio.run -> assemble -> await transform，返回后同步 summarize。"
+        },
+        {
+          "id": "C05-2",
+          "criterion": "协程创建与启动",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            32,
+            40,
+            141
+          ],
+          "note": "pending 不执行 A，before=[]，先 await B。"
+        },
+        {
+          "id": "C05-3",
+          "criterion": "日志顺序",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            40,
+            48
+          ],
+          "note": "start:B,finish:B,start:A,finish:A，无交错。"
+        },
+        {
+          "id": "C05-4",
+          "criterion": "挂起与调度",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            25,
+            40,
+            94,
+            141
+          ],
+          "note": "sleep(0) 让出循环，未调度的 A 不自动启动。"
+        },
+        {
+          "id": "C05-5",
+          "criterion": "rows 顺序和值",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            48,
+            67
+          ],
+          "note": "rows=[A:6,B:4] 来自 [first,second]，与 B 后 A 的执行顺序区分。"
+        },
+        {
+          "id": "C05-6",
+          "criterion": "汇总条件",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            48,
+            58
+          ],
+          "note": "翻倍后 amount>=5，仅 A，结果 6。"
+        },
+        {
+          "id": "C05-7",
+          "criterion": "推导与观察",
+          "coverage_credit": 1,
+          "status": "covered",
+          "document_lines": [
+            48,
+            94,
+            460
+          ],
+          "note": "全部值与顺序明确为静态推演。"
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "id": "F01",
+      "severity": "P2",
+      "blocking": false,
+      "kind": "internal_condition_inconsistency",
+      "locations": [
+        {
+          "file": "C03_R41.md",
+          "lines": [
+            125,
+            334
+          ],
+          "correct_context": [
+            50,
+            104,
+            145,
+            310,
+            327,
+            351
+          ]
+        },
+        {
+          "file": "C04_R41.md",
+          "lines": [
+            127
+          ],
+          "correct_context": [
+            80,
+            98,
+            151,
+            338,
+            355,
+            376
+          ]
+        }
+      ],
+      "description": "通用前提将每条步骤/调用/变量事件限定为前序未因异常、return、break、continue 提前离开；这不能不加限定地应用于 except/finally。C03 的 invalid return 又同时附带“前序语句未提前中断”和“try 中产生匹配 ValueError”条件，口径不一致。",
+      "correction": "把前提改为前序控制流未跳过当前节点；明确 except/finally 按异常与清理路径到达，不受普通顺序语句的未中断限定。",
+      "impact": "具体章节及最终日志讲对，属于需修正文案的局部内部不一致，不是给定路径的错误 finally 结论。"
+    },
+    {
+      "id": "F02",
+      "severity": "P2",
+      "blocking": false,
+      "kind": "generator_resume_count_error",
+      "locations": [
+        {
+          "file": "C04_R41.md",
+          "lines": [
+            62
+          ],
+          "correct_context": [
+            36,
+            44,
+            328,
+            359
+          ]
+        }
+      ],
+      "description": "把读取 #note 写为下一次请求生成器，随后读取 5 又写为再下一次；#note 分支没有 yield，因此两者是在同一次 next/for 请求内连续完成。",
+      "correction": "改为第二次请求在同一次推进中读到 #note 并跳过，继续读 5 并 yield；第三次请求才 yield 9。",
+      "impact": "请求/暂停次数表述错误，但 total、paused、next_value 与最终 trace 正确。"
+    },
+    {
+      "id": "F03",
+      "severity": "P3",
+      "blocking": false,
+      "kind": "missing_generator_close_precondition",
+      "locations": [
+        {
+          "file": "C04_R41.md",
+          "lines": [
+            36
+          ],
+          "correct_context": [
+            80
+          ]
+        }
+      ],
+      "description": "“finally 块在生成器正常结束或被 close 时执行”没有限定生成器已经开始执行并进入 try。尚未启动即 close 的生成器不会执行此函数体和 finally。",
+      "correction": "补上“对已启动且进入 try 的生成器”前提；说明给定路径已在 yield 4 暂停，因而 close 确实触发 finally。",
+      "impact": "给定样本结论不受影响，是泛化表述的条件遗漏。"
+    },
+    {
+      "id": "F04",
+      "severity": "P3",
+      "blocking": false,
+      "kind": "wrong_subject_in_alias_sentence",
+      "locations": [
+        {
+          "file": "C04_R41.md",
+          "lines": [
+            19
+          ],
+          "correct_context": [
+            53
+          ]
+        }
+      ],
+      "description": "“trace 还保持为空列表的新副本”把副本对象名称写错；新副本是 before，trace 是原列表。",
+      "correction": "改为“trace 仍为空，before 得到它的一个新列表副本”。",
+      "impact": "后面的别名与快照解释正确，局部主语错误。"
+    },
+    {
+      "id": "F05",
+      "severity": "P3",
+      "blocking": false,
+      "kind": "coverage_gap",
+      "locations": [
+        {
+          "file": "C02_R41.md",
+          "lines": [
+            27,
+            35,
+            51,
+            125
+          ]
+        }
+      ],
+      "description": "未明确解释 record 只改 state 字典内容而不重新绑定外层 state，所以不需要 global/nonlocal。",
+      "correction": "增加一句上述因果解释。",
+      "impact": "C02-6 记半点覆盖；不作为错误断言扣陈述准确分。"
+    },
+    {
+      "id": "F06",
+      "severity": "P3",
+      "blocking": false,
+      "kind": "readability",
+      "locations": [
+        {
+          "file": "C01_R41.md",
+          "lines": [
+            113,
+            204,
+            227,
+            398,
+            419
+          ]
+        },
+        {
+          "file": "C02_R41.md",
+          "lines": [
+            97,
+            188,
+            221,
+            409,
+            430
+          ]
+        },
+        {
+          "file": "C03_R41.md",
+          "lines": [
+            117,
+            208,
+            231,
+            424,
+            445
+          ]
+        },
+        {
+          "file": "C04_R41.md",
+          "lines": [
+            119,
+            214,
+            247,
+            448,
+            469
+          ]
+        },
+        {
+          "file": "C05_R41.md",
+          "lines": [
+            109,
+            210,
+            230,
+            431,
+            452
+          ]
+        }
+      ],
+      "description": "35至41行的样本对应431至479行说明；源码索引与叙述重复，反复泛列未知目标、外部状态、异常和边界，长段落与编号证据增加初学者阅读负担。",
+      "correction": "保留正文主线和结果表，把索引与重复边界折叠或移至附录，区分分析器未解析与正文已经推导清楚。",
+      "impact": "只扣可读性；保守未知不算事实错误，也不抵消正文已有正确覆盖。"
+    }
+  ],
+  "aggregate": {
+    "case_count": 5,
+    "score_sum": 462.9,
+    "mean_score": 92.58,
+    "mean_score_display": 92.6,
+    "component_means": {
+      "assertion_accuracy": 14.2,
+      "key_behavior_coverage": 14.78,
+      "calls_and_flow": 19.4,
+      "variables_and_conditions": 19.4,
+      "beginner_readability": 14.8,
+      "evidence_boundary": 10
+    },
+    "checkpoints": {
+      "total": 35,
+      "fully_covered": 34,
+      "partially_covered": 1,
+      "absent": 0,
+      "weighted_credit": 34.5,
+      "weighted_coverage_percent": 98.6,
+      "is_accuracy_measure": false
+    },
+    "blocking_error_count": 0,
+    "has_blocking_errors": false,
+    "conclusion": "无阻断性错误；但仍有非阻断性说明错误、条件冲突与一处覆盖缺口，不能称全文无矛盾。"
+  }
+}

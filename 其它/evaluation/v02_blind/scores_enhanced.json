@@ -1,0 +1,977 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-09-20T03:12:32.236Z",
+  "candidate": "R23",
+  "evaluation_kind": "已知样本改进后的独立匿名回归评阅",
+  "evaluator": "独立 AI 静态评阅者",
+  "human_participant_study": false,
+  "unseen_sample_double_blind_experiment": false,
+  "candidate_identity_known": false,
+  "candidate_identity_inferred": false,
+  "evaluation_limits": [
+    "仅评阅五份匿名 R23 说明书及封存参考。",
+    "没有真人被试或理解测验。",
+    "这是已知样本改进后的回归材料，不是新的未见样本双盲实验。",
+    "分数和 oracle 覆盖均不是泛化准确率、真人理解率或运行验证结果。",
+    "不与未读取的其他候选、旧版本或既有评分作提升量比较。"
+  ],
+  "input_scope": [
+    "cases.json",
+    "sealed/oracle.json",
+    "COMMITMENT.json",
+    "regression_packet/MANIFEST.json",
+    "regression_packet/C01_R23.md",
+    "regression_packet/C02_R23.md",
+    "regression_packet/C03_R23.md",
+    "regression_packet/C04_R23.md",
+    "regression_packet/C05_R23.md"
+  ],
+  "prohibited_inputs_read": false,
+  "evaluated_sources_executed": false,
+  "evaluated_sources_imported": false,
+  "external_api_called": false,
+  "input_integrity": {
+    "all_checks_passed": true,
+    "commitment_freeze_utc": "2026-09-20T02:40:31+00:00",
+    "checks": [
+      {
+        "path": "cases.json",
+        "expected_sha256": "50b37e8e47fee782f1c55d5dfae17c9b6694bfa85495e66b5c06f3c551403964",
+        "observed_sha256": "50b37e8e47fee782f1c55d5dfae17c9b6694bfa85495e66b5c06f3c551403964",
+        "sha256_match": true,
+        "expected_bytes": 5828,
+        "bytes_match": true
+      },
+      {
+        "path": "sealed/oracle.json",
+        "expected_sha256": "a13ba34d401eb537255968c91cde13f95e6b36be1ffec01a4e0c64b46ea2bd50",
+        "observed_sha256": "a13ba34d401eb537255968c91cde13f95e6b36be1ffec01a4e0c64b46ea2bd50",
+        "sha256_match": true,
+        "expected_bytes": 18910,
+        "bytes_match": true
+      },
+      {
+        "path": "regression_packet/C01_R23.md",
+        "expected_sha256": "11f10e6b77a5fce81ddd1d0215d704d545fbb62a2f188d2292cf89a0caf2b248",
+        "observed_sha256": "11f10e6b77a5fce81ddd1d0215d704d545fbb62a2f188d2292cf89a0caf2b248",
+        "sha256_match": true
+      },
+      {
+        "path": "regression_packet/C02_R23.md",
+        "expected_sha256": "2f49b062fd32b1ff8844fb2672500f93a2a92809048bee2dd265248e35858333",
+        "observed_sha256": "2f49b062fd32b1ff8844fb2672500f93a2a92809048bee2dd265248e35858333",
+        "sha256_match": true
+      },
+      {
+        "path": "regression_packet/C03_R23.md",
+        "expected_sha256": "4615f17df7538d7449c9bb55b709aefe413a9738ba77b8f0244bacbc7ec152ec",
+        "observed_sha256": "4615f17df7538d7449c9bb55b709aefe413a9738ba77b8f0244bacbc7ec152ec",
+        "sha256_match": true
+      },
+      {
+        "path": "regression_packet/C04_R23.md",
+        "expected_sha256": "f34e2b036ba189f2c2e21ae86c8e3d98a475d26fb8df4261eba7077acbbb1374",
+        "observed_sha256": "f34e2b036ba189f2c2e21ae86c8e3d98a475d26fb8df4261eba7077acbbb1374",
+        "sha256_match": true
+      },
+      {
+        "path": "regression_packet/C05_R23.md",
+        "expected_sha256": "05062d6e7d2ea636fc669eacf3af6a10dc721873c174a1535f6bbeed6ee69912",
+        "observed_sha256": "05062d6e7d2ea636fc669eacf3af6a10dc721873c174a1535f6bbeed6ee69912",
+        "sha256_match": true
+      }
+    ],
+    "note": "先比对 COMMITMENT 的输入 SHA-256 及字节数，再比对 MANIFEST 的五份匿名输出 SHA-256。MANIFEST 仅说明删除标题和元数据；该转换的真实性因未读取原输出而不另作证明。"
+  },
+  "rubric": {
+    "maxima": {
+      "factual_accuracy": 30,
+      "statement_correctness": 15,
+      "core_behavior_coverage": 15,
+      "calls_and_flow": 20,
+      "variables_and_conditions": 20,
+      "beginner_readability": 20,
+      "evidence_and_boundaries": 10,
+      "total": 100
+    },
+    "checkpoint_credit": {
+      "covered": 1,
+      "partial": 0.5,
+      "partial_with_contradiction": 0.5,
+      "incorrect": 0,
+      "missing": 0
+    },
+    "coverage_formula": "每案 core_behavior_coverage = 15 × 该案七项 oracle 得分 / 7。其他维度为按所列证据作出的评分判断。",
+    "interpretation": [
+      "保守未确认视为覆盖不足，不能当成已确认事实错误。",
+      "只要相邻或明确关联的正文已无额外语义推断地给齐结论，可合并计覆盖；不要求完全复述 oracle。",
+      "同一主题同时有正确与冲突陈述时，最多计部分覆盖；错误另在现有陈述正确性中扣分。",
+      "不按篇幅加减分；可读性评估解释是否连贯、术语是否说明、读者是否会被误导及关键信息是否可用。",
+      "错误的多处重复不当作多个独立根因；同一错误对事实、流程和读者理解的不同影响分别反映在相应维度。"
+    ]
+  },
+  "cases": [
+    {
+      "id": "C01",
+      "title": "订单摘要",
+      "candidate": "R23",
+      "checkpoints": [
+        {
+          "id": "C01-1",
+          "criterion": "入口与跨文件路径",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C01_R23.md:18",
+            "C01_R23.md:33",
+            "C01_R23.md:92"
+          ],
+          "source_locations": [
+            "C01/main.py:1,4,10,16-17",
+            "C01/pricing.py:12"
+          ],
+          "assessment": "说明守卫、导入不自动进入 main，以及 main → build_report → line_total。"
+        },
+        {
+          "id": "C01-2",
+          "criterion": "筛选",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C01_R23.md:33",
+            "C01_R23.md:50-52"
+          ],
+          "source_locations": [
+            "C01/pricing.py:9-14"
+          ],
+          "assessment": "A、C 计入，B 在 active 分支 continue，不累计且不收集。"
+        },
+        {
+          "id": "C01-3",
+          "criterion": "行金额规则",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C01_R23.md:41",
+            "C01_R23.md:50-52"
+          ],
+          "source_locations": [
+            "C01/pricing.py:1-3"
+          ],
+          "assessment": "缺 qty 为 0，负 qty 截断，A=80、C=30 均正确。"
+        },
+        {
+          "id": "C01-4",
+          "criterion": "阈值与更新顺序",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C01_R23.md:53",
+            "C01_R23.md:82"
+          ],
+          "source_locations": [
+            "C01/pricing.py:15-19"
+          ],
+          "assessment": "先用 110>=100 定 bulk 再减 10；另举 total=100 减成 90 但仍 bulk，表达类别不重判。"
+        },
+        {
+          "id": "C01-5",
+          "criterion": "最终摘要",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C01_R23.md:54",
+            "C01_R23.md:64"
+          ],
+          "source_locations": [
+            "C01/main.py:11-12",
+            "C01/pricing.py:20-24"
+          ],
+          "assessment": "完整给出摘要，并解释两个 print 的空格及逗号连接；两段合起来准确确定 100 bulk 与 A,C，未要求必须另设输出代码块。"
+        },
+        {
+          "id": "C01-6",
+          "criterion": "数据边界",
+          "status": "partial",
+          "score": 0.5,
+          "weight": 1,
+          "explanation_locations": [
+            "C01_R23.md:26",
+            "C01_R23.md:33",
+            "C01_R23.md:41",
+            "C01_R23.md:72",
+            "C01_R23.md:80-84"
+          ],
+          "source_locations": [
+            "C01/pricing.py:3,8,10-14,20-24"
+          ],
+          "assessment": "新字典、新 codes、不改原订单、缺 active 默认 False、缺 unit 的 KeyError 均有说明；遗漏活动订单缺 sku 的 KeyError，且边界段未明确限定缺必需键须先通过 active 筛选。"
+        },
+        {
+          "id": "C01-7",
+          "criterion": "区分推导与观察",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C01_R23.md:46-55",
+            "C01_R23.md:403"
+          ],
+          "source_locations": [
+            "C01/main.py:4-13"
+          ],
+          "assessment": "明确标为静态推演、未执行，没有测试通过或外部系统验证声明。"
+        }
+      ],
+      "dimensions": {
+        "statement_correctness": 14.5,
+        "calls_and_flow": 20,
+        "variables_and_conditions": 19,
+        "beginner_readability": 17,
+        "evidence_and_boundaries": 8.5,
+        "core_behavior_coverage": 13.928571428571429,
+        "factual_accuracy": 28.42857142857143
+      },
+      "dimension_reasons": {
+        "statement_correctness": "主要数值及顺序正确；末尾否认存在调用示例，与 main 中明确的示例调用及正文相矛盾，扣 0.5。",
+        "calls_and_flow": "入口、跨文件调用、continue、分类与减额及返回后的打印说明完整。",
+        "variables_and_conditions": "跟踪 total、codes、category 清楚；sku 缺失边界未讲。",
+        "beginner_readability": "正文足以逐步跟读，结果分散在摘要和打印说明两处；大量通用未确认提示增加新手筛选相关信息的负担。",
+        "evidence_and_boundaries": "有源码行号及静态边界；缺 sku、负单价等边界未完整说明，末尾关于调用示例的限制说明失真。"
+      },
+      "error_ids": [
+        "E01-1"
+      ],
+      "omissions": [
+        "活动订单缺 sku 会抛 KeyError。",
+        "未明确指出 unit 未作非负限制。",
+        "最终两行输出没有集中列出，但已有内容可无额外机制推断地拼合，不据此扣 oracle 覆盖分。"
+      ],
+      "beginner_verdict": "基本可帮助已有变量、列表和函数基础的读者独立理解给定输入；完全零基础仍需理解字典访问等基础概念。",
+      "oracle_credit": 6.5,
+      "total": 92.92857142857143
+    },
+    {
+      "id": "C02",
+      "title": "记录面板",
+      "candidate": "R23",
+      "checkpoints": [
+        {
+          "id": "C02-1",
+          "criterion": "闭包与调用顺序",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C02_R23.md:21",
+            "C02_R23.md:28-60"
+          ],
+          "source_locations": [
+            "C02/main.py:5-10",
+            "C02/state.py:1-9"
+          ],
+          "assessment": "make_session 返回 state、record；seed、浅拷贝、revise、done、seen 顺序正确。"
+        },
+        {
+          "id": "C02-2",
+          "criterion": "浅拷贝别名",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C02_R23.md:45",
+            "C02_R23.md:60",
+            "C02_R23.md:97"
+          ],
+          "source_locations": [
+            "C02/main.py:7-10",
+            "C02/state.py:5-6"
+          ],
+          "assessment": "明确外层不同字典、items 同一列表、calls 后续不自动同步。"
+        },
+        {
+          "id": "C02-3",
+          "criterion": "原地修改和重新绑定",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C02_R23.md:52",
+            "C02_R23.md:88"
+          ],
+          "source_locations": [
+            "C02/state.py:13-17"
+          ],
+          "assessment": "append 修改共享列表，列表加法创建新列表，draft 只改新列表，均正确。"
+        },
+        {
+          "id": "C02-4",
+          "criterion": "两个字典的最终内容",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C02_R23.md:35",
+            "C02_R23.md:45",
+            "C02_R23.md:60",
+            "C02_R23.md:80-86"
+          ],
+          "source_locations": [
+            "C02/main.py:6-12",
+            "C02/state.py:5-6"
+          ],
+          "assessment": "state calls=2、最终共享 items 完整写出；saved calls 为拷贝 seed 后的 1 且不再同步，分段内容可明确拼合。没有把未单列 saved calls=1 当成事实错误；但另有错误声称 calls 不被打印，见 E02-1。"
+        },
+        {
+          "id": "C02-5",
+          "criterion": "独立列表最终内容",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C02_R23.md:84-88"
+          ],
+          "source_locations": [
+            "C02/state.py:15-17",
+            "C02/main.py:8-10"
+          ],
+          "assessment": "edited=['draft','queued','local'] 且不受 done、seen 影响，明确且正确。"
+        },
+        {
+          "id": "C02-6",
+          "criterion": "作用域",
+          "status": "partial",
+          "score": 0.5,
+          "weight": 1,
+          "explanation_locations": [
+            "C02_R23.md:28",
+            "C02_R23.md:52",
+            "C02_R23.md:97"
+          ],
+          "source_locations": [
+            "C02/state.py:2-7,15-16"
+          ],
+          "assessment": "说明闭包捕获和 revise 的局部重绑定，但没有明确解释只改字典下标而未重绑 state，因而不需要 global/nonlocal。"
+        },
+        {
+          "id": "C02-7",
+          "criterion": "区分推导与观察",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C02_R23.md:11",
+            "C02_R23.md:78",
+            "C02_R23.md:434"
+          ],
+          "source_locations": [
+            "C02/main.py:4-14"
+          ],
+          "assessment": "始终把对象内容标为静态推演，没有声称实际执行或验证内存地址。"
+        }
+      ],
+      "dimensions": {
+        "statement_correctness": 13,
+        "calls_and_flow": 20,
+        "variables_and_conditions": 18,
+        "beginner_readability": 15,
+        "evidence_and_boundaries": 8.5,
+        "core_behavior_coverage": 13.928571428571429,
+        "factual_accuracy": 26.92857142857143
+      },
+      "dimension_reasons": {
+        "statement_correctness": "最终对象变化推演基本正确，但声称源码没有打印 calls 与实际 print(state)、print(saved) 直接冲突，扣 2。",
+        "calls_and_flow": "入口、闭包返回、两次 record、revise、最终 append 和打印顺序清楚。",
+        "variables_and_conditions": "浅拷贝、别名和局部重绑定已解释；global/nonlocal 的关键作用域原因缺失。",
+        "beginner_readability": "正文例子具体，但 calls 打印误导及状态表缺少 Markdown 分隔行会阻碍初学者对照；saved calls 没有独立列也增加核对负担。",
+        "evidence_and_boundaries": "源码定位与静态声明完整；对 print 格式及非 CPython 的泛化不确定措辞偏多，作用域解释不完整。"
+      },
+      "error_ids": [
+        "E02-1"
+      ],
+      "omissions": [
+        "未明确解释为什么 record 无需 global/nonlocal。",
+        "状态表没有 saved['calls'] 列；最终值 1 需结合正文拼合。"
+      ],
+      "presentation_issues": [
+        {
+          "location": "C02_R23.md:80-86",
+          "description": "表头后缺少 Markdown 表格分隔行，按通常 Markdown 规则不会渲染为表格。"
+        }
+      ],
+      "beginner_verdict": "能帮助理解别名、浅拷贝与新列表，但 calls 打印错误需先纠正；不能直接当作无需复核的新手教材。",
+      "oracle_credit": 6.5,
+      "total": 88.42857142857143
+    },
+    {
+      "id": "C03",
+      "title": "批次处理",
+      "candidate": "R23",
+      "checkpoints": [
+        {
+          "id": "C03-1",
+          "criterion": "入口和批次调用",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C03_R23.md:20-32"
+          ],
+          "source_locations": [
+            "C03/main.py:5",
+            "C03/processor.py:19-25"
+          ],
+          "assessment": "输入列表、逐项调用 handle 和收集返回字典均正确。"
+        },
+        {
+          "id": "C03-2",
+          "criterion": "四种分支",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C03_R23.md:42",
+            "C03_R23.md:65-75"
+          ],
+          "source_locations": [
+            "C03/processor.py:4-14"
+          ],
+          "assessment": "None 不进入 int；状态 empty、skip、invalid、ok；最后 value=4，均正确。"
+        },
+        {
+          "id": "C03-3",
+          "criterion": "提前返回与 finally",
+          "status": "partial_with_contradiction",
+          "score": 0.5,
+          "weight": 1,
+          "explanation_locations": [
+            "C03_R23.md:44",
+            "C03_R23.md:96"
+          ],
+          "source_locations": [
+            "C03/processor.py:5,8,11,14-16",
+            "C03/processor.py:23-24"
+          ],
+          "assessment": "前文明确 finally 在返回前，且不覆盖返回值；后文却写 end 在返回之后追加。关键时序自相矛盾，不能判完整。"
+        },
+        {
+          "id": "C03-4",
+          "criterion": "异常边界",
+          "status": "partial",
+          "score": 0.5,
+          "weight": 1,
+          "explanation_locations": [
+            "C03_R23.md:42",
+            "C03_R23.md:94",
+            "C03_R23.md:271-304"
+          ],
+          "source_locations": [
+            "C03/processor.py:6,9-16"
+          ],
+          "assessment": "0 主动抛 ValueError 并被捕获说明正确，未误称零除；但没有解释仅捕获 ValueError、TypeError 等经 finally 后继续传播并中止 collect。"
+        },
+        {
+          "id": "C03-5",
+          "criterion": "完整日志",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C03_R23.md:75"
+          ],
+          "source_locations": [
+            "C03/processor.py:2,13,16,22-24"
+          ],
+          "assessment": "完整九项 events 顺序与 oracle 一致。"
+        },
+        {
+          "id": "C03-6",
+          "criterion": "共享返回字段",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C03_R23.md:32",
+            "C03_R23.md:84-86"
+          ],
+          "source_locations": [
+            "C03/processor.py:5,8,11,14,21,23"
+          ],
+          "assessment": "明确全部返回字典引用同一 events，先前字典也能看到后续追加，不是各项快照。"
+        },
+        {
+          "id": "C03-7",
+          "criterion": "区分推导与观察",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C03_R23.md:65",
+            "C03_R23.md:75",
+            "C03_R23.md:447"
+          ],
+          "source_locations": [
+            "C03/main.py:4-9"
+          ],
+          "assessment": "明确静态推演，无运行、测试通过或日志落盘声明。"
+        }
+      ],
+      "dimensions": {
+        "statement_correctness": 13.5,
+        "calls_and_flow": 18,
+        "variables_and_conditions": 18,
+        "beginner_readability": 16.5,
+        "evidence_and_boundaries": 9,
+        "core_behavior_coverage": 12.857142857142858,
+        "factual_accuracy": 26.357142857142858
+      },
+      "dimension_reasons": {
+        "statement_correctness": "分支结果、value 和完整日志正确；finally 的追加时机存在一处可确认错句，扣 1.5。",
+        "calls_and_flow": "总体批次路径准确，但 return 与 finally 的时序冲突影响核心流程解释。",
+        "variables_and_conditions": "共享 events 与局部 number 绑定讲清；非 ValueError 异常边界遗漏。",
+        "beginner_readability": "逐轮推演与别名解释可读；返回前后冲突会让新手误以为调用方先取得未加 end 的结果。",
+        "evidence_and_boundaries": "未执行边界及源码行号充分；例外传播边界仅有通用说明，没有落实到本例。"
+      },
+      "error_ids": [
+        "E03-1"
+      ],
+      "omissions": [
+        "未明确给出 TypeError 等非 ValueError 异常在 finally 后传播并使 collect 中止。"
+      ],
+      "beginner_verdict": "能帮助理解给定批次的结果和共享日志；finally 错句必须修正，异常边界还需补讲。",
+      "oracle_credit": 6,
+      "total": 87.85714285714286
+    },
+    {
+      "id": "C04",
+      "title": "数据摘录",
+      "candidate": "R23",
+      "checkpoints": [
+        {
+          "id": "C04-1",
+          "criterion": "惰性入口",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C04_R23.md:32-37",
+            "C04_R23.md:56-65"
+          ],
+          "source_locations": [
+            "C04/main.py:6-7",
+            "C04/stream.py:1-2,9"
+          ],
+          "assessment": "调用只创建生成器、before=[]、首次迭代才追加 open，准确。"
+        },
+        {
+          "id": "C04-2",
+          "criterion": "过滤与累计",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C04_R23.md:81-100"
+          ],
+          "source_locations": [
+            "C04/stream.py:5-9,16-19"
+          ],
+          "assessment": "#note 先记录后跳过；比较 2>6、5>6 后累加成 7，明确展示限制的是单项而非总和。"
+        },
+        {
+          "id": "C04-3",
+          "criterion": "停止项",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C04_R23.md:101-111"
+          ],
+          "source_locations": [
+            "C04/stream.py:16-19"
+          ],
+          "assessment": "9 已取出、9>6 触发 return，不计入 total，返回 7。"
+        },
+        {
+          "id": "C04-4",
+          "criterion": "续读状态",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C04_R23.md:107-111",
+            "C04_R23.md:132-144"
+          ],
+          "source_locations": [
+            "C04/main.py:8-10",
+            "C04/stream.py:4-9"
+          ],
+          "assessment": "生成器停在 yield 9，未关闭；next 返回 4 而不是 9，准确。"
+        },
+        {
+          "id": "C04-5",
+          "criterion": "清理时机和日志",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C04_R23.md:122-126",
+            "C04_R23.md:150-178"
+          ],
+          "source_locations": [
+            "C04/main.py:9-13",
+            "C04/stream.py:10-11"
+          ],
+          "assessment": "paused 五项、close 后最终七项及清理时机均正确。"
+        },
+        {
+          "id": "C04-6",
+          "criterion": "快照与资源边界",
+          "status": "partial",
+          "score": 0.5,
+          "weight": 1,
+          "explanation_locations": [
+            "C04_R23.md:11",
+            "C04_R23.md:48",
+            "C04_R23.md:124",
+            "C04_R23.md:201"
+          ],
+          "source_locations": [
+            "C04/main.py:5-11",
+            "C04/stream.py:2,5,11"
+          ],
+          "assessment": "独立列表快照解释充分，但未明说 open/close 只是日志字符串、没有真实文件操作；不将此遗漏升级为事实错误。"
+        },
+        {
+          "id": "C04-7",
+          "criterion": "区分推导与观察",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C04_R23.md:13",
+            "C04_R23.md:161",
+            "C04_R23.md:182",
+            "C04_R23.md:570-571"
+          ],
+          "source_locations": [
+            "C04/main.py:4-14"
+          ],
+          "assessment": "所有数值与状态标为静态推演，未声称执行或测试清理路径。"
+        }
+      ],
+      "dimensions": {
+        "statement_correctness": 15,
+        "calls_and_flow": 20,
+        "variables_and_conditions": 20,
+        "beginner_readability": 18,
+        "evidence_and_boundaries": 8.5,
+        "core_behavior_coverage": 13.928571428571429,
+        "factual_accuracy": 28.92857142857143
+      },
+      "dimension_reasons": {
+        "statement_correctness": "未发现可确认的核心事实或具体值错误。",
+        "calls_and_flow": "创建、首次消费、yield 暂停、take_until 返回、next 续读和显式 close 的时序完整。",
+        "variables_and_conditions": "正确区分单项阈值和累计量，以及原 trace 与 before/paused 快照。",
+        "beginner_readability": "逐次拉取的示例及完整输出最有帮助；部分重复边界提示、把 trace 也松散称作快照的措辞可更精确。",
+        "evidence_and_boundaries": "缺少无真实文件操作的明确边界，亦未单独说明非法数字文本导致 ValueError 并触发 finally。"
+      },
+      "error_ids": [],
+      "omissions": [
+        "没有明确说明 open/close 是日志文本而非真实文件打开、关闭。",
+        "没有单独解释其他非法数字文本抛 ValueError 后也执行 finally。"
+      ],
+      "presentation_issues": [
+        {
+          "location": "C04_R23.md:220",
+          "description": "把 before、paused、trace 合称三个快照用词不够精确；trace 是原始可变列表，前文已正确解释这一点，按表达精度问题处理，不列为确定事实错误。"
+        }
+      ],
+      "beginner_verdict": "五案中最适合已有 Python 基础的新手逐步跟读；生成器核心状态足够清楚，仍应补上日志文本与真实资源的区别。",
+      "oracle_credit": 6.5,
+      "total": 95.42857142857143
+    },
+    {
+      "id": "C05",
+      "title": "条目合并",
+      "candidate": "R23",
+      "checkpoints": [
+        {
+          "id": "C05-1",
+          "criterion": "同步入口和异步调用链",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C05_R23.md:26-30",
+            "C05_R23.md:42-46",
+            "C05_R23.md:137-149"
+          ],
+          "source_locations": [
+            "C05/main.py:6-10",
+            "C05/worker.py:11-21"
+          ],
+          "assessment": "main → asyncio.run → assemble，返回后同步 summarize 的路径正确；内部具体调度错误另列。"
+        },
+        {
+          "id": "C05-2",
+          "criterion": "协程创建与启动",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C05_R23.md:77-83",
+            "C05_R23.md:107-111"
+          ],
+          "source_locations": [
+            "C05/worker.py:12-15"
+          ],
+          "assessment": "A 调用只创建协程、before=[]、B 首先被 await，这几个明确要求均正确。后续自动调度的错误计入 C05-4。"
+        },
+        {
+          "id": "C05-3",
+          "criterion": "日志顺序",
+          "status": "incorrect",
+          "score": 0,
+          "weight": 1,
+          "explanation_locations": [
+            "C05_R23.md:85-97",
+            "C05_R23.md:113",
+            "C05_R23.md:143",
+            "C05_R23.md:164-179"
+          ],
+          "source_locations": [
+            "C05/worker.py:5-7,15-16"
+          ],
+          "assessment": "给出 start:B,start:A,finish:B,finish:A，且声称 finish 顺序可能改变；正确是 start:B,finish:B,start:A,finish:A。"
+        },
+        {
+          "id": "C05-4",
+          "criterion": "挂起与调度",
+          "status": "incorrect",
+          "score": 0,
+          "weight": 1,
+          "explanation_locations": [
+            "C05_R23.md:68",
+            "C05_R23.md:85-97",
+            "C05_R23.md:165-168",
+            "C05_R23.md:189"
+          ],
+          "source_locations": [
+            "C05/worker.py:6,13-16"
+          ],
+          "assessment": "sleep(0) 让出执行机会的通用解释正确，但错误声称事件循环自动调度普通 pending 协程。没有 create_task/gather；B 完成后才 await A。核心机制未通过。"
+        },
+        {
+          "id": "C05-5",
+          "criterion": "返回条目顺序和值",
+          "status": "partial_with_contradiction",
+          "score": 0.5,
+          "weight": 1,
+          "explanation_locations": [
+            "C05_R23.md:95",
+            "C05_R23.md:125-127",
+            "C05_R23.md:169"
+          ],
+          "source_locations": [
+            "C05/worker.py:8,15-17"
+          ],
+          "assessment": "正确列出 A=6 在前、B=4 在后及 [first,second]，却又称调度改变可能改变 rows 元素顺序。该结论自相矛盾。"
+        },
+        {
+          "id": "C05-6",
+          "criterion": "汇总条件",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C05_R23.md:123-125",
+            "C05_R23.md:170"
+          ],
+          "source_locations": [
+            "C05/worker.py:8,20-21"
+          ],
+          "assessment": "翻倍后 amount>=5，只有 A 的 6 计入，汇总 6，正确。"
+        },
+        {
+          "id": "C05-7",
+          "criterion": "区分推导与观察",
+          "status": "covered",
+          "score": 1,
+          "weight": 1,
+          "explanation_locations": [
+            "C05_R23.md:15",
+            "C05_R23.md:157",
+            "C05_R23.md:174",
+            "C05_R23.md:543"
+          ],
+          "source_locations": [
+            "C05/main.py:5-10"
+          ],
+          "assessment": "没有假称运行、网络或性能验证。静态推导仍然可能错误；此项通过不会抵消前述错误。"
+        }
+      ],
+      "dimensions": {
+        "statement_correctness": 8,
+        "calls_and_flow": 11,
+        "variables_and_conditions": 14,
+        "beginner_readability": 9,
+        "evidence_and_boundaries": 7,
+        "core_behavior_coverage": 9.642857142857142,
+        "factual_accuracy": 17.642857142857142
+      },
+      "dimension_reasons": {
+        "statement_correctness": "before、金额和汇总正确，但自动调度、日志、已完成的 pending 及 rows 顺序可变的论断错误，严重影响核心事实。",
+        "calls_and_flow": "跨模块路径可追踪，内部异步执行顺序被错误解释为重叠执行。",
+        "variables_and_conditions": "共享 log、before 快照、金额翻倍和过滤有价值；log 状态及 first 取得结果的时点不正确。",
+        "beginner_readability": "文本顺畅且步骤具体，但具体步骤反复教授错误异步心智模型，新手难以自行发现，不能据可读文风给高分。",
+        "evidence_and_boundaries": "有位置及未执行声明，但将能由源码确定的顺序归为运行时不确定性，且引用范围本身不能证明错误推演。"
+      },
+      "error_ids": [
+        "E05-1",
+        "E05-2",
+        "E05-3"
+      ],
+      "omissions": [
+        "未解释普通协程对象与已创建、调度的 Task 的区别。",
+        "未说明 asyncio.run 在同线程已有运行中事件循环时的使用限制。"
+      ],
+      "beginner_verdict": "不足以让小白正确理解本例。必须纠正普通协程未自动调度、B 全部结束后才运行 A、rows 顺序固定这三个事实。",
+      "oracle_credit": 4.5,
+      "total": 58.64285714285714
+    }
+  ],
+  "confirmed_factual_errors": [
+    {
+      "id": "E01-1",
+      "case_id": "C01",
+      "severity": "minor",
+      "kind": "evidence_description",
+      "explanation_locations": [
+        "C01_R23.md:405"
+      ],
+      "source_locations": [
+        "C01/main.py:5-10"
+      ],
+      "claim": "未提供测试文件或调用示例。",
+      "correction": "main 明确提供三条订单并调用 build_report(orders, limit=100)。可说没有测试文件或边界调用示例，不能说没有调用示例。",
+      "impact": "不影响主结果，但使证据边界说明与正文矛盾。"
+    },
+    {
+      "id": "E02-1",
+      "case_id": "C02",
+      "severity": "moderate",
+      "kind": "observable_output",
+      "explanation_locations": [
+        "C02_R23.md:60"
+      ],
+      "source_locations": [
+        "C02/main.py:11-12",
+        "C02/state.py:2,5"
+      ],
+      "claim": "源码没有打印 calls。",
+      "correction": "print(state) 和 print(saved) 打印整个字典，包含 calls。静态推导分别会展示 calls=2 和 calls=1。",
+      "impact": "新手可能误以为两个计数字段不会出现在输出中，弱化了浅拷贝差异的可见结果。"
+    },
+    {
+      "id": "E03-1",
+      "case_id": "C03",
+      "severity": "moderate",
+      "kind": "execution_order",
+      "explanation_locations": [
+        "C03_R23.md:96"
+      ],
+      "source_locations": [
+        "C03/processor.py:5,8,11,14-16",
+        "C03/processor.py:23-24"
+      ],
+      "claim": "返回的字典里 events 字段指向的列表在返回之后还会被追加 end。",
+      "correction": "先求值 return 表达式得到待返回字典，再执行 finally 追加 end，之后才把控制权和结果交回 collect。后续 handle 调用当然还会追加别的事件，但本次 end 在该次返回完成之前。",
+      "impact": "本段前半及第 44 行已有正确表述，因此是内部时序矛盾，不能当成整案都不懂 finally；但错句会误导新手。"
+    },
+    {
+      "id": "E05-1",
+      "case_id": "C05",
+      "severity": "major",
+      "kind": "coroutine_scheduling",
+      "explanation_locations": [
+        "C05_R23.md:68",
+        "C05_R23.md:85-93",
+        "C05_R23.md:165-168"
+      ],
+      "source_locations": [
+        "C05/worker.py:6,13-16"
+      ],
+      "claim": "B 挂起时事件循环会调度之前创建的 pending，A 提前执行并完成，因此第 16 行 await pending 立即取已完成结果。",
+      "correction": "pending 只是未运行的普通协程对象；代码没有创建 A 的 Task 或并发任务组。第 15 行 await B 完整完成后，才到第 16 行开始运行 A；sleep(0) 不会发现并调度局部变量中的任意协程。",
+      "impact": "把创建协程与调度任务混为一谈，是本例核心机制错误。"
+    },
+    {
+      "id": "E05-2",
+      "case_id": "C05",
+      "severity": "major",
+      "kind": "derived_log_and_order",
+      "explanation_locations": [
+        "C05_R23.md:89-97",
+        "C05_R23.md:113",
+        "C05_R23.md:143",
+        "C05_R23.md:169-179",
+        "C05_R23.md:189"
+      ],
+      "source_locations": [
+        "C05/worker.py:5-7,15-16",
+        "C05/main.py:9"
+      ],
+      "claim": "log=['start:B','start:A','finish:B','finish:A']，finish 顺序可能受不同事件循环影响。",
+      "correction": "本例确定为 ['start:B','finish:B','start:A','finish:A']。两个转换按 await 顺序完成；不应把本可静态判定的顺序归因于调度不确定性。",
+      "impact": "给出错误的具体推导值并重复为预期输出；这是 E05-1 的结果，统计错误时注明同一根因，不把重复出现当成多个独立错误。"
+    },
+    {
+      "id": "E05-3",
+      "case_id": "C05",
+      "severity": "major",
+      "kind": "returned_order",
+      "explanation_locations": [
+        "C05_R23.md:127"
+      ],
+      "source_locations": [
+        "C05/worker.py:15-17"
+      ],
+      "claim": "如果调度顺序不同，rows 的元素顺序可能改变。",
+      "correction": "返回列表显式构造为 [first, second]，first 对应 A 金额 6，second 对应 B 金额 4。该 rows 顺序由返回表达式固定，与执行先后或假想调度顺序无关。",
+      "impact": "虽然其他段落列出了正确 rows，这句仍会让新手混淆执行顺序与容器构造顺序。"
+    }
+  ],
+  "aggregate": {
+    "case_count": 5,
+    "mean_total": 84.65714285714287,
+    "sum_total": 423.28571428571433,
+    "mean_dimensions": {
+      "statement_correctness": 12.8,
+      "calls_and_flow": 17.8,
+      "variables_and_conditions": 17.8,
+      "beginner_readability": 15.1,
+      "evidence_and_boundaries": 8.3,
+      "core_behavior_coverage": 12.857142857142858,
+      "factual_accuracy": 25.657142857142862
+    },
+    "oracle": {
+      "checkpoint_count": 35,
+      "covered_count": 27,
+      "partial_count": 6,
+      "incorrect_count": 2,
+      "credit": 30,
+      "max_credit": 35,
+      "credit_ratio": 0.8571428571428571
+    },
+    "error_inventory_count": 6,
+    "error_root_cause_note": "六条可定位错误记录；E05-2 是 E05-1 的派生日志错误，不能据此宣称六个相互独立的错误根因。",
+    "sufficient_for_unassisted_complete_beginner": false,
+    "beginner_judgment": "整体不能认定足够小白无辅助、准确理解全部五案。C01 与 C04 的正文基本可支持已有基础的读者；C02/C03 有局部误导和解释遗漏；C05 的核心异步模型错误，必须先改正。此为评阅判断，不是实测学习效果。"
+  }
+}
+

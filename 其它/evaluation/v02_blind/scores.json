@@ -1,0 +1,805 @@
+{
+  "schema_version": 1,
+  "candidate": "R17",
+  "score_phase": "initial_frozen_candidate",
+  "evaluated_at_local": "2026-09-20",
+  "evaluation_kind": "分角色模拟盲评",
+  "human_participant_study": false,
+  "true_double_blind_study": false,
+  "candidate_count": 1,
+  "case_count": 5,
+  "grader_scope": "只读取 cases.json、sealed/oracle.json、COMMITMENT.json、anonymous_outputs/*；未读取工程实现、软件文档、其他评审或候选身份信息。",
+  "sample_sources_executed": false,
+  "candidate_modified": false,
+  "cases_modified": false,
+  "oracle_modified": false,
+  "freeze_verification": {
+    "passed": true,
+    "verified_artifact_count": 7,
+    "commitment_freeze_utc": "2026-09-20T02:40:31+00:00",
+    "output_manifest_freeze_utc": "2026-09-20T02:42:06.212967+00:00",
+    "manifest_case_hash_matches_commitment": true,
+    "artifacts": [
+      {
+        "path": "cases.json",
+        "sha256": "50b37e8e47fee782f1c55d5dfae17c9b6694bfa85495e66b5c06f3c551403964",
+        "bytes": 5828,
+        "hash_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "sealed/oracle.json",
+        "sha256": "a13ba34d401eb537255968c91cde13f95e6b36be1ffec01a4e0c64b46ea2bd50",
+        "bytes": 18910,
+        "hash_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "anonymous_outputs/C01_R17.md",
+        "sha256": "284408d66f1425901f98db6ab6c5aeeb62b14f217a6736316ee355a50cf8ec12",
+        "hash_match": true
+      },
+      {
+        "path": "anonymous_outputs/C02_R17.md",
+        "sha256": "5390ead491598333c8edf29a9d7ebb0e9b851b78e7e77ef6897b36f2f0130100",
+        "hash_match": true
+      },
+      {
+        "path": "anonymous_outputs/C03_R17.md",
+        "sha256": "2d54a093a69badee4acc48f1912371074bd8d9cefe1cbd53ea7d0d2ee8569667",
+        "hash_match": true
+      },
+      {
+        "path": "anonymous_outputs/C04_R17.md",
+        "sha256": "c9de22787dd00acf496cb2f4e46a60ff27362a147f6d6f66b849a2eeedb992f3",
+        "hash_match": true
+      },
+      {
+        "path": "anonymous_outputs/C05_R17.md",
+        "sha256": "758a9ae614f93818ad69e4a84d4dbfefc5ac51ef4a0d54edb8ca584b5b3ce07d",
+        "hash_match": true
+      }
+    ],
+    "limits": "哈希证明当前字节与所给本地冻结记录一致；不能独立证明时间戳或生成者从未看过 oracle。MANIFEST 中相关内容仅是生成方声明。"
+  },
+  "rubric": {
+    "maxima": {
+      "fact_accuracy": 30,
+      "call_and_flow": 20,
+      "variables_and_conditions": 20,
+      "beginner_readability": 20,
+      "evidence_and_boundaries": 10
+    },
+    "fact_accuracy_operationalization": "事实准确 30 分细分为现有陈述正确性 15 分、核心行为及结果事实的解释覆盖 15 分；五例前者均为 15，后者按覆盖给分。该细化是本评阅者的操作口径，不是冻结协议中预注册的细则。",
+    "coverage_policy": "保守的目标未确认/无法静态确定不算事实错误；但未解释 required facts 计覆盖不足。抄出表达式通常只获部分覆盖，不等同于解释语义。",
+    "checkpoint_policy": "covered=预期要点已清楚表达；partial=只覆盖部分或仅列语法表达式；omitted=未解释核心要点。检查点状态为诊断，不直接换算总分，不是正确率。",
+    "readability_policy": "按新手能否从说明回答程序做什么、如何走、对象如何变化及为何如此评判；不以篇幅或行数奖励。",
+    "severity_policy": "high=遗漏本例核心语义或最终结果；medium=遗漏重要边界/作用机制；low=局部表述负担。遗漏的严重性不是事实错误严重性。"
+  },
+  "cases": [
+    {
+      "id": "C01",
+      "title": "订单摘要",
+      "scores": {
+        "fact_accuracy": 22,
+        "call_and_flow": 15,
+        "variables_and_conditions": 8,
+        "beginner_readability": 8,
+        "evidence_and_boundaries": 10
+      },
+      "fact_components": {
+        "stated_claim_correctness": 15,
+        "core_semantic_fact_coverage": 7
+      },
+      "reasons": {
+        "fact_accuracy": "入口、函数定义、筛选/累加/阈值语句的现有陈述准确；没有解释真实业务作用和给定订单的摘要数值。",
+        "call_and_flow": "正确关联 main→build_report→line_total，并说明 continue；没有把调用限制明确串成只对 A、C 执行的路径。",
+        "variables_and_conditions": "列出了初始化、+=、-= 和 >= 条件，但没有给出 0→80→110→100、codes 变化和输入不被修改的关系。",
+        "beginner_readability": "可按行定位，基础术语有解释；主体重复语法模板，仍需读者自行解释 get、max、join 及计算结果。",
+        "evidence_and_boundaries": "语句与调用均有源码行引用，持续声明未执行；没有虚构测试、数据库或外部行为。"
+      },
+      "checkpoints": [
+        {
+          "id": "C01-1",
+          "criterion": "解释入口与跨文件路径",
+          "status": "covered",
+          "source_reference": "main.py:1,16-17; pricing.py:12",
+          "candidate_reference": "C01_R17.md:15,32-44,98-99,222-223",
+          "observed": "入口守卫、普通 import 不进入以及三个项目内调用目标均说明。",
+          "missing": ""
+        },
+        {
+          "id": "C01-2",
+          "criterion": "解释筛选",
+          "status": "partial",
+          "source_reference": "main.py:5-10; pricing.py:9-14",
+          "candidate_reference": "C01_R17.md:187-202",
+          "observed": "解释 active 判断和 continue 跳过本轮。",
+          "missing": "未指出给定输入只计 A、C，B 不调用 line_total 且不加入 codes。"
+        },
+        {
+          "id": "C01-3",
+          "criterion": "解释行金额规则",
+          "status": "partial",
+          "source_reference": "pricing.py:2-3; main.py:6,8",
+          "candidate_reference": "C01_R17.md:140-154",
+          "observed": "保留 get('qty',0) 和 max(qty,0)*unit 表达式。",
+          "missing": "未用白话说明缺 qty/负 qty 的规则，未推导 A=80、C=30。"
+        },
+        {
+          "id": "C01-4",
+          "criterion": "解释阈值与更新顺序",
+          "status": "partial",
+          "source_reference": "pricing.py:15-19",
+          "candidate_reference": "C01_R17.md:204-213",
+          "observed": "正确排列 >= 判断、bulk 赋值与减 10。",
+          "missing": "未说明折扣前 110 与 100 比较，也未点明类别在减额后不重判。"
+        },
+        {
+          "id": "C01-5",
+          "criterion": "给出最终摘要",
+          "status": "omitted",
+          "source_reference": "pricing.py:20-24; main.py:11-12",
+          "candidate_reference": "C01_R17.md:90-94,215,230",
+          "observed": "只列返回和打印表达式。",
+          "missing": "缺 total=100、category='bulk'、codes=['A','C'] 及静态推导的两行打印。"
+        },
+        {
+          "id": "C01-6",
+          "criterion": "说明数据边界",
+          "status": "omitted",
+          "source_reference": "pricing.py:2-3,8-14,20-24",
+          "candidate_reference": "C01_R17.md:140-150,185-226,254-255",
+          "observed": "列出创建列表及字段访问，未建立对象或异常边界。",
+          "missing": "缺返回新字典/新 codes、不改订单、缺 active 跳过、活动订单缺 unit/sku 传播 KeyError。"
+        },
+        {
+          "id": "C01-7",
+          "criterion": "区分推导与观察",
+          "status": "covered",
+          "source_reference": "全部样本源码",
+          "candidate_reference": "C01_R17.md:3,278-284",
+          "observed": "明确静态分析、未执行，未把源码表达式说成观察到的值。",
+          "missing": ""
+        }
+      ],
+      "supplemental": [
+        {
+          "fact_id": "true_function",
+          "status": "partial",
+          "source_reference": "pricing.py:6-24",
+          "assessment": "未将启用订单筛选、行金额、编码收集、按折扣前总额减额串成一句职责说明。"
+        },
+        {
+          "fact_id": "negative_unit_boundary",
+          "status": "omitted",
+          "source_reference": "pricing.py:3",
+          "assessment": "未说明只截断数量，不限制单价非负。"
+        },
+        {
+          "fact_id": "inactive_missing_keys",
+          "status": "omitted",
+          "source_reference": "pricing.py:10-14",
+          "assessment": "未说明未启用订单先跳过，因此不会访问 unit 或 sku。"
+        }
+      ],
+      "issues": [
+        {
+          "kind": "coverage_omission",
+          "severity": "high",
+          "source": "main.py:5-12; pricing.py:7-24",
+          "output": "C01_R17.md:86-126,183-268",
+          "detail": "没有给定输入的逐步状态和最终摘要；读者无法直接回答示例到底打印什么。"
+        },
+        {
+          "kind": "coverage_omission",
+          "severity": "medium",
+          "source": "pricing.py:2-3,8-14,20-24",
+          "output": "C01_R17.md:140-168,187-226",
+          "detail": "缺默认字段、负数量、KeyError 与对象不变性的解释。"
+        },
+        {
+          "kind": "readability_risk",
+          "severity": "low",
+          "source": "pricing.py:10-14",
+          "output": "C01_R17.md:195-202,222-226",
+          "detail": "continue 后只写循环条件；全局前提防止构成错误断言，但未把 active 为真这一存活路径就地讲清。"
+        }
+      ],
+      "total": 63,
+      "confirmed_factual_errors": []
+    },
+    {
+      "id": "C02",
+      "title": "记录面板",
+      "scores": {
+        "fact_accuracy": 18,
+        "call_and_flow": 11,
+        "variables_and_conditions": 4,
+        "beginner_readability": 7,
+        "evidence_and_boundaries": 10
+      },
+      "fact_components": {
+        "stated_claim_correctness": 15,
+        "core_semantic_fact_coverage": 3
+      },
+      "reasons": {
+        "fact_accuracy": "现有逐行语义未见可确认错误，但本例核心是闭包、浅拷贝与列表别名；这些事实及最终对象均未解释。",
+        "call_and_flow": "列出 make_session、seed、copy、revise、done、seen 顺序；两次 record 保守留为目标未确认，未连回闭包。",
+        "variables_and_conditions": "只逐个列出名称绑定和修改表达式，没有说明共享列表、独立整数以及局部重绑定。",
+        "beginner_readability": "小白能找到各行，仍无法据说明回答为什么修改 saved 会影响 state、为什么 edited 不跟着变化。",
+        "evidence_and_boundaries": "行号可追溯，未宣称实际运行、内存地址验证或持久化；未把目标未确认当作已解析。"
+      },
+      "checkpoints": [
+        {
+          "id": "C02-1",
+          "criterion": "解释闭包与调用顺序",
+          "status": "partial",
+          "source_reference": "main.py:5-10; state.py:1-9",
+          "candidate_reference": "C02_R17.md:86-96,108-124,177-189",
+          "observed": "main 中顺序以及返回 (state,record) 均列出。",
+          "missing": "未把 record 调用连到返回的嵌套函数，未解释捕获 state。"
+        },
+        {
+          "id": "C02-2",
+          "criterion": "解释浅拷贝别名",
+          "status": "omitted",
+          "source_reference": "main.py:7; state.py:2",
+          "candidate_reference": "C02_R17.md:90,114-115,153-155",
+          "observed": "仅保留 state.copy()。",
+          "missing": "缺不同字典、同一 items 列表，以及 calls 后续独立。"
+        },
+        {
+          "id": "C02-3",
+          "criterion": "区分原地修改和重新绑定",
+          "status": "partial",
+          "source_reference": "state.py:13-17",
+          "candidate_reference": "C02_R17.md:258-266,283-295",
+          "observed": "按顺序列 mirror=items、append、items+['local']、索引赋值。",
+          "missing": "未说明 append 修改共享列表、+ 新建列表、draft 只作用于新列表。"
+        },
+        {
+          "id": "C02-4",
+          "criterion": "给出两个字典的最终内容",
+          "status": "omitted",
+          "source_reference": "main.py:6-12; state.py:5-6,14",
+          "candidate_reference": "C02_R17.md:86-100,137",
+          "observed": "只列 print 与返回对象名。",
+          "missing": "缺两个 items 同为 ['seed','queued','done','seen']，state.calls=2、saved.calls=1。"
+        },
+        {
+          "id": "C02-5",
+          "criterion": "给出独立列表的最终内容",
+          "status": "omitted",
+          "source_reference": "state.py:15-17; main.py:8-10,13",
+          "candidate_reference": "C02_R17.md:102,262-275",
+          "observed": "列出 edited 来源与 return items。",
+          "missing": "缺 edited=['draft','queued','local']，且不含 done/seen。"
+        },
+        {
+          "id": "C02-6",
+          "criterion": "解释作用域",
+          "status": "omitted",
+          "source_reference": "state.py:2,4-7,12-17",
+          "candidate_reference": "C02_R17.md:201-244,283-295",
+          "observed": "区分了函数作用域标题，未解释捕获及重绑定的作用。",
+          "missing": "缺 record 修改外层字典内容而不需 global/nonlocal；缺 revise 的 items 重绑定仅局部有效。"
+        },
+        {
+          "id": "C02-7",
+          "criterion": "区分推导与观察",
+          "status": "covered",
+          "source_reference": "全部样本源码",
+          "candidate_reference": "C02_R17.md:3,305-311",
+          "observed": "明确未运行，未声称内存地址或测试已验证。",
+          "missing": ""
+        }
+      ],
+      "supplemental": [
+        {
+          "fact_id": "true_function",
+          "status": "omitted",
+          "source_reference": "main.py:5-14; state.py:1-17",
+          "assessment": "没有解释本例展示闭包会话、浅拷贝与独立编辑列表三者关系。"
+        },
+        {
+          "fact_id": "seed_and_queued_intermediate_states",
+          "status": "omitted",
+          "source_reference": "main.py:6-8; state.py:5-6,13-15",
+          "assessment": "没有给出 seed 后 calls=1/items=['seed']、queued 后共享列表变化。"
+        },
+        {
+          "fact_id": "draft_and_later_appends_isolation",
+          "status": "omitted",
+          "source_reference": "state.py:15-16; main.py:9-10",
+          "assessment": "未说明 draft 不替换共享列表里的 seed，done/seen 不进入 edited。"
+        }
+      ],
+      "issues": [
+        {
+          "kind": "coverage_omission",
+          "severity": "high",
+          "source": "main.py:7-10; state.py:13-17",
+          "output": "C02_R17.md:90-96,258-295",
+          "detail": "浅拷贝、别名、原地修改和重绑定的差别完全没有建立，遗漏本例核心。"
+        },
+        {
+          "kind": "coverage_omission",
+          "severity": "high",
+          "source": "main.py:11-14",
+          "output": "C02_R17.md:98-104,137",
+          "detail": "三个最终对象均未给出，无法用说明核对阅读结果。"
+        },
+        {
+          "kind": "conservative_unresolved",
+          "severity": "medium",
+          "source": "main.py:5-6,9; state.py:4-9",
+          "output": "C02_R17.md:111-112,120-121",
+          "detail": "record 目标未确认是诚实保留，未判事实错误；但导致闭包捕获及作用域没有解释。"
+        }
+      ],
+      "total": 50,
+      "confirmed_factual_errors": []
+    },
+    {
+      "id": "C03",
+      "title": "批次处理",
+      "scores": {
+        "fact_accuracy": 22,
+        "call_and_flow": 15,
+        "variables_and_conditions": 8,
+        "beginner_readability": 8,
+        "evidence_and_boundaries": 10
+      },
+      "fact_components": {
+        "stated_claim_correctness": 15,
+        "core_semantic_fact_coverage": 7
+      },
+      "reasons": {
+        "fact_accuracy": "四类返回表达式、显式 raise 与 except/finally 的现有描述准确；缺本例结果、完整日志和共享引用事实。",
+        "call_and_flow": "正确关联 main→collect→handle，说明迭代、异常转移与离开时 finally；没有完整串起各输入的路径。",
+        "variables_and_conditions": "分支条件和追加点可定位，但未代入输入，没有事件顺序、共同列表或非 ValueError 传播的样本化解释。",
+        "beginner_readability": "能看到 empty/skip/ok/invalid 的语句依据；重复模板及通用前提使 return/finally 的实际时序仍需自行推导。",
+        "evidence_and_boundaries": "所有路径都有源码引用，明确静态分析；未虚构测试、任务队列或落盘日志。"
+      },
+      "checkpoints": [
+        {
+          "id": "C03-1",
+          "criterion": "解释入口和批次调用",
+          "status": "covered",
+          "source_reference": "main.py:5,12-13; processor.py:19-25",
+          "candidate_reference": "C03_R17.md:15,86,98-99,239-256",
+          "observed": "输入列表、collect 逐项调用 handle 并收集结果的路径均列明。",
+          "missing": ""
+        },
+        {
+          "id": "C03-2",
+          "criterion": "解释四种分支",
+          "status": "partial",
+          "source_reference": "processor.py:4-14; main.py:5-7",
+          "candidate_reference": "C03_R17.md:149-177,201-204",
+          "observed": "正确列出 None/负数/零/正常路径的返回表达式。",
+          "missing": "未给出 ['empty','skip','invalid','ok']、value=4，也未明确 None 不进入 int。"
+        },
+        {
+          "id": "C03-3",
+          "criterion": "解释提前返回与 finally",
+          "status": "partial",
+          "source_reference": "processor.py:5,8,11,14-16",
+          "candidate_reference": "C03_R17.md:147,152,161,170,176,179-180",
+          "observed": "说明离开结构执行 finally，且 return 提到清理。",
+          "missing": "未针对四条返回明确每次都追加 end，也未说明 finally 不覆盖返回对象而是修改同一日志。"
+        },
+        {
+          "id": "C03-4",
+          "criterion": "解释异常边界",
+          "status": "partial",
+          "source_reference": "processor.py:6,9-16",
+          "candidate_reference": "C03_R17.md:155-180,206",
+          "observed": "显式 ValueError('zero') 及匹配 ValueError 才进入 except 已说明。",
+          "missing": "未明确零在整除前拒绝、没有 ZeroDivisionError；未解释 TypeError 等经过 finally 后传播并中止 collect。"
+        },
+        {
+          "id": "C03-5",
+          "criterion": "说明完整日志",
+          "status": "omitted",
+          "source_reference": "processor.py:2,13,16,21-24; main.py:5",
+          "candidate_reference": "C03_R17.md:216-225,280-290",
+          "observed": "列出日志追加位置。",
+          "missing": "缺 ['start:None','end','start:-2','end','start:0','invalid','end','start:3','end']。"
+        },
+        {
+          "id": "C03-6",
+          "criterion": "解释共享返回字段",
+          "status": "omitted",
+          "source_reference": "processor.py:5,8,11,14,21-24",
+          "candidate_reference": "C03_R17.md:201-204,216-221,280-282",
+          "observed": "返回表达式包含 events，未阐明引用关系。",
+          "missing": "缺四个字典的 events 指向同一列表，最终均见完整日志而非快照。"
+        },
+        {
+          "id": "C03-7",
+          "criterion": "区分推导与观察",
+          "status": "covered",
+          "source_reference": "全部样本源码",
+          "candidate_reference": "C03_R17.md:3,300-306",
+          "observed": "明确未运行，不宣称异常测试通过或日志落盘。",
+          "missing": ""
+        }
+      ],
+      "supplemental": [
+        {
+          "fact_id": "true_function",
+          "status": "partial",
+          "source_reference": "processor.py:1-25",
+          "assessment": "有逐项处理结构，但没有面向业务的批量解析与内存共用日志摘要。"
+        },
+        {
+          "fact_id": "invalid_integer_string",
+          "status": "partial",
+          "source_reference": "processor.py:6,12-16",
+          "assessment": "列出 int 和匹配 ValueError，未说明非法数字字符串走 invalid。"
+        },
+        {
+          "fact_id": "none_and_negative_intermediate_events",
+          "status": "omitted",
+          "source_reference": "processor.py:2-8,15-16",
+          "assessment": "未以 None、'-2' 逐步演示准备返回后 finally 追加 end。"
+        }
+      ],
+      "issues": [
+        {
+          "kind": "coverage_omission",
+          "severity": "high",
+          "source": "processor.py:5,8,11,14,21-24",
+          "output": "C03_R17.md:201-204,280-290",
+          "detail": "没有解释每个结果共享同一 events 列表，缺最容易误读的快照/引用区别。"
+        },
+        {
+          "kind": "coverage_omission",
+          "severity": "high",
+          "source": "main.py:5-8; processor.py:1-16",
+          "output": "C03_R17.md:86-92,145-180",
+          "detail": "无给定四项状态、value=4 和完整日志。"
+        },
+        {
+          "kind": "coverage_omission",
+          "severity": "medium",
+          "source": "processor.py:9-16",
+          "output": "C03_R17.md:167-180",
+          "detail": "没有解释主动拒零及未匹配异常的传播边界。"
+        },
+        {
+          "kind": "readability_risk",
+          "severity": "medium",
+          "source": "processor.py:5,8,11,14-16",
+          "output": "C03_R17.md:11,147,179-180",
+          "detail": "通用的“前序未通过 return 提前离开”前提与 finally 路径需要区别说明；局部段落已有离开结构执行 finally，故仅记表述易误读，不认定 return 绕过 finally 的事实错误。"
+        }
+      ],
+      "total": 63,
+      "confirmed_factual_errors": []
+    },
+    {
+      "id": "C04",
+      "title": "数据摘录",
+      "scores": {
+        "fact_accuracy": 20,
+        "call_and_flow": 12,
+        "variables_and_conditions": 6,
+        "beginner_readability": 8,
+        "evidence_and_boundaries": 10
+      },
+      "fact_components": {
+        "stated_claim_correctness": 15,
+        "core_semantic_fact_coverage": 5
+      },
+      "reasons": {
+        "fact_accuracy": "生成器惰性、yield 暂停和单项比较表达式的现有陈述正确；未说明实际消耗项、返回值、快照和关闭时机。",
+        "call_and_flow": "入口及 main 的调用顺序完整，生成器机制有专段；没有连接 take_until 的早退、next 的续读和 close 的 finally。",
+        "variables_and_conditions": "列出 trace/before/paused 和 total 事件，但没有列表快照关系、7 与 4 或完整 trace。",
+        "beginner_readability": "生成器专段有帮助；缺一次具体消费过程，“求值 yield”的普通调用模板会增加理解负担。",
+        "evidence_and_boundaries": "行号可追溯并声明未执行；没有宣称真实文件被打开或关闭，但本例资源边界的正面说明仍遗漏。"
+      },
+      "checkpoints": [
+        {
+          "id": "C04-1",
+          "criterion": "解释惰性入口",
+          "status": "partial",
+          "source_reference": "main.py:5-8; stream.py:1-2,9",
+          "candidate_reference": "C04_R17.md:86-92,223-225",
+          "observed": "明确调用先得生成器对象，next/for 时执行函数体。",
+          "missing": "未把机制落实为 before=[]、调用 read_values 时尚无 open。"
+        },
+        {
+          "id": "C04-2",
+          "criterion": "解释过滤与累计",
+          "status": "partial",
+          "source_reference": "stream.py:4-9,16-19",
+          "candidate_reference": "C04_R17.md:183-199,265-274",
+          "observed": "列出先记录读取、startswith、continue 和 number>limit。",
+          "missing": "未说明 #note 记录后跳过，2+5=7，以及 limit 比较单项而非总和。"
+        },
+        {
+          "id": "C04-3",
+          "criterion": "解释停止项",
+          "status": "partial",
+          "source_reference": "stream.py:16-19; main.py:6,8",
+          "candidate_reference": "C04_R17.md:265-274",
+          "observed": "条件 number>limit 时 return 在累加之前。",
+          "missing": "未说明 9 已从生成器取出但不累计，返回值为 7。"
+        },
+        {
+          "id": "C04-4",
+          "criterion": "解释续读状态",
+          "status": "partial",
+          "source_reference": "main.py:8-10; stream.py:9",
+          "candidate_reference": "C04_R17.md:92-96,223-225",
+          "observed": "有 next 调用顺序及 yield 下次迭代继续的一般解释。",
+          "missing": "未解释 take_until 早退不关闭生成器、暂停在 yield 9、next 返回 4 而非 9。"
+        },
+        {
+          "id": "C04-5",
+          "criterion": "解释清理时机和日志",
+          "status": "partial",
+          "source_reference": "main.py:9-11; stream.py:10-11",
+          "candidate_reference": "C04_R17.md:94-98,201-202,240",
+          "observed": "列出 close 调用和 finally 追加 close 的位置。",
+          "missing": "未把显式 close 与 finally 连起来；缺 paused 不含 read:4/close、最终七项 trace。"
+        },
+        {
+          "id": "C04-6",
+          "criterion": "说明快照与资源边界",
+          "status": "omitted",
+          "source_reference": "main.py:7,9; stream.py:2,5,11",
+          "candidate_reference": "C04_R17.md:90,94,152,160,179-201",
+          "observed": "仅保留 list(trace) 与日志字符串表达式。",
+          "missing": "缺 before/paused 是独立快照，以及 open/close 只是日志文本、无真实文件操作。"
+        },
+        {
+          "id": "C04-7",
+          "criterion": "区分推导与观察",
+          "status": "covered",
+          "source_reference": "全部样本源码",
+          "candidate_reference": "C04_R17.md:3,318-324",
+          "observed": "明确未运行、未测试清理路径；没有把日志词当成观测的资源行为。",
+          "missing": ""
+        }
+      ],
+      "supplemental": [
+        {
+          "fact_id": "true_function",
+          "status": "partial",
+          "source_reference": "main.py:6-11; stream.py:1-20",
+          "assessment": "没有用一句话解释过滤字符串、按单项限值累计、续读与关闭的完整职责。"
+        },
+        {
+          "fact_id": "invalid_text_cleanup",
+          "status": "omitted",
+          "source_reference": "stream.py:6-11",
+          "assessment": "未说明非注释的非法整数文本触发 ValueError 并经 finally 追加 close。"
+        },
+        {
+          "fact_id": "printed_and_snapshot_values",
+          "status": "omitted",
+          "source_reference": "main.py:7,9,12-13",
+          "assessment": "缺静态打印 7 4，以及 before/paused 不随后续 trace 变化。"
+        }
+      ],
+      "issues": [
+        {
+          "kind": "coverage_omission",
+          "severity": "high",
+          "source": "main.py:8-11; stream.py:9,16-19",
+          "output": "C04_R17.md:92-98,223-225,265-274",
+          "detail": "没有阐明已消耗 9、next 续读得到 4、take_until 返回不自动关闭这条关键因果链。"
+        },
+        {
+          "kind": "coverage_omission",
+          "severity": "high",
+          "source": "main.py:7-13; stream.py:2,5,11",
+          "output": "C04_R17.md:90-104,150-164,235-240",
+          "detail": "缺 total=7、next_value=4、before/paused/final trace 及快照关系。"
+        },
+        {
+          "kind": "coverage_omission",
+          "severity": "medium",
+          "source": "stream.py:2,8,10-11",
+          "output": "C04_R17.md:179-202",
+          "detail": "没有明确日志不等于真实文件、非法文本的 ValueError 清理边界。"
+        },
+        {
+          "kind": "readability_risk",
+          "severity": "low",
+          "source": "stream.py:9",
+          "output": "C04_R17.md:198-199,223-225",
+          "detail": "先用普通求值/调用模板描述 yield，再在后段解释暂停；后段正确，前段仍不适合小白理解控制权转移。"
+        }
+      ],
+      "total": 56,
+      "confirmed_factual_errors": []
+    },
+    {
+      "id": "C05",
+      "title": "条目合并",
+      "scores": {
+        "fact_accuracy": 20,
+        "call_and_flow": 13,
+        "variables_and_conditions": 6,
+        "beginner_readability": 8,
+        "evidence_and_boundaries": 10
+      },
+      "fact_components": {
+        "stated_claim_correctness": 15,
+        "core_semantic_fact_coverage": 5
+      },
+      "reasons": {
+        "fact_accuracy": "async、await、乘 2、返回顺序和过滤表达式的现有陈述正确；未落到 B 先 A 后、6/4、总和 6 等核心事实。",
+        "call_and_flow": "明确 main 中 run/assemble 与后续 summarize，列出两次 await 顺序；未解释非任务协程不会自动并发及日志时序。",
+        "variables_and_conditions": "记录 pending/before/second/first 的表达式，未给出 before=[]、对象值及翻倍后门槛筛选结果。",
+        "beginner_readability": "有 async 通用解释，足以提示延迟执行；没有把它与 A/B 示例关联，sum 推导式缺白话说明。",
+        "evidence_and_boundaries": "行号可追溯，未夸称实际启动事件循环、并发性能、网络或测试结果。"
+      },
+      "checkpoints": [
+        {
+          "id": "C05-1",
+          "criterion": "解释同步入口和异步调用链",
+          "status": "covered",
+          "source_reference": "main.py:6-7,13-14; worker.py:15-16",
+          "candidate_reference": "C05_R17.md:15,92-114,219-240",
+          "observed": "run(assemble()) 在前、summarize 在后以及 assemble 的 await 链均呈现，并有 async 说明。",
+          "missing": ""
+        },
+        {
+          "id": "C05-2",
+          "criterion": "解释协程创建与启动",
+          "status": "partial",
+          "source_reference": "worker.py:12-16",
+          "candidate_reference": "C05_R17.md:181,213-221,240",
+          "observed": "说明直接调用得到协程，需要 await/调度才推进函数体。",
+          "missing": "未明确 pending 尚未执行 A、before=[]，以及真正先启动的是 B。"
+        },
+        {
+          "id": "C05-3",
+          "criterion": "给出日志顺序",
+          "status": "omitted",
+          "source_reference": "worker.py:5-7,13-16",
+          "candidate_reference": "C05_R17.md:158-162,213-221",
+          "observed": "只列追加表达式和 await 语句。",
+          "missing": "缺 ['start:B','finish:B','start:A','finish:A']，未解释两次转换没有交错。"
+        },
+        {
+          "id": "C05-4",
+          "criterion": "解释挂起与调度",
+          "status": "partial",
+          "source_reference": "worker.py:6,13-16",
+          "candidate_reference": "C05_R17.md:160,171-181,219-221",
+          "observed": "一般性说明 await 可能交回事件循环。",
+          "missing": "未说明 sleep(0) 的让出语义及无 create_task/gather，因此两个 transform 顺序完成。"
+        },
+        {
+          "id": "C05-5",
+          "criterion": "给出返回条目顺序和值",
+          "status": "partial",
+          "source_reference": "worker.py:8,15-17",
+          "candidate_reference": "C05_R17.md:164,219-223,238",
+          "observed": "保留 amount*2 与 [first,second] 表达式。",
+          "missing": "未明确 rows 为 A:6 在前、B:4 在后，且返回顺序不同于执行顺序。"
+        },
+        {
+          "id": "C05-6",
+          "criterion": "解释汇总条件",
+          "status": "partial",
+          "source_reference": "worker.py:20-21; main.py:7",
+          "candidate_reference": "C05_R17.md:278-287",
+          "observed": "给出 sum 的 amount>=5 过滤表达式。",
+          "missing": "未说明对翻倍后金额筛选、B 的 4 排除、总和为 6 而非 10。"
+        },
+        {
+          "id": "C05-7",
+          "criterion": "区分推导与观察",
+          "status": "covered",
+          "source_reference": "全部样本源码",
+          "candidate_reference": "C05_R17.md:3,311-317",
+          "observed": "明确静态分析，未声称运行、网络或性能验证。",
+          "missing": ""
+        }
+      ],
+      "supplemental": [
+        {
+          "fact_id": "true_function",
+          "status": "partial",
+          "source_reference": "worker.py:11-21",
+          "assessment": "没有用职责摘要解释顺序转换、按指定顺序汇集、筛选求和。"
+        },
+        {
+          "fact_id": "asyncio_run_environment_boundary",
+          "status": "omitted",
+          "source_reference": "main.py:6",
+          "assessment": "未说明同一线程已有运行中事件循环时 asyncio.run 的使用限制。"
+        },
+        {
+          "fact_id": "before_snapshot_remains_empty",
+          "status": "omitted",
+          "source_reference": "worker.py:14-17",
+          "assessment": "未说明 before 是复制且保持空列表。"
+        }
+      ],
+      "issues": [
+        {
+          "kind": "coverage_omission",
+          "severity": "high",
+          "source": "worker.py:12-17",
+          "output": "C05_R17.md:213-240",
+          "detail": "泛化 async 概念未转为 A/B 的执行顺序与非并发解释，缺完整日志。"
+        },
+        {
+          "kind": "coverage_omission",
+          "severity": "high",
+          "source": "worker.py:8,14-17,21",
+          "output": "C05_R17.md:164,217-223,278-287",
+          "detail": "缺 before=[]、rows=[A:6,B:4] 和汇总 6；未说明返回顺序和执行顺序不同。"
+        },
+        {
+          "kind": "coverage_omission",
+          "severity": "medium",
+          "source": "worker.py:6; main.py:6",
+          "output": "C05_R17.md:104-105,160,171-181",
+          "detail": "sleep(0) 的确切调度作用与 asyncio.run 的已有事件循环边界未解释；未知外部目标未判错误。"
+        }
+      ],
+      "total": 57,
+      "confirmed_factual_errors": []
+    }
+  ],
+  "summary": {
+    "mean_scores": {
+      "fact_accuracy": 20.4,
+      "call_and_flow": 13.2,
+      "variables_and_conditions": 6.4,
+      "beginner_readability": 7.8,
+      "evidence_and_boundaries": 10
+    },
+    "mean_total": 57.8,
+    "totals": [
+      63,
+      50,
+      63,
+      56,
+      57
+    ],
+    "checkpoint_counts": {
+      "covered": 8,
+      "partial": 17,
+      "omitted": 10,
+      "total": 35
+    },
+    "confirmed_factual_error_count": 0,
+    "runtime_or_test_fabrication_detected": false,
+    "interpretation": "较可靠的源码索引与语法说明，但还不足以作为能让小白理解样本语义的完整说明书；主要短板是具体推导和跨语句关系，不能把 57.8 分称作 57.8% 准确率。"
+  },
+  "top_fixes": [
+    {
+      "priority": 1,
+      "title": "补充基于固定输入的静态推导",
+      "detail": "每例先写真实职责、入口与最终结果，再给一段逐步变化；明确是静态推导而非运行观察。至少覆盖 C01 的 110→100、C02 的三个最终对象、C03 的完整日志、C04 的 7/4 和 C05 的 6。"
+    },
+    {
+      "priority": 2,
+      "title": "解释跨语句对象关系与延迟执行",
+      "detail": "优先补 C02 的浅拷贝/闭包/别名与重绑定、C03 共用 events、C04 已消费停止项和 close 时机、C05 协程创建/启动及 B→A 顺序；只列赋值式不足以覆盖这些事实。"
+    },
+    {
+      "priority": 3,
+      "title": "把主要解释改成新手能直接理解的因果叙述",
+      "detail": "先给样本化语义，把逐行和调用索引放后面；压缩反复出现的通用可能性，保留具体源码依据；就地讲清 continue/return 后的有效条件、finally、字典缺键及日志资源边界。"
+    }
+  ],
+  "limitations": [
+    "只有一个匿名候选和五个刻意选取的小型 Python 样本，不能进行候选优劣排序，也不能推断真实项目的泛化准确率。",
+    "这是分角色模拟盲评，没有真人被试、独立人类评分者或真实双盲实验。",
+    "未执行示例；参考结果来自冻结 oracle 及静态阅读，不能表述为测试通过或运行事实。",
+    "初始评分应保留；任何修复后的输出应另行冻结并另建复评分，不覆盖此轮 scores.json。"
+  ]
+}
+

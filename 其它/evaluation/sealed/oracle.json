@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "expectations": {
+    "C3cd7bcd96d": [
+      {
+        "id": "C3cd7bcd96d-D1",
+        "concept": "Mutable default survives calls",
+        "path": "sample.py",
+        "line": 1,
+        "pattern": "mutable|可变|默认|default"
+      }
+    ],
+    "Cc96767cf18": [],
+    "C9012599ecc": [
+      {
+        "id": "C9012599ecc-D1",
+        "concept": "Bare handler swallows control exceptions",
+        "path": "sample.py",
+        "line": 4,
+        "pattern": "bare|裸|except|异常|捕获"
+      }
+    ],
+    "C73393d18ef": [],
+    "Cba368fc52a": [
+      {
+        "id": "Cba368fc52a-D1",
+        "concept": "Untrusted eval executes code",
+        "path": "sample.py",
+        "line": 2,
+        "pattern": "eval|执行|注入"
+      }
+    ],
+    "C7de7f419b7": [],
+    "Cd8f1ba2b02": [
+      {
+        "id": "Cd8f1ba2b02-D1",
+        "concept": "Untrusted exec executes code",
+        "path": "sample.py",
+        "line": 2,
+        "pattern": "exec|执行|注入"
+      }
+    ],
+    "C300d5c1919": [],
+    "Cb6dc45f001": [
+      {
+        "id": "Cb6dc45f001-D1",
+        "concept": "Shell interpolation allows injection",
+        "path": "sample.py",
+        "line": 4,
+        "pattern": "shell|命令|注入|子进程"
+      }
+    ],
+    "Ca084145a88": [],
+    "C084bb29ddc": [
+      {
+        "id": "C084bb29ddc-D1",
+        "concept": "Literal zero divisor",
+        "path": "sample.py",
+        "line": 2,
+        "pattern": "zero|division|除零|零|除数"
+      }
+    ],
+    "C0719887448": [],
+    "C3e94dec6aa": [
+      {
+        "id": "C3e94dec6aa-D1",
+        "concept": "Statement unreachable after return",
+        "path": "sample.py",
+        "line": 3,
+        "pattern": "unreachable|不可达|无法执行|永远|return"
+      }
+    ],
+    "Cf97723ecba": [],
+    "Cd9db0b42a1": [
+      {
+        "id": "Cd9db0b42a1-D1",
+        "concept": "Repeated dict key silently overwrites value",
+        "path": "sample.py",
+        "line": 2,
+        "pattern": "duplicate|重复|字典|key|覆盖"
+      }
+    ],
+    "C84da8e192f": [],
+    "C5510707e8d": [
+      {
+        "id": "C5510707e8d-D1",
+        "concept": "Identity comparison with string literal",
+        "path": "sample.py",
+        "line": 2,
+        "pattern": "identity|is\\b|身份|标识|比较|字面量"
+      }
+    ],
+    "Cfae6fb8f1e": [],
+    "Ce1c872d5f7": [
+      {
+        "id": "Ce1c872d5f7-D1",
+        "concept": "Hardcoded synthetic credential",
+        "path": "sample.py",
+        "line": 1,
+        "pattern": "secret|credential|密钥|凭据|硬编码|敏感|api.?key"
+      }
+    ],
+    "Cec7ec26ca1": [],
+    "C3775d56ef9": [
+      {
+        "id": "C3775d56ef9-D1",
+        "concept": "Silenced I/O failure",
+        "path": "sample.py",
+        "line": 5,
+        "pattern": "pass|silenc|吞|忽略|空|异常"
+      }
+    ],
+    "C074b095eb9": [],
+    "C6f12ef6e00": [
+      {
+        "id": "C6f12ef6e00-D1",
+        "concept": "Nonempty tuple assertion always truthy",
+        "path": "sample.py",
+        "line": 2,
+        "pattern": "assert|断言|tuple|元组|始终|恒真"
+      }
+    ],
+    "C4eaef273c6": [],
+    "C403f2b1871": [
+      {
+        "id": "C403f2b1871-D1",
+        "concept": "Invalid Python syntax",
+        "path": "sample.py",
+        "line": 1,
+        "pattern": "syntax|语法|解析"
+      }
+    ],
+    "C08a26d267e": [],
+    "C61e3973d22": [],
+    "C9d90219bc5": [],
+    "C51f1c29f12": [],
+    "Cde4b30aac6": [],
+    "C0760fc3f2a": [],
+    "Cbc47b2afab": []
+  }
+}

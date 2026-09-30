@@ -1,0 +1,9 @@
+{
+  "second_instance_exit": 0,
+  "api_called": false,
+  "shutdown_exit": 0,
+  "instance_file_removed": true,
+  "same_pid": true,
+  "same_port": true,
+  "first_instance_stayed_running": true
+}

@@ -1,0 +1,12 @@
+{
+  "src/reviewdesk/api.py": "110605548a012803eefc62d31058e9ee9ad1e6451891d5ad84fd882a610c8cb2",
+  "src/reviewdesk/storage.py": "4979356d7ed7c732983da8a9954536159b60d61c25212e830a558668e647dfe5",
+  "src/reviewdesk/service.py": "0f9f92515eb8f561a061fc041c114364537ce6e78271c84c4e137434e4b595c1",
+  "src/reviewdesk/ui.py": "94822443c545d468d94266e1bece31a94b884ce1d0294fbbcb1049bb282079ce",
+  "src/reviewdesk/widgets.py": "99a78664b6cf09196b3bf56af71bbec510b08e589cd13f71e7b900041ce46ba4",
+  "tests/test_analysis.py": "67dbb7043c8bd6b91aafeb81cb8b35b888a14d33976bfb58c381e274eefe1a40",
+  "tests/test_api.py": "c7346befaac64192cc1d30dab6abb41928d5d95d42ecc5019a6ec763f7ecae43",
+  "tests/test_context.py": "caca390861ea735d9956ff8c031ea0e397cbbb6d974c14a532d100aeba604ee9",
+  "tests/test_service.py": "f759acf7000704f339095241a356a45e5042991364f352b875e31677ac965818",
+  "tests/test_ui.py": "ac160c25e3f3c219aa99938aeb617215a4f42c15197e917d9163f1b00f9adc2d"
+}

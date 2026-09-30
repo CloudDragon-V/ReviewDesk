@@ -1,0 +1,66 @@
+{
+  "checked_at": "2026-09-13T10:47:49.905317+08:00",
+  "root_folders": [
+    "其它",
+    "前端功能",
+    "后端功能"
+  ],
+  "application_tests_passed": 72,
+  "evaluation_harness_tests_passed": 4,
+  "historical_hash_assertions_passed": 31,
+  "source_smoke": {
+    "ok": true,
+    "version": "0.1.0",
+    "frozen": false,
+    "python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+    "files": 1,
+    "findings": 4,
+    "nodes": 8,
+    "edges": 8,
+    "data_dir": "D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\verification\\reorganized-source-userdata",
+    "api_called": false,
+    "report_persisted": true,
+    "markdown_exported": true,
+    "json_exported": true
+  },
+  "bundle_smoke": {
+    "ok": true,
+    "version": "0.1.0",
+    "frozen": true,
+    "python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+    "files": 1,
+    "findings": 4,
+    "nodes": 8,
+    "edges": 8,
+    "data_dir": "D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\verification\\reorganized-bundle-userdata",
+    "api_called": false,
+    "report_persisted": true,
+    "markdown_exported": true,
+    "json_exported": true
+  },
+  "bundle_inspection": {
+    "final_merge_fix_in_pyz": true,
+    "files_scanned": 173,
+    "credential_matches": [],
+    "runtime_bundled": true,
+    "qt_plugin_bundled": true,
+    "foreign_icu_absent": true,
+    "frontend_package_bundled": true
+  },
+  "backend_has_no_ui_dependency": true,
+  "installer": {
+    "relative_path": "其它/安装包/ReviewDesk-0.1.0-Setup-win-x64.exe",
+    "bytes": 28910645,
+    "sha256": "59f22dfe5fd2703c802ab3469e0d22831c25a6a88371d6afe7b84afe4e9f05e1",
+    "build_log": "reorganized-build.txt"
+  },
+  "venv_entrypoints_regenerated": true,
+  "network_api_requests": 0,
+  "reinstalled_during_reorganization": false,
+  "other_physical_computer_tested": false,
+  "notes": [
+    "已在排除系统Python的PATH下验证新打包程序；本次未重装或卸载现有安装",
+    "原始安装验收记录及冻结盲评结果保留，新记录单独存储",
+    "源码、安装与测试路径已同步，完整使用方法见其它/README.md"
+  ]
+}

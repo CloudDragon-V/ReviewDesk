@@ -1,0 +1,35 @@
+{
+  "judgments": [
+    {
+      "item_id": "Cba368fc52a-A-001",
+      "verdict": "valid",
+      "reason": "第 2 行直接对 text 调用 eval，表达式可调用函数并产生副作用，因此确认输入信任边界有源码依据。这里只支持不可信输入下的注入风险：没有调用方，不能断定已有外部可利用漏洞；建议中的 json.loads 或 literal_eval 仅适合普通数据解析，不能等价替代任意表达式求值。"
+    },
+    {
+      "item_id": "Cba368fc52a-B-001",
+      "verdict": "valid",
+      "reason": "eval(text) 确实可以执行普通数据解析以外的 Python 表达式；建议先确认可信来源，并在普通数据解析场景换用受限解析器，符合源码。包中没有输入来源或攻击调用证据，因此认可的是条件性安全风险，而非已经证实的外部漏洞。"
+    },
+    {
+      "item_id": "C3cd7bcd96d-A-001",
+      "verdict": "valid",
+      "reason": "entries 的默认列表在定义时创建且被 append 原地修改；连续调用 remember(1)、remember(2) 而不传 entries 会累计为同一列表，第一次返回值也会随第二次调用变化。建议以 None 为默认值并逐次创建列表能修复这种跨调用共享，包中没有说明共享是刻意约定。"
+    },
+    {
+      "item_id": "C3cd7bcd96d-B-001",
+      "verdict": "valid",
+      "reason": "可变默认列表被持续复用且在函数内修改，因而多次省略 entries 的调用共享状态和返回对象。所述语义可直接由源码确定；以 None 作为缺省标记可隔离默认调用，同时仍允许调用者显式传入列表。"
+    },
+    {
+      "item_id": "C9012599ecc-A-001",
+      "verdict": "valid",
+      "reason": "裸 except 捕获 try 中抛出的全部 BaseException，包括 KeyboardInterrupt 和 SystemExit，而不是只处理转换失败。例如自定义 __int__ 抛出 SystemExit 会被转换成 -1。缩小到约定的解析异常是有实际行为价值的建议。"
+    },
+    {
+      "item_id": "C9012599ecc-B-002",
+      "verdict": "valid",
+      "reason": "裸 except 的确包含 KeyboardInterrupt 和 SystemExit，导致 try 中的终止异常被吞掉并返回 -1；建议明确捕获预期异常成立。不过它与同候选 B-001 重复报告同一处理器及同一根因，本项真实性有效，按独立缺陷计数时需去重。"
+    }
+  ],
+  "provenance": "Unchanged subset of online_v1 independent judgments; no new adjudication."
+}

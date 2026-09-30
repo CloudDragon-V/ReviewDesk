@@ -1,0 +1,84 @@
+{
+  "evaluation_kind": "Known-sample replay, not a new blind evaluation",
+  "original_packet_sha256": "0cd2da9961202235e1919ab737fb6d353a72b3807b182bd09e3c123815f32271",
+  "replay_script_sha256": "a53a26f10a1a316315bb367c1756ed346daea62d1c69fd04b1aa3315d94a87b7",
+  "source_limit": "The original collector saved accepted combined findings, not raw HTTP/model envelopes. Already discarded findings cannot be reconstructed.",
+  "restoration_method": "Reanalyze unchanged static source; require exact equality with saved local findings to restore rule_id; remaining saved hybrid findings are retained model candidates.",
+  "new_network_connections": 0,
+  "cases": [
+    {
+      "case_id": "Cba368fc52a",
+      "original_local_findings": 1,
+      "original_hybrid_findings": 1,
+      "retained_model_findings_available_for_replay": 0,
+      "replayed_hybrid_findings": 1,
+      "merged_duplicates": 0,
+      "removed_item_ids": []
+    },
+    {
+      "case_id": "C3cd7bcd96d",
+      "original_local_findings": 1,
+      "original_hybrid_findings": 1,
+      "retained_model_findings_available_for_replay": 0,
+      "replayed_hybrid_findings": 1,
+      "merged_duplicates": 0,
+      "removed_item_ids": []
+    },
+    {
+      "case_id": "C300d5c1919",
+      "original_local_findings": 0,
+      "original_hybrid_findings": 0,
+      "retained_model_findings_available_for_replay": 0,
+      "replayed_hybrid_findings": 0,
+      "merged_duplicates": 0,
+      "removed_item_ids": []
+    },
+    {
+      "case_id": "C3775d56ef9",
+      "original_local_findings": 0,
+      "original_hybrid_findings": 0,
+      "retained_model_findings_available_for_replay": 0,
+      "replayed_hybrid_findings": 0,
+      "merged_duplicates": 0,
+      "removed_item_ids": []
+    },
+    {
+      "case_id": "C4eaef273c6",
+      "original_local_findings": 0,
+      "original_hybrid_findings": 0,
+      "retained_model_findings_available_for_replay": 0,
+      "replayed_hybrid_findings": 0,
+      "merged_duplicates": 0,
+      "removed_item_ids": []
+    },
+    {
+      "case_id": "C9012599ecc",
+      "original_local_findings": 1,
+      "original_hybrid_findings": 2,
+      "retained_model_findings_available_for_replay": 1,
+      "replayed_hybrid_findings": 1,
+      "merged_duplicates": 1,
+      "removed_item_ids": [
+        "C9012599ecc-B-001"
+      ]
+    },
+    {
+      "case_id": "C074b095eb9",
+      "original_local_findings": 0,
+      "original_hybrid_findings": 0,
+      "retained_model_findings_available_for_replay": 0,
+      "replayed_hybrid_findings": 0,
+      "merged_duplicates": 0,
+      "removed_item_ids": []
+    },
+    {
+      "case_id": "C73393d18ef",
+      "original_local_findings": 0,
+      "original_hybrid_findings": 0,
+      "retained_model_findings_available_for_replay": 0,
+      "replayed_hybrid_findings": 0,
+      "merged_duplicates": 0,
+      "removed_item_ids": []
+    }
+  ]
+}

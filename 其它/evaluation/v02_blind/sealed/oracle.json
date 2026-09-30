@@ -1,0 +1,362 @@
+{
+  "schema_version": 1,
+  "evaluation_kind": "模拟盲评",
+  "human_participant_study": false,
+  "reference_basis": "独立编写样本，人工式静态推演；未查看被评实现、未运行样本、未调用外部 API、未评分。",
+  "scoring_units": "每例 7 个检查点，每点权重 1；本文件只提供参考要点，不包含任何被评输出或得分。",
+  "claims_policy": "允许把值和输出表述为基于代码的静态推导；禁止把静态推导表述为已执行、已捕获的运行事实或通过的测试。",
+  "cases": [
+    {
+      "id": "C01",
+      "true_function": "遍历订单，为启用的订单计算行金额、保留商品编码，再按折扣前总额决定类别与一次性减额，返回摘要。",
+      "entry_and_calls": [
+        "直接运行 main.py 时，__main__ 守卫调用 main；仅导入 main 或 pricing 不会调用 main 或打印摘要。",
+        "main -> build_report -> 对每个启用订单调用 line_total；main 再读取并打印 report。"
+      ],
+      "variable_changes": [
+        "A 启用，数量 2、单价 40，金额 80；total 从 0 变成 80，codes 变成 ['A']。",
+        "B 未启用，continue 跳过，未调用 line_total，也不加入 codes。",
+        "C 启用，金额 30；折扣前 total=110，codes=['A','C']。",
+        "110>=100 成立，category='bulk'，随后 total 减 10 得 100；返回 {'total':100,'category':'bulk','codes':['A','C']}。"
+      ],
+      "easy_to_misread_conditions": [
+        "阈值使用 >=，按减额前的 total 判断，category 在减额后不重新判断。",
+        "active 缺失默认为 False；缺 qty 默认为 0，负 qty 被截成 0；未限制单价非负。",
+        "函数没有修改 orders 或其中的字典；codes 是新建列表。",
+        "活动订单缺 unit 或 sku 会传播 KeyError；未启用订单会先跳过，不访问这些字段。"
+      ],
+      "do_not_claim_runtime_facts": [
+        "只能说静态推导直接运行时应打印 '100 bulk' 和 'A,C'；不得说实际运行、输出已捕获或测试通过。",
+        "没有实际订单服务、数据库、网络或文件读写，不能宣称验证了外部系统。"
+      ],
+      "checkpoints": [
+        {
+          "id": "C01-1",
+          "criterion": "解释入口与跨文件路径",
+          "expected": "main.py 的守卫进入 main，再调用 pricing.build_report，后者调用 line_total；导入不会自动生成摘要。",
+          "weight": 1
+        },
+        {
+          "id": "C01-2",
+          "criterion": "解释筛选",
+          "expected": "仅 A、C 被计入；B 通过 active 分支 continue 跳过。",
+          "weight": 1
+        },
+        {
+          "id": "C01-3",
+          "criterion": "解释行金额规则",
+          "expected": "数量缺失按 0，负数截为 0，再乘单价；给定 A=80、C=30。",
+          "weight": 1
+        },
+        {
+          "id": "C01-4",
+          "criterion": "解释阈值与更新顺序",
+          "expected": "折扣前 110 与 100 比较，>= 成立后定 bulk，再减 10，类别不二次判断。",
+          "weight": 1
+        },
+        {
+          "id": "C01-5",
+          "criterion": "给出最终摘要",
+          "expected": "total=100，category='bulk'，codes=['A','C']，静态推导两行打印内容。",
+          "weight": 1
+        },
+        {
+          "id": "C01-6",
+          "criterion": "说明数据边界",
+          "expected": "返回新字典和新 codes，不改原订单；缺 active 不参与，活动订单缺必需键可报 KeyError。",
+          "weight": 1
+        },
+        {
+          "id": "C01-7",
+          "criterion": "区分推导与观察",
+          "expected": "所有结果明确来自阅读代码的推导，不声称实际执行或测试。",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "true_function": "创建由闭包记录的会话字典，形成浅拷贝与独立编辑列表，并展示多次更新后的三个对象。",
+      "entry_and_calls": [
+        "直接运行 main.py 才通过守卫调用 main；main 调用 make_session、闭包 record、revise，再次调用 record。",
+        "make_session 返回原 state 字典及捕获该字典的 record 函数；record 修改字典内容，没有对闭包变量 state 重新绑定。"
+      ],
+      "variable_changes": [
+        "make_session 后 state={'items':[],'calls':0}；record('seed') 后 items=['seed']、calls=1。",
+        "saved=state.copy() 后 saved 是不同的字典，saved['items'] 与 state['items'] 是同一个列表，saved['calls']=1。",
+        "revise 的 mirror 最初与传入列表相同；append('queued') 使共享列表变成 ['seed','queued']。",
+        "items=items+['local'] 创建新列表；items[0]='draft' 只改新列表。edited=['draft','queued','local']。",
+        "record('done') 使 state['calls']=2，并向共享列表加 'done'；saved['calls'] 仍为 1。",
+        "saved['items'].append('seen') 同时体现在 state 与 saved 的 items；两者最终 items=['seed','queued','done','seen']；edited 不变。"
+      ],
+      "easy_to_misread_conditions": [
+        "字典浅拷贝只复制第一层映射，嵌套列表仍共享；整数 calls 的后续赋值不反映到 saved。",
+        "revise 中 append 是原地变更，列表加法是创建新列表并给局部名重新绑定。",
+        "record 不需要 nonlocal，因为没有给 state 名称赋新对象，只修改其下标内容。",
+        "edited 的 'draft' 不会替换共享列表中的 'seed'，而后续共享列表追加也不会进入 edited。"
+      ],
+      "do_not_claim_runtime_facts": [
+        "最终对象内容与打印结果是静态推导，不得声称已运行或验证了具体内存地址。",
+        "不能将 state 或 record 称为跨进程持久化状态、全局数据库或磁盘记录。"
+      ],
+      "checkpoints": [
+        {
+          "id": "C02-1",
+          "criterion": "解释闭包与调用顺序",
+          "expected": "make_session 返回 state 和 record；main 按 seed、浅拷贝、revise、done、seen 的顺序变化状态。",
+          "weight": 1
+        },
+        {
+          "id": "C02-2",
+          "criterion": "解释浅拷贝别名",
+          "expected": "state 与 saved 是不同字典，但 items 指向同一列表；calls 后续独立。",
+          "weight": 1
+        },
+        {
+          "id": "C02-3",
+          "criterion": "区分原地修改和重新绑定",
+          "expected": "mirror.append 改共享列表；items+['local'] 创建新列表，之后改索引只影响 edited。",
+          "weight": 1
+        },
+        {
+          "id": "C02-4",
+          "criterion": "给出两个字典的最终内容",
+          "expected": "state calls=2，saved calls=1；二者 items 都为 ['seed','queued','done','seen']。",
+          "weight": 1
+        },
+        {
+          "id": "C02-5",
+          "criterion": "给出独立列表的最终内容",
+          "expected": "edited=['draft','queued','local']，没有后续的 done 或 seen。",
+          "weight": 1
+        },
+        {
+          "id": "C02-6",
+          "criterion": "解释作用域",
+          "expected": "record 捕获局部 state，修改字典内容，因此不需要 global 或 nonlocal；revise 的 items 重新绑定是局部行为。",
+          "weight": 1
+        },
+        {
+          "id": "C02-7",
+          "criterion": "区分推导与观察",
+          "expected": "对象关系与最终值来自静态推导，不声称实际执行或测试。",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "true_function": "逐项解析一批输入，分别返回空值、跳过、无效或成功状态，并把各次处理事件记录到同一日志列表。",
+      "entry_and_calls": [
+        "__main__ 守卫 -> main -> collect -> 按输入顺序调用 handle。",
+        "handle 中 ValueError 在函数内转换为 invalid 结果；finally 在正常返回、提前返回和该异常路径都追加 end。"
+      ],
+      "variable_changes": [
+        "None：追加 start:None，准备 empty 返回对象，finally 追加 end。",
+        "'-2'：int 得 -2，准备 skip 返回对象，finally 追加 end。",
+        "'0'：int 得 0，主动抛 ValueError，except 追加 invalid，准备 invalid 返回对象，finally 追加 end。",
+        "'3'：int 得 3，12//3 得 4，准备 ok 返回对象，finally 追加 end。",
+        "最终状态依次为 ['empty','skip','invalid','ok']，最后一个结果 value=4。",
+        "最终 events=['start:None','end','start:-2','end','start:0','invalid','end','start:3','end']。",
+        "四个结果中的 events 字段均引用 collect 创建的同一列表，最终都会看到完整 events，而不是各自返回时的快照。"
+      ],
+      "easy_to_misread_conditions": [
+        "return 不会绕过 finally；这里 finally 不另行 return，因此不替换已准备的返回对象，只修改共享日志。",
+        "0 在整除前被主动拒绝；不发生 ZeroDivisionError。",
+        "仅 ValueError 被捕获，例如无法转为整数的字符串会走 invalid；TypeError 等其他异常会在 finally 后传播，collect 随之中止。",
+        "None 的分支在 int(value) 前，因此不会尝试 int(None)。"
+      ],
+      "do_not_claim_runtime_facts": [
+        "结果与事件顺序仅为静态推导，不得声称实际执行或异常路径测试通过。",
+        "没有真实任务队列或持久化日志，events 只是内存列表。"
+      ],
+      "checkpoints": [
+        {
+          "id": "C03-1",
+          "criterion": "解释入口和批次调用",
+          "expected": "main 把 [None,'-2','0','3'] 交给 collect，后者按顺序调用 handle 并收集返回字典。",
+          "weight": 1
+        },
+        {
+          "id": "C03-2",
+          "criterion": "解释四种分支",
+          "expected": "状态依次 empty、skip、invalid、ok，3 对应的 value 为 4；None 不进入 int。",
+          "weight": 1
+        },
+        {
+          "id": "C03-3",
+          "criterion": "解释提前返回与 finally",
+          "expected": "每次 return 前都执行 finally 追加 end，finally 没有覆盖返回值。",
+          "weight": 1
+        },
+        {
+          "id": "C03-4",
+          "criterion": "解释异常边界",
+          "expected": "零主动抛 ValueError 后被捕获，并非整除报错；只捕获 ValueError，其他异常仍会经 finally 后传播。",
+          "weight": 1
+        },
+        {
+          "id": "C03-5",
+          "criterion": "说明完整日志",
+          "expected": "events 顺序为 start:None,end,start:-2,end,start:0,invalid,end,start:3,end。",
+          "weight": 1
+        },
+        {
+          "id": "C03-6",
+          "criterion": "解释共享返回字段",
+          "expected": "四个返回字典 events 都引用同一列表，最终都包含完整日志，非每项快照。",
+          "weight": 1
+        },
+        {
+          "id": "C03-7",
+          "criterion": "区分推导与观察",
+          "expected": "结果与异常行为是静态推导，不声称运行、测试通过或日志落盘。",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "true_function": "惰性读取字符串并跳过注释项，累计不超过单项阈值的数；随后继续从同一生成器读取一项并显式关闭。",
+      "entry_and_calls": [
+        "__main__ 守卫 -> main；main 创建 read_values 生成器，调用 take_until 消费它，再通过 next 续读，最后 close。",
+        "read_values 的函数体在首次迭代时才开始；每次 yield 暂停；close 使已启动的生成器进入 finally。"
+      ],
+      "variable_changes": [
+        "创建 values 时 read_values 的函数体尚未执行，因此 before=[]，trace 仍为空。",
+        "首次消费追加 open、read:2，yield 2，total=2；#note 先追加 read:#note，然后跳过，不产生数值。",
+        "5 被产出并累计，使 total=7；9 被产出，take_until 因 9>6 返回 7，不累计 9。",
+        "paused=['open','read:2','read:#note','read:5','read:9']；它是当时 trace 的复制。",
+        "take_until 返回后生成器仍停在 yield 9；next(values) 继续读取并 yield 4，因此 next_value=4。",
+        "values.close() 执行 finally 追加 close；最终 trace=['open','read:2','read:#note','read:5','read:9','read:4','close']。",
+        "静态推导第一行打印为 '7 4'；before 与 paused 不跟随 trace 后续变化。"
+      ],
+      "easy_to_misread_conditions": [
+        "limit 比较的是每一个 number，而不是累计 total，因此总和可以大于 6。",
+        "触发停止的 9 已从生成器消费，不会成为后续 next 的结果。",
+        "take_until 的 return 不自动关闭仍被 values 引用的生成器，paused 时尚未追加 close。",
+        "注释项在 int 之前跳过；其他非法数值文本会触发 ValueError，并执行 read_values 的 finally。",
+        "本例只把字符串列表作为数据源，没有打开真实文件；open 和 close 是记录字符串。"
+      ],
+      "do_not_claim_runtime_facts": [
+        "不得声称生成器已实际运行、打印已观察或清理路径已经测试；各值都是静态推导。",
+        "不得把 trace 中 open/close 说成已打开或关闭了真实文件、网络或操作系统资源。"
+      ],
+      "checkpoints": [
+        {
+          "id": "C04-1",
+          "criterion": "解释惰性入口",
+          "expected": "调用 read_values 只创建生成器，before=[]；迭代开始才追加 open。",
+          "weight": 1
+        },
+        {
+          "id": "C04-2",
+          "criterion": "解释过滤与累计",
+          "expected": "#note 记录读取后被跳过；2、5 累计成 7，限制比较单项而不是总和。",
+          "weight": 1
+        },
+        {
+          "id": "C04-3",
+          "criterion": "解释停止项",
+          "expected": "9 被取出但不加入 total，因为 9>6；take_until 返回 7。",
+          "weight": 1
+        },
+        {
+          "id": "C04-4",
+          "criterion": "解释续读状态",
+          "expected": "生成器仍暂停且未关闭；next(values) 返回 4，不是 9。",
+          "weight": 1
+        },
+        {
+          "id": "C04-5",
+          "criterion": "解释清理时机和日志",
+          "expected": "paused 中没有 read:4/close；显式 close 后 finally 加 close，最终 trace 为完整七项序列。",
+          "weight": 1
+        },
+        {
+          "id": "C04-6",
+          "criterion": "说明快照与资源边界",
+          "expected": "before、paused 是独立列表快照；open/close 是日志文本，没有真实文件操作。",
+          "weight": 1
+        },
+        {
+          "id": "C04-7",
+          "criterion": "区分推导与观察",
+          "expected": "所有状态与输出均为静态推导，不声称实际执行或测试。",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "true_function": "依次等待两个条目转换，按指定的返回列表顺序汇集结果，再对达到金额门槛的条目求和。",
+      "entry_and_calls": [
+        "__main__ 守卫 -> main -> asyncio.run(assemble())；assemble 顺序 await 两次 transform，main 随后调用 summarize。",
+        "transform('A',3,log) 首次调用只创建协程对象 pending；真正先执行的是 await transform('B',2,log)。"
+      ],
+      "variable_changes": [
+        "assemble 创建 log=[]，再创建 pending 协程；这时 transform A 的函数体未执行，所以 before=[]。",
+        "等待 B 时，log 依次追加 start:B、finish:B；second={'name':'B','amount':4}。",
+        "之后 await pending，log 追加 start:A、finish:A；first={'name':'A','amount':6}。",
+        "返回 rows=[{'name':'A','amount':6},{'name':'B','amount':4}]，即 A 在 B 前，虽然执行顺序是 B 再 A。",
+        "summarize 仅累加 amount>=5 的条目，结果为 6；before 保持 []。",
+        "最终 log=['start:B','finish:B','start:A','finish:A']。"
+      ],
+      "easy_to_misread_conditions": [
+        "构造协程对象不会立即执行其函数体，也不会自动调度成任务。",
+        "asyncio.sleep(0) 是让出事件循环的挂起点，并不创建并行任务；这里未用 create_task 或 gather，两个转换没有重叠执行。",
+        "rows 的顺序由 return [first,second] 决定，不能用执行顺序替代。",
+        "summarize 在翻倍后的 amount 上按 >=5 筛选，B 的 4 被排除，结果不是 10。",
+        "asyncio.run 作为普通脚本入口驱动事件循环；在同一线程已有运行中事件循环时直接调用会受 asyncio.run 的使用限制。"
+      ],
+      "do_not_claim_runtime_facts": [
+        "不得声称已实际启动事件循环、测得并发性能或观察到输出；执行顺序与数值是静态推导。",
+        "没有网络请求、磁盘读写、多线程工作池或并发任务组，不能宣称已验证这些外部行为。"
+      ],
+      "checkpoints": [
+        {
+          "id": "C05-1",
+          "criterion": "解释同步入口和异步调用链",
+          "expected": "main 用 asyncio.run 执行 assemble；assemble await transform，返回后 main 同步执行 summarize。",
+          "weight": 1
+        },
+        {
+          "id": "C05-2",
+          "criterion": "解释协程创建与启动",
+          "expected": "pending 的创建不运行 A，因此 before=[]；B 先被 await。",
+          "weight": 1
+        },
+        {
+          "id": "C05-3",
+          "criterion": "给出日志顺序",
+          "expected": "start:B、finish:B、start:A、finish:A，没有两个转换的交错执行。",
+          "weight": 1
+        },
+        {
+          "id": "C05-4",
+          "criterion": "解释挂起与调度",
+          "expected": "sleep(0) 会挂起让出循环，但没有 create_task/gather，两个转换按 await 顺序完成。",
+          "weight": 1
+        },
+        {
+          "id": "C05-5",
+          "criterion": "给出返回条目顺序和值",
+          "expected": "rows 仍为 A 金额 6 在前、B 金额 4 在后，顺序来自 [first,second]。",
+          "weight": 1
+        },
+        {
+          "id": "C05-6",
+          "criterion": "解释汇总条件",
+          "expected": "对翻倍后的 amount>=5 求和，只有 A 计入，结果 6。",
+          "weight": 1
+        },
+        {
+          "id": "C05-7",
+          "criterion": "区分推导与观察",
+          "expected": "值与顺序均为静态推导，不声称实际运行、网络行为或性能验证。",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

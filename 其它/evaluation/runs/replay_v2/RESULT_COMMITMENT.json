@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "created_utc": "2026-09-12T14:44:59.532951+00:00",
+  "status": "Known-sample replay; preserve unchanged",
+  "sha256": {
+    "RUN_COMMITMENT.json": "7ca10f6647850efddfd26cf1bb907f87d38175e1f1813e2a45ca68d9f0a86daf",
+    "ADJUDICATION_COMMITMENT.json": "13661bb7d1c97a750a473a1eb1073c00ba64f43200d7d4fd4cc3450dc0bd5eda",
+    "anonymous_packet.json": "63e665966fd244c6f8ed2776e2bf8dd87f44960f84fc4dcc129e1d826bee2198",
+    "adjudication_completed.json": "855f7d61b37e5c9089fc70604f9b89fff3ab496e8266d3b6d62e87b88497db21",
+    "SCORES_ANONYMOUS.json": "e700d4b482f78ebef841470a1dcdc0cf9cbf8e81d49c480be441ec1d8ab65c58",
+    "SCORES_REVEALED.json": "22d074ef680d6808a52129d9ba84bc64a0b5fc4ee9816cd6da3359b3569f55a2",
+    "REPLAY_DETAILS.json": "d06083590c558bc62f2ca646ce979596306130542c97446ead08a93dbc61e4d3",
+    "USAGE_REFERENCE.json": "c58861051b46fb704a97f85e6a52aaf043bb087bbbe757049b47f0d35e6bac78"
+  }
+}

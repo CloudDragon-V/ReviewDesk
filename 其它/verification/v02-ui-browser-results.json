@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "base": "http://127.0.0.1:8876",
+  "checked_at": "2026-09-20T03:10:52.673Z",
+  "actions": [
+    "real demo import and overview",
+    "click graph node and locate source",
+    "symbol search, input steps return details",
+    "variable timeline and line locator",
+    "keyword search accepted by API",
+    "offline manual generation, >5000 automatic document, actual download",
+    "real AI context and cost preview only; cancelled without paid request",
+    "paste import two revisions and real version diff",
+    "multiple-file upload accepts an empty first __init__.py",
+    "settings empty-key validation; no API key changed or paid AI sent",
+    "explicitly mocked interrupted job exits polling and restores controls immediately"
+  ],
+  "errors": [],
+  "failed_responses": []
+}

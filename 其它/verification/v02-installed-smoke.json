@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "frozen": true,
+  "port": 61662,
+  "files": 3,
+  "symbols": 7,
+  "calls": 14,
+  "character_count": 13836,
+  "auto_exported": true,
+  "download_verified": true,
+  "api_called": false,
+  "frontend_served": true,
+  "data_dir": "D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\verification\\v02-installed-userdata"
+}

@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "created_utc": "2026-09-12T14:11:58.611804+00:00",
+  "status": "First blind evaluation; preserve unchanged",
+  "sha256": {
+    "RUN_COMMITMENT.json": "1a976af87814c0b93bd755c9c1d993a0115fc26f99b2695b5fa17e7bf4473699",
+    "ADJUDICATION_COMMITMENT.json": "7e6e39c53d4291798562ce35851e83d85a9db98a03afc113cd540f4bda2b48b9",
+    "anonymous_packet.json": "13a6463b660efc000b97faa511b6807cf125b20f79b97b50b635b03abc6e67db",
+    "adjudication_completed.json": "dae9eef1cc4526c827628a4d80fcb5faf6d7a05ce782c65dfeafeeb0adcf3dfe",
+    "SCORES_ANONYMOUS.json": "71029d126aff8adb5b1fe42882e614babe1ad94ed63fe77271396129a2678e20",
+    "SCORES_REVEALED.json": "a4379d354e5f4b7133a351c4029a3e09399199b42c2861c40f5b9450bf622578"
+  }
+}

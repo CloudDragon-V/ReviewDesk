@@ -1,0 +1,458 @@
+{
+  "schema": 1,
+  "instructions": "Judge whether each reported issue is valid in the supplied synthetic source. Do not infer candidate identity. Preserve item_id. Use valid, invalid or uncertain; give a concise reason.",
+  "cases": [
+    {
+      "case_id": "Cba368fc52a",
+      "files": {
+        "sample.py": "def parse_expression(text):\n    return eval(text)\n"
+      },
+      "candidates": {
+        "Candidate-A": [
+          {
+            "path": "sample.py",
+            "start_line": 2,
+            "end_line": 2,
+            "category": "bug",
+            "severity": "medium",
+            "title": "Dynamic eval call",
+            "evidence": "return eval(text)",
+            "recommendation": "Check whether the input is trusted.",
+            "item_id": "Cba368fc52a-A-001"
+          }
+        ],
+        "Candidate-B": [
+          {
+            "path": "sample.py",
+            "start_line": 2,
+            "end_line": 2,
+            "category": "correctness",
+            "severity": "medium",
+            "title": "动态执行代码存在注入风险",
+            "evidence": "    return eval(text)",
+            "recommendation": "确认传入代码完全可信；普通数据解析应使用 json.loads 或 ast.literal_eval，并校验数据结构。",
+            "item_id": "Cba368fc52a-B-001"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C3cd7bcd96d",
+      "files": {
+        "sample.py": "def remember(item, entries=[]):\n    entries.append(item)\n    return entries\n"
+      },
+      "candidates": {
+        "Candidate-A": [
+          {
+            "path": "sample.py",
+            "start_line": 1,
+            "end_line": 1,
+            "category": "bug",
+            "severity": "medium",
+            "title": "Mutable default argument",
+            "evidence": "def remember(item, entries=[]):",
+            "recommendation": "Allocate mutable defaults per call.",
+            "item_id": "C3cd7bcd96d-A-001"
+          }
+        ],
+        "Candidate-B": [
+          {
+            "path": "sample.py",
+            "start_line": 1,
+            "end_line": 1,
+            "category": "correctness",
+            "severity": "medium",
+            "title": "可变对象作为默认参数",
+            "evidence": "def remember(item, entries=[]):",
+            "recommendation": "默认值只在函数定义时创建，后续调用会共享同一对象；改为 None 并在函数内创建。",
+            "item_id": "C3cd7bcd96d-B-001"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C300d5c1919",
+      "files": {
+        "sample.py": "def run_text(text):\n    return text.upper()\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "C3775d56ef9",
+      "files": {
+        "sample.py": "def save(callback):\n    try:\n        callback()\n    except OSError:\n        pass\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "C4eaef273c6",
+      "files": {
+        "sample.py": "def require(value):\n    assert value > 0, 'must be positive'\n    return value\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "C9012599ecc",
+      "files": {
+        "sample.py": "def parse(text):\n    try:\n        return int(text)\n    except:\n        return -1\n"
+      },
+      "candidates": {
+        "Candidate-A": [
+          {
+            "path": "sample.py",
+            "start_line": 4,
+            "end_line": 4,
+            "category": "bug",
+            "severity": "medium",
+            "title": "Bare exception handler",
+            "evidence": "except:",
+            "recommendation": "Catch the intended exception type.",
+            "item_id": "C9012599ecc-A-001"
+          }
+        ],
+        "Candidate-B": [
+          {
+            "path": "sample.py",
+            "start_line": 4,
+            "end_line": 5,
+            "category": "correctness",
+            "severity": "medium",
+            "title": "裸 except 捕获所有异常",
+            "evidence": "    except:\n        return -1",
+            "recommendation": "明确捕获预期异常类型；裸 except 也会拦截 KeyboardInterrupt 和 SystemExit。",
+            "item_id": "C9012599ecc-B-001"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C074b095eb9",
+      "files": {
+        "sample.py": "def save(callback):\n    try:\n        callback()\n    except OSError as exc:\n        raise RuntimeError('save failed') from exc\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "C73393d18ef",
+      "files": {
+        "sample.py": "def parse(text):\n    try:\n        return int(text)\n    except ValueError:\n        return -1\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "Cb6dc45f001",
+      "files": {
+        "sample.py": "import subprocess\n\ndef locate(name):\n    return subprocess.run('where ' + name, shell=True, check=True)\n"
+      },
+      "candidates": {
+        "Candidate-A": [
+          {
+            "path": "sample.py",
+            "start_line": 4,
+            "end_line": 4,
+            "category": "bug",
+            "severity": "medium",
+            "title": "Shell invocation",
+            "evidence": "return subprocess.run('where ' + name, shell=True, check=True)",
+            "recommendation": "Check command interpolation.",
+            "item_id": "Cb6dc45f001-A-001"
+          }
+        ],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "C3e94dec6aa",
+      "files": {
+        "sample.py": "def total(values):\n    return sum(values)\n    print('finished')\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": [
+          {
+            "path": "sample.py",
+            "start_line": 3,
+            "end_line": 3,
+            "category": "redundancy",
+            "severity": "medium",
+            "title": "不可达语句",
+            "evidence": "    print('finished')",
+            "recommendation": "前一条语句已经直接结束该控制流；删除此语句或调整终止语句的位置。",
+            "item_id": "C3e94dec6aa-B-001"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C403f2b1871",
+      "files": {
+        "sample.py": "def broken(:\n    return 1\n"
+      },
+      "candidates": {
+        "Candidate-A": [
+          {
+            "path": "sample.py",
+            "start_line": 1,
+            "end_line": 1,
+            "category": "bug",
+            "severity": "high",
+            "title": "Python syntax error",
+            "evidence": "invalid syntax",
+            "recommendation": "Correct the syntax.",
+            "item_id": "C403f2b1871-A-001"
+          }
+        ],
+        "Candidate-B": [
+          {
+            "path": "sample.py",
+            "start_line": 1,
+            "end_line": 1,
+            "category": "correctness",
+            "severity": "high",
+            "title": "Python 语法错误",
+            "evidence": "def broken(:",
+            "recommendation": "先修复语法错误，再进行结构审查。解析器信息：invalid syntax",
+            "item_id": "C403f2b1871-B-001"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "Cd9db0b42a1",
+      "files": {
+        "sample.py": "def palette():\n    return {'start': 'green', 'stop': 'red', 'start': 'blue'}\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": [
+          {
+            "path": "sample.py",
+            "start_line": 2,
+            "end_line": 2,
+            "category": "correctness",
+            "severity": "medium",
+            "title": "字典中有重复的常量键",
+            "evidence": "    return {'start': 'green', 'stop': 'red', 'start': 'blue'}",
+            "recommendation": "后出现的同值键会覆盖前面的值；确认键名是否写错，并合并或删除重复项。",
+            "item_id": "Cd9db0b42a1-B-001"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C5510707e8d",
+      "files": {
+        "sample.py": "def is_ok(status):\n    return status is 'ready'\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": [
+          {
+            "path": "sample.py",
+            "start_line": 2,
+            "end_line": 2,
+            "category": "correctness",
+            "severity": "medium",
+            "title": "使用 is 比较普通字面量",
+            "evidence": "    return status is 'ready'",
+            "recommendation": "is 比较对象身份，数值或字符串内容比较通常应使用 == / !=；None 等单例保持 is。",
+            "item_id": "C5510707e8d-B-001"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C7de7f419b7",
+      "files": {
+        "sample.py": "import ast\n\ndef parse_expression(text):\n    return ast.literal_eval(text)\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "Cc96767cf18",
+      "files": {
+        "sample.py": "def remember(item, entries=None):\n    if entries is None:\n        entries = []\n    entries.append(item)\n    return entries\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "C6f12ef6e00",
+      "files": {
+        "sample.py": "def require(value):\n    assert (value > 0, 'must be positive')\n    return value\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": [
+          {
+            "path": "sample.py",
+            "start_line": 2,
+            "end_line": 2,
+            "category": "correctness",
+            "severity": "high",
+            "title": "非空元组使断言恒为真",
+            "evidence": "    assert (value > 0, 'must be positive')",
+            "recommendation": "assert (condition, message) 检查的是非空元组；改为 assert condition, message。",
+            "item_id": "C6f12ef6e00-B-001"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C084bb29ddc",
+      "files": {
+        "sample.py": "def fraction(value):\n    return value / 0\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": [
+          {
+            "path": "sample.py",
+            "start_line": 2,
+            "end_line": 2,
+            "category": "correctness",
+            "severity": "high",
+            "title": "除数为零",
+            "evidence": "    return value / 0",
+            "recommendation": "分母为字面量零，数值运算将失败；检查表达式并对实际分母做有效性判断。",
+            "item_id": "C084bb29ddc-B-001"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C08a26d267e",
+      "files": {
+        "sample.py": "def intact():\n    return 1\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "Cf97723ecba",
+      "files": {
+        "sample.py": "def total(values):\n    result = sum(values)\n    print('finished')\n    return result\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "Cec7ec26ca1",
+      "files": {
+        "sample.py": "import os\n\ndef headers():\n    return {'Authorization': 'Bearer ' + os.environ['SERVICE_TOKEN']}\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "Cfae6fb8f1e",
+      "files": {
+        "sample.py": "def is_ok(status):\n    return status == 'ready'\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "Ce1c872d5f7",
+      "files": {
+        "sample.py": "API_KEY = 'sk-00000000000000000000000000000000'\n\ndef headers():\n    return {'Authorization': 'Bearer ' + API_KEY}\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "C0719887448",
+      "files": {
+        "sample.py": "def fraction(value, denominator):\n    if denominator == 0:\n        return None\n    return value / denominator\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "Ca084145a88",
+      "files": {
+        "sample.py": "import subprocess\n\ndef locate(name):\n    return subprocess.run(['where', name], shell=False, check=True)\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "Cd8f1ba2b02",
+      "files": {
+        "sample.py": "def run_text(text):\n    exec(text)\n"
+      },
+      "candidates": {
+        "Candidate-A": [
+          {
+            "path": "sample.py",
+            "start_line": 2,
+            "end_line": 2,
+            "category": "bug",
+            "severity": "medium",
+            "title": "Dynamic exec call",
+            "evidence": "exec(text)",
+            "recommendation": "Avoid executing external text.",
+            "item_id": "Cd8f1ba2b02-A-001"
+          }
+        ],
+        "Candidate-B": [
+          {
+            "path": "sample.py",
+            "start_line": 2,
+            "end_line": 2,
+            "category": "correctness",
+            "severity": "medium",
+            "title": "动态执行代码存在注入风险",
+            "evidence": "    exec(text)",
+            "recommendation": "确认传入代码完全可信；普通数据解析应使用 json.loads 或 ast.literal_eval，并校验数据结构。",
+            "item_id": "Cd8f1ba2b02-B-001"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C84da8e192f",
+      "files": {
+        "sample.py": "def palette():\n    return {'start': 'green', 'stop': 'red', 'pause': 'blue'}\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    }
+  ]
+}

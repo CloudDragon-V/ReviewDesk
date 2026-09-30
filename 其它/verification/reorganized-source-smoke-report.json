@@ -1,0 +1,83 @@
+{
+  "project_name": "订单服务 · 示例项目",
+  "findings": [
+    {
+      "path": "order_service.py",
+      "start_line": 11,
+      "end_line": 11,
+      "category": "correctness",
+      "severity": "medium",
+      "title": "可变对象作为默认参数",
+      "evidence": "    def add_order(self, order, orders=[]):",
+      "recommendation": "默认值只在函数定义时创建，后续调用会共享同一对象；改为 None 并在函数内创建。",
+      "source": "static",
+      "rule_id": "PY002",
+      "confidence": 0.95,
+      "status": "new"
+    },
+    {
+      "path": "order_service.py",
+      "start_line": 12,
+      "end_line": 12,
+      "category": "correctness",
+      "severity": "high",
+      "title": "非空元组使断言恒为真",
+      "evidence": "        assert (order.get(\"price\", 0) >= 0, \"价格不能为负数\")",
+      "recommendation": "assert (condition, message) 检查的是非空元组；改为 assert condition, message。",
+      "source": "static",
+      "rule_id": "PY010",
+      "confidence": 0.95,
+      "status": "new"
+    },
+    {
+      "path": "order_service.py",
+      "start_line": 23,
+      "end_line": 24,
+      "category": "correctness",
+      "severity": "medium",
+      "title": "裸 except 捕获所有异常",
+      "evidence": "        except:\n            return []",
+      "recommendation": "明确捕获预期异常类型；裸 except 也会拦截 KeyboardInterrupt 和 SystemExit。",
+      "source": "static",
+      "rule_id": "PY003",
+      "confidence": 0.95,
+      "status": "new"
+    },
+    {
+      "path": "order_service.py",
+      "start_line": 31,
+      "end_line": 31,
+      "category": "redundancy",
+      "severity": "medium",
+      "title": "不可达语句",
+      "evidence": "        print(\"订单汇总完成\")",
+      "recommendation": "前一条语句已经直接结束该控制流；删除此语句或调整终止语句的位置。",
+      "source": "static",
+      "rule_id": "PY005",
+      "confidence": 0.95,
+      "status": "new"
+    }
+  ],
+  "limitations": [
+    "关系图来自 Python AST：仅显示可静态定位的项目内定义、导入和调用；不推断动态导入、反射、实例类型或运行时分派，源码不会被执行。"
+  ],
+  "usage": {
+    "model": "",
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "cache_hit_tokens": 0,
+    "estimated_cost_cny": "0",
+    "actual": false,
+    "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+    "price_checked_at": "2026-09-12",
+    "recorded_at": "2026-09-13T02:44:50.191286+00:00",
+    "note": "未调用 API"
+  },
+  "created_at": "2026-09-13T02:44:50.191299+00:00",
+  "mode": "local",
+  "file_count": 1,
+  "source_hashes": {
+    "order_service.py": "b2d9f5692200e309f98f4f04da35300e651c62c5028cf78777607244f4879ee3"
+  },
+  "schema_version": 1
+}

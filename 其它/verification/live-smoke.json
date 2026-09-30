@@ -1,0 +1,87 @@
+{
+  "synthetic_code_only": true,
+  "requests": 1,
+  "balance_before": {
+    "is_available": true,
+    "balance_infos": [
+      {
+        "currency": "CNY",
+        "total_balance": "4.99",
+        "granted_balance": "0.00",
+        "topped_up_balance": "4.99"
+      }
+    ]
+  },
+  "balance_after": {
+    "is_available": true,
+    "balance_infos": [
+      {
+        "currency": "CNY",
+        "total_balance": "4.99",
+        "granted_balance": "0.00",
+        "topped_up_balance": "4.99"
+      }
+    ]
+  },
+  "result": {
+    "project_name": "合成样例在线验证",
+    "findings": [
+      {
+        "path": "synthetic_demo.py",
+        "start_line": 1,
+        "end_line": 3,
+        "category": "correctness",
+        "severity": "high",
+        "title": "空列表输入导致除零错误",
+        "evidence": "return sum(values) / len(values)",
+        "recommendation": "当 values 为空列表时，len(values) 为 0，会抛出 ZeroDivisionError，与文档字符串声明的“空输入应返回 0”不符。调用方若传入空序列将得到异常而非预期的 0。建议在除法前判空，空输入直接返回 0。",
+        "source": "llm",
+        "rule_id": "",
+        "confidence": 0.95,
+        "status": "new"
+      },
+      {
+        "path": "synthetic_demo.py",
+        "start_line": 5,
+        "end_line": 5,
+        "category": "correctness",
+        "severity": "medium",
+        "title": "可变对象作为默认参数",
+        "evidence": "def append_event(event, events=[]):",
+        "recommendation": "默认值只在函数定义时创建，后续调用会共享同一对象；改为 None 并在函数内创建。",
+        "source": "static",
+        "rule_id": "PY002",
+        "confidence": 0.95,
+        "status": "new"
+      }
+    ],
+    "limitations": [
+      "关系图来自 Python AST：仅显示可静态定位的项目内定义、导入和调用；不推断动态导入、反射、实例类型或运行时分派，源码不会被执行。",
+      "token 数为 UTF-8 字节数的保守预算代理，不是模型精确 tokenizer，也不是 API 实际账单用量。",
+      "自动脱敏仅识别常见凭据格式和敏感字段赋值；发送前仍需检查上下文预览。",
+      "已包含全部 7 行、1 个非空文件。",
+      "模型提示：仅提供两个函数的源码，无法判断调用方是否会传入空序列或复用返回值",
+      "模型提示：未提供测试或其他模块，无法验证实际运行表现",
+      "模型建议已校验路径、行号和摘录；逻辑判断仍须人工复核。未覆盖片段不代表没有问题。"
+    ],
+    "usage": {
+      "model": "deepseek-flash",
+      "prompt_tokens": 394,
+      "completion_tokens": 292,
+      "cache_hit_tokens": 0,
+      "estimated_cost_cny": "0.00156200",
+      "actual": true,
+      "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+      "price_checked_at": "2026-09-12",
+      "recorded_at": "2026-09-12T13:54:41.843028+00:00",
+      "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。"
+    },
+    "created_at": "2026-09-12T13:54:40.089316+00:00",
+    "mode": "hybrid",
+    "file_count": 1,
+    "source_hashes": {
+      "synthetic_demo.py": "dcb7f37c9ecaab651fad2353ef0d0dd2709e44da81808144d9a32b2f8466dc0f"
+    },
+    "schema_version": 1
+  }
+}

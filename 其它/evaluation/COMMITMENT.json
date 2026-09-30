@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "created_utc": "2026-09-12T13:52:16.596005+00:00",
+  "date_note": "local clock only, not an externally trusted timestamp",
+  "detection_cases": 26,
+  "probe_cases": 6,
+  "total_cases": 32,
+  "fixture_origin": "Author-generated synthetic Python; no user project source",
+  "hashes": {
+    "sealed/corpus.json": "36aec144fe00ba0c90be2e2860043d0885fede52d467c9004633154a54d283c2",
+    "sealed/oracle.json": "d297ae4114d1c4682f9004aef365c51a2e67a4eecc0a04cf093ec4f40af26dfe",
+    "freeze_corpus.py": "d0895483187b3ca3c8ebf70fcb9018d28f1683ae7b4f6776d614ed815bb2ed8e"
+  },
+  "online_selection": [
+    "Cba368fc52a",
+    "C3cd7bcd96d",
+    "C300d5c1919",
+    "C3775d56ef9"
+  ],
+  "limitations": [
+    "Hash commitment is local, not externally timestamped.",
+    "Roles share an environment and model family; this is simulated double-blind."
+  ]
+}

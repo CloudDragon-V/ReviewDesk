@@ -1,0 +1,49 @@
+{
+  "results": [
+    {
+      "case_id": "C51f1c29f12",
+      "pass": true,
+      "raw_needle_present": false,
+      "source_included": true
+    },
+    {
+      "case_id": "Cde4b30aac6",
+      "pass": true,
+      "raw_needle_present": false,
+      "source_included": true
+    },
+    {
+      "case_id": "C9d90219bc5",
+      "pass": true,
+      "cross_file_edges": 2,
+      "edge_kinds": [
+        "calls",
+        "imports"
+      ]
+    },
+    {
+      "case_id": "Cbc47b2afab",
+      "pass": true,
+      "observed_paths": [
+        "main.py"
+      ]
+    },
+    {
+      "case_id": "C61e3973d22",
+      "pass": true,
+      "cross_file_edges": 2,
+      "edge_kinds": [
+        "calls",
+        "imports"
+      ]
+    },
+    {
+      "case_id": "C0760fc3f2a",
+      "pass": true,
+      "reported_tokens": 0,
+      "recomputed_tokens": 0,
+      "budget": 120,
+      "spans_valid": true
+    }
+  ]
+}

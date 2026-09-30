@@ -1,0 +1,216 @@
+{
+  "actual_request_count": 12,
+  "complete_manuals": 11,
+  "partial_manuals": 1,
+  "all_usage_returned": true,
+  "prompt_tokens": 19037,
+  "completion_tokens_including_reasoning": 83295,
+  "estimated_total_cny": "0.34820292",
+  "note": "Includes the truncated request; CNY is an estimate, not the provider bill. No production automatic retries.",
+  "attempts": [
+    {
+      "phase": "demo",
+      "case_id": "shopping",
+      "mode": "ai",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 1728,
+        "completion_tokens": 2874,
+        "cache_hit_tokens": 0,
+        "estimated_cost_cny": "0.01322400",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-20",
+        "recorded_at": "2026-09-20T02:44:07.795794+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。法定节假日未单独换算，费用仍为估算。"
+      }
+    },
+    {
+      "phase": "enhanced",
+      "case_id": "C01",
+      "mode": "ai",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 1516,
+        "completion_tokens": 2952,
+        "cache_hit_tokens": 0,
+        "estimated_cost_cny": "0.01332400",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-20",
+        "recorded_at": "2026-09-20T02:59:10.648351+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。法定节假日未单独换算，费用仍为估算。"
+      }
+    },
+    {
+      "phase": "enhanced",
+      "case_id": "C02",
+      "mode": "ai",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 1272,
+        "completion_tokens": 3904,
+        "cache_hit_tokens": 384,
+        "estimated_cost_cny": "0.01651168",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-20",
+        "recorded_at": "2026-09-20T02:59:27.567773+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。法定节假日未单独换算，费用仍为估算。"
+      }
+    },
+    {
+      "phase": "enhanced",
+      "case_id": "C03",
+      "mode": "ai",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 1406,
+        "completion_tokens": 3214,
+        "cache_hit_tokens": 384,
+        "estimated_cost_cny": "0.01388568",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-20",
+        "recorded_at": "2026-09-20T02:59:43.499582+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。法定节假日未单独换算，费用仍为估算。"
+      }
+    },
+    {
+      "phase": "enhanced",
+      "case_id": "C04",
+      "mode": "ai",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 1352,
+        "completion_tokens": 4701,
+        "cache_hit_tokens": 384,
+        "estimated_cost_cny": "0.01977968",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-20",
+        "recorded_at": "2026-09-20T03:00:03.942965+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。法定节假日未单独换算，费用仍为估算。"
+      }
+    },
+    {
+      "phase": "enhanced",
+      "case_id": "C05",
+      "mode": "ai",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 1315,
+        "completion_tokens": 4423,
+        "cache_hit_tokens": 384,
+        "estimated_cost_cny": "0.01863068",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-20",
+        "recorded_at": "2026-09-20T03:00:24.442098+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。法定节假日未单独换算，费用仍为估算。"
+      }
+    },
+    {
+      "phase": "reasoning",
+      "case_id": "C05",
+      "mode": "ai",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 1781,
+        "completion_tokens": 9011,
+        "cache_hit_tokens": 0,
+        "estimated_cost_cny": "0.03782500",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-20",
+        "recorded_at": "2026-09-20T03:09:35.856473+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。法定节假日未单独换算，费用仍为估算。"
+      }
+    },
+    {
+      "phase": "reasoning",
+      "case_id": "C04",
+      "mode": "ai",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 1850,
+        "completion_tokens": 11328,
+        "cache_hit_tokens": 512,
+        "estimated_cost_cny": "0.04666024",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-20",
+        "recorded_at": "2026-09-20T03:10:31.837374+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。法定节假日未单独换算，费用仍为估算。"
+      }
+    },
+    {
+      "phase": "reasoning",
+      "case_id": "C03",
+      "mode": "ai",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 1708,
+        "completion_tokens": 7570,
+        "cache_hit_tokens": 512,
+        "estimated_cost_cny": "0.03148624",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-20",
+        "recorded_at": "2026-09-20T03:11:08.265596+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。法定节假日未单独换算，费用仍为估算。"
+      }
+    },
+    {
+      "phase": "reasoning",
+      "case_id": "C02",
+      "mode": "ai",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 1526,
+        "completion_tokens": 10550,
+        "cache_hit_tokens": 512,
+        "estimated_cost_cny": "0.04322424",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-20",
+        "recorded_at": "2026-09-20T03:11:58.081588+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。法定节假日未单独换算，费用仍为估算。"
+      }
+    },
+    {
+      "phase": "reasoning",
+      "case_id": "C01",
+      "mode": "partial",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 1790,
+        "completion_tokens": 11999,
+        "cache_hit_tokens": 512,
+        "estimated_cost_cny": "0.04928424",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-12",
+        "recorded_at": "2026-09-20T03:12:57.090421+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。"
+      }
+    },
+    {
+      "phase": "completion",
+      "case_id": "C01",
+      "mode": "ai",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 1793,
+        "completion_tokens": 10769,
+        "cache_hit_tokens": 512,
+        "estimated_cost_cny": "0.04436724",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-20",
+        "recorded_at": "2026-09-20T03:15:40.258518+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。法定节假日未单独换算，费用仍为估算。"
+      }
+    }
+  ]
+}

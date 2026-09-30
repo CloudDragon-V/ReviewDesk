@@ -1,0 +1,9 @@
+{
+  "final_merge_fix_in_pyz": true,
+  "files_scanned": 173,
+  "credential_matches": [],
+  "runtime_bundled": true,
+  "qt_plugin_bundled": true,
+  "foreign_icu_absent": true,
+  "frontend_package_bundled": true
+}

@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "created_utc": "2026-09-12T14:10:54.370082+00:00",
+  "adjudication_file": "adjudication_completed.json",
+  "adjudication_sha256": "dae9eef1cc4526c827628a4d80fcb5faf6d7a05ce782c65dfeafeeb0adcf3dfe",
+  "anonymous_packet_sha256": "13a6463b660efc000b97faa511b6807cf125b20f79b97b50b635b03abc6e67db"
+}

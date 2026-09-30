@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "hash_assertions": 31,
+  "frozen_results_preserved": true,
+  "online_protocol_preserved": true,
+  "historical_analysis_and_context_unchanged": true,
+  "original_tool_snapshots_match_historical_hashes": true,
+  "pyproject_package_directories_exist": true,
+  "ide_paths_exist": true,
+  "candidate_source_count": 10,
+  "network_requests": 0
+}

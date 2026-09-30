@@ -1,0 +1,19 @@
+{
+  "sha256_files_verified": 3,
+  "archives": {
+    "ReviewDesk-0.1.0-Portable-win-x64.zip": {
+      "files": 173,
+      "crc_ok": true,
+      "credential_matches": 0
+    },
+    "ReviewDesk-0.1.0-Source.zip": {
+      "files": 165,
+      "crc_ok": true,
+      "credential_matches": 0
+    }
+  },
+  "source_archive_three_roots": true,
+  "source_archive_extracted_smoke_ok": true,
+  "portable_matches_runtime": true,
+  "api_calls": 0
+}

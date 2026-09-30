@@ -1,0 +1,132 @@
+{
+  "usage": [
+    {
+      "case_id": "Cba368fc52a",
+      "candidate": "Candidate-B",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 343,
+        "completion_tokens": 166,
+        "cache_hit_tokens": 128,
+        "estimated_cost_cny": "0.00088156",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-12",
+        "recorded_at": "2026-09-12T14:03:10.392559+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。"
+      }
+    },
+    {
+      "case_id": "C3cd7bcd96d",
+      "candidate": "Candidate-B",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 352,
+        "completion_tokens": 192,
+        "cache_hit_tokens": 128,
+        "estimated_cost_cny": "0.00099456",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-12",
+        "recorded_at": "2026-09-12T14:03:12.151372+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。"
+      }
+    },
+    {
+      "case_id": "C300d5c1919",
+      "candidate": "Candidate-B",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 343,
+        "completion_tokens": 57,
+        "cache_hit_tokens": 128,
+        "estimated_cost_cny": "0.00044556",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-12",
+        "recorded_at": "2026-09-12T14:03:13.933919+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。"
+      }
+    },
+    {
+      "case_id": "C3775d56ef9",
+      "candidate": "Candidate-B",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 361,
+        "completion_tokens": 213,
+        "cache_hit_tokens": 128,
+        "estimated_cost_cny": "0.00108756",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-12",
+        "recorded_at": "2026-09-12T14:03:16.269407+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。"
+      }
+    },
+    {
+      "case_id": "C4eaef273c6",
+      "candidate": "Candidate-B",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 355,
+        "completion_tokens": 89,
+        "cache_hit_tokens": 128,
+        "estimated_cost_cny": "0.00058556",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-12",
+        "recorded_at": "2026-09-12T14:03:17.560030+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。"
+      }
+    },
+    {
+      "case_id": "C9012599ecc",
+      "candidate": "Candidate-B",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 361,
+        "completion_tokens": 192,
+        "cache_hit_tokens": 128,
+        "estimated_cost_cny": "0.00100356",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-12",
+        "recorded_at": "2026-09-12T14:03:19.420818+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。"
+      }
+    },
+    {
+      "case_id": "C074b095eb9",
+      "candidate": "Candidate-B",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 371,
+        "completion_tokens": 67,
+        "cache_hit_tokens": 128,
+        "estimated_cost_cny": "0.00051356",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-12",
+        "recorded_at": "2026-09-12T14:03:20.862486+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。"
+      }
+    },
+    {
+      "case_id": "C73393d18ef",
+      "candidate": "Candidate-B",
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 362,
+        "completion_tokens": 62,
+        "cache_hit_tokens": 128,
+        "estimated_cost_cny": "0.00048456",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-12",
+        "recorded_at": "2026-09-12T14:03:22.437850+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。"
+      }
+    }
+  ]
+}

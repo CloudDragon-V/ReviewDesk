@@ -1,0 +1,16 @@
+{
+  "editor_read_only_during_review": true,
+  "programmatic_edit_preserved": true,
+  "dirty_flag_retained": true,
+  "busy_history_open_did_not_replace_review": true,
+  "history_id_stays_correct": true,
+  "new_report_not_overwritten": true,
+  "close_preserves_paid_usage": true,
+  "save_failure_paid_result_retained": false,
+  "save_failure_notice": "操作未完成：database is locked",
+  "malformed_choices_preserve_usage": true,
+  "huge_usage_is_unknown": true,
+  "huge_confidence_rejected": true,
+  "wrapped_timeout_kind": "timeout",
+  "escaped_key_is_redacted": true
+}

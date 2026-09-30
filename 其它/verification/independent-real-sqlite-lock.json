@@ -1,0 +1,9 @@
+{
+  "real_sqlite_lock_result_retained": true,
+  "report_id_is_none_while_unsaved": true,
+  "real_usage_retained": true,
+  "unsaved_report_exportable": true,
+  "retry_saved_once": true,
+  "retry_did_not_repeat_paid_review": true,
+  "saved_usage_matches": true
+}

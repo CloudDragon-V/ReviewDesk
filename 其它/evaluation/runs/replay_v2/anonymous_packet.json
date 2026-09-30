@@ -1,0 +1,159 @@
+{
+  "schema": 1,
+  "instructions": "Not a new blind evaluation. Original independent judgments are reused unchanged for retained original item IDs.",
+  "cases": [
+    {
+      "case_id": "Cba368fc52a",
+      "files": {
+        "sample.py": "def parse_expression(text):\n    return eval(text)\n"
+      },
+      "candidates": {
+        "Candidate-A": [
+          {
+            "path": "sample.py",
+            "start_line": 2,
+            "end_line": 2,
+            "category": "correctness",
+            "severity": "medium",
+            "title": "动态执行代码存在注入风险",
+            "evidence": "    return eval(text)",
+            "recommendation": "确认传入代码完全可信；普通数据解析应使用 json.loads 或 ast.literal_eval，并校验数据结构。",
+            "item_id": "Cba368fc52a-A-001"
+          }
+        ],
+        "Candidate-B": [
+          {
+            "path": "sample.py",
+            "start_line": 2,
+            "end_line": 2,
+            "category": "correctness",
+            "severity": "medium",
+            "title": "动态执行代码存在注入风险",
+            "evidence": "    return eval(text)",
+            "recommendation": "确认传入代码完全可信；普通数据解析应使用 json.loads 或 ast.literal_eval，并校验数据结构。",
+            "item_id": "Cba368fc52a-B-001"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C3cd7bcd96d",
+      "files": {
+        "sample.py": "def remember(item, entries=[]):\n    entries.append(item)\n    return entries\n"
+      },
+      "candidates": {
+        "Candidate-A": [
+          {
+            "path": "sample.py",
+            "start_line": 1,
+            "end_line": 1,
+            "category": "correctness",
+            "severity": "medium",
+            "title": "可变对象作为默认参数",
+            "evidence": "def remember(item, entries=[]):",
+            "recommendation": "默认值只在函数定义时创建，后续调用会共享同一对象；改为 None 并在函数内创建。",
+            "item_id": "C3cd7bcd96d-A-001"
+          }
+        ],
+        "Candidate-B": [
+          {
+            "path": "sample.py",
+            "start_line": 1,
+            "end_line": 1,
+            "category": "correctness",
+            "severity": "medium",
+            "title": "可变对象作为默认参数",
+            "evidence": "def remember(item, entries=[]):",
+            "recommendation": "默认值只在函数定义时创建，后续调用会共享同一对象；改为 None 并在函数内创建。",
+            "item_id": "C3cd7bcd96d-B-001"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C300d5c1919",
+      "files": {
+        "sample.py": "def run_text(text):\n    return text.upper()\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "C3775d56ef9",
+      "files": {
+        "sample.py": "def save(callback):\n    try:\n        callback()\n    except OSError:\n        pass\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "C4eaef273c6",
+      "files": {
+        "sample.py": "def require(value):\n    assert value > 0, 'must be positive'\n    return value\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "C9012599ecc",
+      "files": {
+        "sample.py": "def parse(text):\n    try:\n        return int(text)\n    except:\n        return -1\n"
+      },
+      "candidates": {
+        "Candidate-A": [
+          {
+            "path": "sample.py",
+            "start_line": 4,
+            "end_line": 5,
+            "category": "correctness",
+            "severity": "medium",
+            "title": "裸 except 捕获所有异常",
+            "evidence": "    except:\n        return -1",
+            "recommendation": "明确捕获预期异常类型；裸 except 也会拦截 KeyboardInterrupt 和 SystemExit。",
+            "item_id": "C9012599ecc-A-001"
+          }
+        ],
+        "Candidate-B": [
+          {
+            "path": "sample.py",
+            "start_line": 4,
+            "end_line": 5,
+            "category": "correctness",
+            "severity": "medium",
+            "title": "裸 except 捕获所有异常",
+            "evidence": "    except:\n        return -1",
+            "recommendation": "明确捕获预期异常类型；裸 except 也会拦截 KeyboardInterrupt 和 SystemExit。",
+            "item_id": "C9012599ecc-B-002"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C074b095eb9",
+      "files": {
+        "sample.py": "def save(callback):\n    try:\n        callback()\n    except OSError as exc:\n        raise RuntimeError('save failed') from exc\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    },
+    {
+      "case_id": "C73393d18ef",
+      "files": {
+        "sample.py": "def parse(text):\n    try:\n        return int(text)\n    except ValueError:\n        return -1\n"
+      },
+      "candidates": {
+        "Candidate-A": [],
+        "Candidate-B": []
+      }
+    }
+  ],
+  "evaluation_kind": "known_sample_saved_finding_replay"
+}

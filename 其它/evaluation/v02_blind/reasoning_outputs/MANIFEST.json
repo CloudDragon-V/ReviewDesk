@@ -1,0 +1,119 @@
+{
+  "candidate": "R31",
+  "evaluation_kind": "known-case enhancement regression after initial scores",
+  "sealed_oracle_read_by_generator": false,
+  "source_executed": false,
+  "outputs": [
+    {
+      "case_id": "C05",
+      "file": "C05_R31.md",
+      "sha256": "c83d78b724498c5613acf707ae2eb6d94af6c6c148feb34110c33c1f6a0c4031",
+      "mode": "ai",
+      "character_count": 15920,
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 1781,
+        "completion_tokens": 9011,
+        "cache_hit_tokens": 0,
+        "estimated_cost_cny": "0.03782500",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-20",
+        "recorded_at": "2026-09-20T03:09:35.856473+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。法定节假日未单独换算，费用仍为估算。"
+      },
+      "auto_exported": true,
+      "ceiling_cny": "0.20",
+      "job_id": "7648c1b209244c0bb6e8e3b44eb0f516"
+    },
+    {
+      "case_id": "C04",
+      "file": "C04_R31.md",
+      "sha256": "0530c1f67df678b1e400d030fd9484b836a6acfa585e25c434d855bf39914eeb",
+      "mode": "ai",
+      "character_count": 18649,
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 1850,
+        "completion_tokens": 11328,
+        "cache_hit_tokens": 512,
+        "estimated_cost_cny": "0.04666024",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-20",
+        "recorded_at": "2026-09-20T03:10:31.837374+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。法定节假日未单独换算，费用仍为估算。"
+      },
+      "auto_exported": true,
+      "ceiling_cny": "0.20",
+      "job_id": "f0f58e9cabc143b89a57b9b072f578db"
+    },
+    {
+      "case_id": "C03",
+      "file": "C03_R31.md",
+      "sha256": "09e24518aba65ebe7ebc21f0d5ef3372929f7926ba2d7166576aba473e5f1b75",
+      "mode": "ai",
+      "character_count": 16943,
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 1708,
+        "completion_tokens": 7570,
+        "cache_hit_tokens": 512,
+        "estimated_cost_cny": "0.03148624",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-20",
+        "recorded_at": "2026-09-20T03:11:08.265596+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。法定节假日未单独换算，费用仍为估算。"
+      },
+      "auto_exported": true,
+      "ceiling_cny": "0.20",
+      "job_id": "20ba25adffb8456bb453207793e6e022"
+    },
+    {
+      "case_id": "C02",
+      "file": "C02_R31.md",
+      "sha256": "6c300bdfc0e593a52ee0dc78abca981bb6a74690c68adee086460e22547c197e",
+      "mode": "ai",
+      "character_count": 14820,
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 1526,
+        "completion_tokens": 10550,
+        "cache_hit_tokens": 512,
+        "estimated_cost_cny": "0.04322424",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-20",
+        "recorded_at": "2026-09-20T03:11:58.081588+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。法定节假日未单独换算，费用仍为估算。"
+      },
+      "auto_exported": true,
+      "ceiling_cny": "0.20",
+      "job_id": "12283538f5a74d349a1f3a57285c5563"
+    },
+    {
+      "case_id": "C01",
+      "file": "C01_R31.md",
+      "sha256": "ac6352ecff4812bb8e2190bb743d312c6ae2e418a10ecb1d08046e969e97d7dc",
+      "mode": "partial",
+      "character_count": 10259,
+      "usage": {
+        "model": "deepseek-flash",
+        "prompt_tokens": 1790,
+        "completion_tokens": 11999,
+        "cache_hit_tokens": 512,
+        "estimated_cost_cny": "0.04928424",
+        "actual": true,
+        "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+        "price_checked_at": "2026-09-12",
+        "recorded_at": "2026-09-20T03:12:57.090421+00:00",
+        "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。"
+      },
+      "auto_exported": true,
+      "ceiling_cny": "0.20",
+      "job_id": "8b79e822446e400e80d1d554a8fa3a32"
+    }
+  ],
+  "frozen_at_utc": "2026-09-20T03:12:57.289060+00:00"
+}

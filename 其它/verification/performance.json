@@ -1,0 +1,27 @@
+{
+  "synthetic_files": 100,
+  "synthetic_functions": 4000,
+  "analysis_seconds": 0.3371,
+  "nodes": 4100,
+  "edges": 4000,
+  "contexts": {
+    "truncate": {
+      "seconds": 0.0262,
+      "budget_proxy": 5985,
+      "files_selected": 3,
+      "selected_lines": 277
+    },
+    "dependency": {
+      "seconds": 0.0415,
+      "budget_proxy": 6000,
+      "files_selected": 16,
+      "selected_lines": 279
+    }
+  },
+  "own_project": {
+    "files": 24,
+    "findings": 0,
+    "seconds": 0.3096
+  },
+  "note": "Single-run warm local performance sample; not a cross-machine benchmark or quality score."
+}

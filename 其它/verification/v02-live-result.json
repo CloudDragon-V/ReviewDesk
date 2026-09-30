@@ -1,0 +1,46 @@
+{
+  "api_called": true,
+  "model": "deepseek-flash",
+  "max_cost_cny": "0.20",
+  "synthetic_demo_only": true,
+  "estimated_upper_cny": "0.10903600",
+  "files": [
+    "main.py",
+    "presentation.py",
+    "pricing.py"
+  ],
+  "evidence_count": 6,
+  "job_id": "0b00374491eb4723b83aae21e85c8f99",
+  "mode": "ai",
+  "usage": {
+    "model": "deepseek-flash",
+    "prompt_tokens": 1728,
+    "completion_tokens": 2874,
+    "cache_hit_tokens": 0,
+    "estimated_cost_cny": "0.01322400",
+    "actual": true,
+    "price_source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+    "price_checked_at": "2026-09-20",
+    "recorded_at": "2026-09-20T02:44:07.795794+00:00",
+    "note": "API 真实 token × 请求开始时段单价；估算人民币费用，以平台账单为准。法定节假日未单独换算，费用仍为估算。"
+  },
+  "character_count": 19058,
+  "auto_exported": true,
+  "limitations": [
+    "本说明来自静态语法分析，未执行、导入或修改被审查代码；变量事件是源码中的可能变化，不是一次真实运行的轨迹。",
+    "函数调用边表示可追溯的静态定义关系；猴子补丁、继承重写、反射、回调和运行时类型可能改变实际调用目标。未解析调用保留在结果中。",
+    "注释与文档代表作者声明，名称推断仅作阅读辅助；两者都不保证实现正确。类型标注不等于运行时类型校验。",
+    "关系图来自 Python AST：仅显示可静态定位的项目内定义、导入和调用；不推断动态导入、反射、实例类型或运行时分派，源码不会被执行。",
+    "检索采用版本内符号、关键词与调用关系，不是预训练语义嵌入。",
+    "字节预算仅为本地保守估算；最终 token 以 API 返回为准。",
+    "详细静态说明覆盖已解析结构；模型只讲解以下实际发送的证据。",
+    "模型章节已检查引用编号；其用途推断和逻辑判断仍需对照源码核实。",
+    "模型说明：未提供实际运行日志或输出，因此所有具体数值（如 37.0、3.7、33.3）都是基于源码规则的静态推演，不是实际执行值。",
+    "模型说明：未提供 pricing.py 和 presentation.py 的完整文件，仅看到被引用的行范围；其他行、其他函数或模块级副作用无法分析。",
+    "模型说明：未提供运行环境、Python 版本或浮点行为信息，无法确定实际浮点运算的精确结果。",
+    "模型说明：未提供测试用例或调用方代码，无法确认 main() 的返回值在真实场景中如何被使用。",
+    "模型说明：动态导入、外部库、条件编译或运行时配置在证据中不存在，因此无法推断这些方面的行为。"
+  ],
+  "ai_section_present": true,
+  "example_path": "D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\示例说明书\\购物订单_详细代码说明书.md"
+}

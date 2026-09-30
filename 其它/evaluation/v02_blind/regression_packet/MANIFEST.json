@@ -1,0 +1,26 @@
+{
+  "candidate": "R23",
+  "transform": "Only provider heading and billing/version metadata removed; explanatory claims and limitations retained.",
+  "outputs": [
+    {
+      "file": "C01_R23.md",
+      "sha256": "11f10e6b77a5fce81ddd1d0215d704d545fbb62a2f188d2292cf89a0caf2b248"
+    },
+    {
+      "file": "C02_R23.md",
+      "sha256": "2f49b062fd32b1ff8844fb2672500f93a2a92809048bee2dd265248e35858333"
+    },
+    {
+      "file": "C03_R23.md",
+      "sha256": "4615f17df7538d7449c9bb55b709aefe413a9738ba77b8f0244bacbc7ec152ec"
+    },
+    {
+      "file": "C04_R23.md",
+      "sha256": "f34e2b036ba189f2c2e21ae86c8e3d98a475d26fb8df4261eba7077acbbb1374"
+    },
+    {
+      "file": "C05_R23.md",
+      "sha256": "05062d6e7d2ea636fc669eacf3af6a10dc721873c174a1535f6bbeed6ee69912"
+    }
+  ]
+}

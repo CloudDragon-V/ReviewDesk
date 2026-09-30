@@ -1,0 +1,9 @@
+test_balanced_scoring_and_adjudication_coverage (test_harness.HarnessTests.test_balanced_scoring_and_adjudication_coverage) ... ok
+test_baseline_parses_but_does_not_execute (test_harness.HarnessTests.test_baseline_parses_but_does_not_execute) ... ok
+test_frozen_corpus_integrity_and_size (test_harness.HarnessTests.test_frozen_corpus_integrity_and_size) ... ok
+test_normalize_removes_identity_metadata (test_harness.HarnessTests.test_normalize_removes_identity_metadata) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.029s
+
+OK

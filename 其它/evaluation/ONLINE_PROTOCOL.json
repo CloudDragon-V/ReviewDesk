@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "selected_case_ids": [
+    "Cba368fc52a",
+    "C300d5c1919",
+    "C3cd7bcd96d",
+    "C4eaef273c6",
+    "C3775d56ef9",
+    "C074b095eb9",
+    "C9012599ecc",
+    "C73393d18ef"
+  ],
+  "positive_cases": 4,
+  "negative_cases": 4,
+  "candidates": [
+    "reviewdesk_local",
+    "reviewdesk_hybrid_deepseek"
+  ],
+  "per_call_estimate_cap_cny": "0.05",
+  "planned_maximum_calls": 8,
+  "planned_estimate_cap_cny": "0.40",
+  "source": "Frozen synthetic corpus only",
+  "supersedes": "COMMITMENT.json online_selection reservation; corpus and oracle remain unchanged",
+  "created_utc": "2026-09-12T13:55:09.011002+00:00"
+}

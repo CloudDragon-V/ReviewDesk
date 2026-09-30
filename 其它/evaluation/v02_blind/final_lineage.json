@@ -1,0 +1,32 @@
+[
+  {
+    "case_id": "C01",
+    "original": "completion_outputs\\C01_R37.md",
+    "original_sha256": "a2fa138ef0fde753256807c1ee9f1b0022157d85ea865c7b476a7fd65fa33da7",
+    "note": "C01 separately regenerated after a documented 12000-token truncation; other four successful outputs retained"
+  },
+  {
+    "case_id": "C02",
+    "original": "reasoning_outputs\\C02_R31.md",
+    "original_sha256": "6c300bdfc0e593a52ee0dc78abca981bb6a74690c68adee086460e22547c197e",
+    "note": "unchanged successful explanation from reasoning round"
+  },
+  {
+    "case_id": "C03",
+    "original": "reasoning_outputs\\C03_R31.md",
+    "original_sha256": "09e24518aba65ebe7ebc21f0d5ef3372929f7926ba2d7166576aba473e5f1b75",
+    "note": "unchanged successful explanation from reasoning round"
+  },
+  {
+    "case_id": "C04",
+    "original": "reasoning_outputs\\C04_R31.md",
+    "original_sha256": "0530c1f67df678b1e400d030fd9484b836a6acfa585e25c434d855bf39914eeb",
+    "note": "unchanged successful explanation from reasoning round"
+  },
+  {
+    "case_id": "C05",
+    "original": "reasoning_outputs\\C05_R31.md",
+    "original_sha256": "c83d78b724498c5613acf707ae2eb6d94af6c6c148feb34110c33c1f6a0c4031",
+    "note": "unchanged successful explanation from reasoning round"
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "recorded_at": "2026-09-13T10:44:31.034403+08:00",
+  "project_root": "D:\\基于大模型的代码审查辅助工具设计与实现",
+  "root_folders": [
+    "前端功能",
+    "后端功能",
+    "其它"
+  ],
+  "moves": {
+    "app.py": "前端功能/app.py",
+    "src/reviewdesk/ui.py": "前端功能/reviewdesk_ui/ui.py",
+    "src/reviewdesk/widgets.py": "前端功能/reviewdesk_ui/widgets.py",
+    "src/reviewdesk (其他业务模块)": "后端功能/reviewdesk",
+    "resources": "前端功能/resources",
+    "release": "其它/安装包",
+    "dist": "其它/运行文件",
+    "build": "其它/构建缓存",
+    "__pycache__": "其它/构建缓存/入口缓存",
+    "src (迁移后空目录)": "其它/构建缓存/旧源码空目录",
+    "ReviewDesk.spec": "其它/packaging/ReviewDesk.spec",
+    ".venv": "其它/.venv",
+    ".tools": "其它/.tools",
+    ".idea": "其它/.idea",
+    "scripts": "其它/scripts",
+    "tests": "其它/tests",
+    "evaluation": "其它/evaluation",
+    "verification": "其它/verification",
+    "artifacts": "其它/artifacts",
+    "packaging": "其它/packaging",
+    "licenses": "其它/licenses",
+    "需求规则目录": "其它/需求规则目录",
+    ".gitignore": "其它/.gitignore",
+    "AGENTS.md": "其它/AGENTS.md",
+    "IMPLEMENTATION_CONTRACT.md": "其它/IMPLEMENTATION_CONTRACT.md",
+    "LICENSE": "其它/LICENSE",
+    "pyproject.toml": "其它/pyproject.toml",
+    "README.md": "其它/README.md",
+    "requirements-build.txt": "其它/requirements-build.txt",
+    "requirements.txt": "其它/requirements.txt",
+    "THIRD_PARTY_NOTICES.md": "其它/THIRD_PARTY_NOTICES.md",
+    "思路代码.py": "其它/思路代码.py"
+  },
+  "original_installer_sha256": "40c216c0332880cf1b60a649b9097496ef0db7e76b1d7ff1c141fde566ff386d",
+  "notes": [
+    "业务模块只移动，界面拆为reviewdesk_ui并修正导入",
+    "冻结测评和历史验证原文保留，旧路径属于原始记录",
+    "未调用收费API；开发环境启动脚本已按新解释器位置重新生成"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "candidate": "R41",
+  "frozen_at_utc": "2026-09-20T03:17:03.101350+00:00",
+  "evaluation_kind": "known-case final regression, not fresh unseen evaluation",
+  "transform": "Only provider heading and billing/version metadata removed; all explanatory claims retained.",
+  "outputs": [
+    {
+      "case_id": "C01",
+      "file": "C01_R41.md",
+      "sha256": "f89a02aaebd58614adaf7bd67c4e4c1e7ebb9d5228526ab1639e9117651e451b"
+    },
+    {
+      "case_id": "C02",
+      "file": "C02_R41.md",
+      "sha256": "0cfe3a7c5aa84228422ea3c38370b32606ae9f5adf9d4fdd15ed2143eeed2d69"
+    },
+    {
+      "case_id": "C03",
+      "file": "C03_R41.md",
+      "sha256": "4b2b8b4fd6e06e2d10bd7b06b8502a6dcea13887b06bea744e83ea6d4ed071a4"
+    },
+    {
+      "case_id": "C04",
+      "file": "C04_R41.md",
+      "sha256": "fd893320543156c2f4408ee6757ca2c3440e05395b2f5d4373a037d6710dfe1e"
+    },
+    {
+      "case_id": "C05",
+      "file": "C05_R41.md",
+      "sha256": "d7b9a4733e7bbcd090b3a46e3c42eed61741eac4722f5a58ec036276dd5a7607"
+    }
+  ]
+}

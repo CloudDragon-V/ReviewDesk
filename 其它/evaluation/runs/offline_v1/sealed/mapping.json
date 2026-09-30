@@ -1,0 +1,17 @@
+{
+  "mapping": {
+    "Candidate-A": "keyword_compile_baseline",
+    "Candidate-B": "reviewdesk_local"
+  },
+  "candidate_hashes": {
+    "src/reviewdesk/__init__.py": "98adc9026b5cee983106b4eadd647180c6f3eb01486f85eaf86a61f1c3467c68",
+    "src/reviewdesk/analysis.py": "1c6fb32bbe6116a28a43662f77e32368f6cd5af5135687e43b9df651ca610b15",
+    "src/reviewdesk/api.py": "79cfb6c9543a4922a2bf496a3914aa8c3e14922b401875b35e8d8d02d826e76f",
+    "src/reviewdesk/context.py": "890f6919df8b8a997dbb60d72e01b8602d5ba6037d19c283e03f11ff24230347",
+    "src/reviewdesk/models.py": "47c1ffa86d58b9fb5556efc18924e89489ba0e9d26a7d8d480b55965c3307ec2",
+    "src/reviewdesk/service.py": "461b9843fc1c97c3139fe1f5c096512575a0b5f52ae67c272700986b724aa880",
+    "src/reviewdesk/storage.py": "4979356d7ed7c732983da8a9954536159b60d61c25212e830a558668e647dfe5",
+    "src/reviewdesk/ui.py": "7d0e42316b77775dc7245051db94c42792699032dddf6d23ba8e80688c9c5005",
+    "src/reviewdesk/widgets.py": "13e7b9a95777229a2a71dd747721fca5e50557dfe09a7981ed15129770f9ae21"
+  }
+}

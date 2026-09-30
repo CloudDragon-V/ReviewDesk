@@ -1,0 +1,15 @@
+{
+  "source_files_scanned": 33,
+  "active_credential_matches": [],
+  "official_balance": {
+    "is_available": true,
+    "balance_infos": [
+      {
+        "currency": "CNY",
+        "total_balance": "4.99",
+        "granted_balance": "0.00",
+        "topped_up_balance": "4.99"
+      }
+    ]
+  }
+}

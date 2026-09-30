@@ -1,0 +1,44 @@
+{
+  "frozen_at_utc": "2026-09-20T02:42:06.212967+00:00",
+  "case_sha256": "50b37e8e47fee782f1c55d5dfae17c9b6694bfa85495e66b5c06f3c551403964",
+  "sealed_reference_read_by_generator": false,
+  "source_executed": false,
+  "external_api_called": false,
+  "outputs": [
+    {
+      "case_id": "C01",
+      "candidate": "R17",
+      "file": "C01_R17.md",
+      "sha256": "284408d66f1425901f98db6ab6c5aeeb62b14f217a6736316ee355a50cf8ec12",
+      "character_count": 9094
+    },
+    {
+      "case_id": "C02",
+      "candidate": "R17",
+      "file": "C02_R17.md",
+      "sha256": "5390ead491598333c8edf29a9d7ebb0e9b851b78e7e77ef6897b36f2f0130100",
+      "character_count": 8927
+    },
+    {
+      "case_id": "C03",
+      "candidate": "R17",
+      "file": "C03_R17.md",
+      "sha256": "2d54a093a69badee4acc48f1912371074bd8d9cefe1cbd53ea7d0d2ee8569667",
+      "character_count": 10475
+    },
+    {
+      "case_id": "C04",
+      "candidate": "R17",
+      "file": "C04_R17.md",
+      "sha256": "c9de22787dd00acf496cb2f4e46a60ff27362a147f6d6f66b849a2eeedb992f3",
+      "character_count": 10543
+    },
+    {
+      "case_id": "C05",
+      "candidate": "R17",
+      "file": "C05_R17.md",
+      "sha256": "758a9ae614f93818ad69e4a84d4dbfefc5ac51ef4a0d54edb8ca584b5b3ce07d",
+      "character_count": 9570
+    }
+  ]
+}

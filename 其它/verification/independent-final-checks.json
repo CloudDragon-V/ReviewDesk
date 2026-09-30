@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-12T14:36:36.860750+00:00",
+  "results": {
+    "connection_reset_returns_partial_local_report": true,
+    "connection_reset_usage_is_unknown": true,
+    "private_socket_detail_not_exposed": true,
+    "markdown_unknown_is_not_zero": true,
+    "same_excerpt_distinct_defects_survive": true,
+    "default_expression_eval_is_not_merged_as_mutable": true,
+    "known_bare_except_duplicate_merged": true,
+    "malformed_choices_retain_usage": true,
+    "huge_usage_is_unknown": true,
+    "reviewed_product_sources_compile": true
+  },
+  "scope": "Independent local offline engineering checks; no evaluation directory access or real API calls"
+}

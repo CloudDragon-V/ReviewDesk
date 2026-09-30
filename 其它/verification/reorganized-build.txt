@@ -1,0 +1,330 @@
+Application icon created.
+License texts collected: 11
+178 INFO: PyInstaller: 6.22.2, contrib hooks: 2026.7
+178 INFO: Python: 3.14.6
+225 INFO: Platform: Windows-11-10.0.26200-SP0
+225 INFO: Python environment: D:\基于大模型的代码审查辅助工具设计与实现\其它\.venv
+226 INFO: wrote D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\ReviewDesk.spec
+228 INFO: Removing temporary files and cleaning cache in C:\Users\hq\AppData\Local\pyinstaller
+238 INFO: Module search paths (PYTHONPATH):
+['D:\\基于大模型的代码审查辅助工具设计与实现',
+ 'D:\\基于大模型的代码审查辅助工具设计与实现\\前端功能',
+ 'D:\\基于大模型的代码审查辅助工具设计与实现\\后端功能',
+ 'C:\\Python314\\python314.zip',
+ 'C:\\Python314\\DLLs',
+ 'C:\\Python314\\Lib',
+ 'C:\\Python314',
+ 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv',
+ 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages',
+ 'D:\\基于大模型的代码审查辅助工具设计与实现\\前端功能',
+ 'D:\\基于大模型的代码审查辅助工具设计与实现\\后端功能']
+575 INFO: Appending 'datas' from .spec
+575 INFO: checking Analysis
+575 INFO: Building Analysis because Analysis-00.toc is non existent
+575 INFO: Looking for Python shared library...
+575 INFO: Using Python shared library: C:\Python314\python314.dll
+575 INFO: Running Analysis Analysis-00.toc
+575 INFO: Target bytecode optimization level: 0
+576 INFO: Initializing module dependency graph...
+576 INFO: Initializing module graph hook caches...
+603 INFO: Analyzing modules for base_library.zip ...
+2703 INFO: Processing standard module hook 'hook-encodings.py' from 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+3392 INFO: Processing standard module hook 'hook-pickle.py' from 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+3698 INFO: Processing standard module hook 'hook-math.py' from 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+3916 INFO: Processing standard module hook 'hook-difflib.py' from 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+3949 INFO: Processing standard module hook 'hook-heapq.py' from 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+10861 INFO: Caching module dependency graph...
+10890 INFO: Analyzing D:\基于大模型的代码审查辅助工具设计与实现\前端功能\app.py
+10899 INFO: Processing standard module hook 'hook-PySide6.py' from 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+11098 INFO: Processing standard module hook 'hook-shiboken6.py' from 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+11418 INFO: Processing standard module hook 'hook-PySide6.QtNetwork.py' from 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+14909 INFO: Processing standard module hook 'hook-PySide6.QtCore.py' from 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+19177 INFO: Processing standard module hook 'hook-PySide6.QtGui.py' from 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+38162 INFO: Processing standard module hook 'hook-PySide6.QtWidgets.py' from 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+42155 INFO: Processing standard module hook 'hook-sysconfig.py' from 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+42174 INFO: Processing standard module hook 'hook-_ctypes.py' from 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+42211 INFO: Processing standard module hook 'hook-sqlite3.py' from 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+42543 INFO: Processing module hooks (post-graph stage)...
+42664 INFO: Performing binary vs. data reclassification (130 entries)
+44712 INFO: Looking for ctypes DLLs
+44717 INFO: Analyzing run-time hooks ...
+44719 INFO: Including run-time hook 'pyi_rth_inspect.py' from 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+44731 INFO: Including run-time hook 'pyi_rth_pyside6.py' from 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+44741 INFO: Processing pre-find-module-path hook 'hook-_pyi_rth_utils.py' from 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_find_module_path'
+44751 INFO: Processing standard module hook 'hook-_pyi_rth_utils.py' from 'D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PyInstaller\\hooks'
+44770 INFO: Creating base_library.zip...
+44785 INFO: Looking for dynamic libraries
+45009 INFO: Extra DLL search directories (AddDllDirectory): ['D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\shiboken6']
+45009 INFO: Extra DLL search directories (PATH): ['D:\\基于大模型的代码审查辅助工具设计与实现\\其它\\.venv\\Lib\\site-packages\\PySide6']
+45568 INFO: Warnings written to D:\基于大模型的代码审查辅助工具设计与实现\其它\构建缓存\ReviewDesk\warn-ReviewDesk.txt
+45591 INFO: Graph cross-reference written to D:\基于大模型的代码审查辅助工具设计与实现\其它\构建缓存\ReviewDesk\xref-ReviewDesk.html
+45690 INFO: checking PYZ
+45690 INFO: Building PYZ because PYZ-00.toc is non existent
+45690 INFO: Building PYZ (ZlibArchive) D:\基于大模型的代码审查辅助工具设计与实现\其它\构建缓存\ReviewDesk\PYZ-00.pyz
+45839 INFO: Building PYZ (ZlibArchive) D:\基于大模型的代码审查辅助工具设计与实现\其它\构建缓存\ReviewDesk\PYZ-00.pyz completed successfully.
+45870 INFO: checking PKG
+45871 INFO: Building PKG because PKG-00.toc is non existent
+45871 INFO: Building PKG (CArchive) ReviewDesk.pkg
+45900 INFO: Building PKG (CArchive) ReviewDesk.pkg completed successfully.
+45900 INFO: Bootloader D:\基于大模型的代码审查辅助工具设计与实现\其它\.venv\Lib\site-packages\PyInstaller\bootloader\Windows-64bit-intel\runw.exe
+45900 INFO: checking EXE
+45901 INFO: Building EXE because EXE-00.toc is non existent
+45901 INFO: Building EXE from EXE-00.toc
+45901 INFO: Copying bootloader EXE to D:\基于大模型的代码审查辅助工具设计与实现\其它\构建缓存\ReviewDesk\ReviewDesk.exe
+46023 INFO: Copying icon to EXE
+46121 INFO: Copying 0 resources to EXE
+46121 INFO: Embedding manifest in EXE
+46203 INFO: Appending PKG archive to EXE
+46348 INFO: Fixing EXE headers
+46846 INFO: Building EXE from EXE-00.toc completed successfully.
+46850 INFO: checking COLLECT
+46850 INFO: Building COLLECT because COLLECT-00.toc is non existent
+46850 INFO: Removing dir D:\基于大模型的代码审查辅助工具设计与实现\其它\运行文件\ReviewDesk
+46914 INFO: Building COLLECT COLLECT-00.toc
+47343 INFO: Building COLLECT COLLECT-00.toc completed successfully.
+47346 INFO: Build complete! The results are available in: D:\基于大模型的代码审查辅助工具设计与实现\其它\运行文件
+Inno Setup 6 Command-Line Compiler
+Copyright (C) 1997-2026 Jordan Russell. All rights reserved.
+Portions Copyright (C) 2000-2026 Martijn Laan. All rights reserved.
+Portions Copyright (C) 2001-2004 Alex Yackimoff. All rights reserved.
+https://www.innosetup.com
+
+Compiler engine version: Inno Setup 6.7.3
+Non-commercial use only
+
+Preprocessing
+   Reading file: D:\基于大模型的代码审查辅助工具设计与实现\其它\.tools\InnoSetup\ISPPBuiltins.iss
+Parsing [Setup] section, line 4
+Parsing [Setup] section, line 5
+Parsing [Setup] section, line 6
+Parsing [Setup] section, line 7
+Parsing [Setup] section, line 8
+Parsing [Setup] section, line 9
+Parsing [Setup] section, line 10
+Parsing [Setup] section, line 11
+Parsing [Setup] section, line 12
+Parsing [Setup] section, line 13
+Parsing [Setup] section, line 14
+Parsing [Setup] section, line 15
+Parsing [Setup] section, line 16
+Parsing [Setup] section, line 17
+Parsing [Setup] section, line 18
+Parsing [Setup] section, line 19
+Parsing [Setup] section, line 20
+Parsing [Setup] section, line 21
+Parsing [Setup] section, line 22
+Parsing [Setup] section, line 23
+Reading file (LicenseFile)
+Reading file (WizardImageFile)
+Reading file (WizardSmallImageFile)
+Preparing Setup program executable
+   Verification successful
+   Updating icons (Setup.e32)
+   Updating version info (Setup.e32)
+Determining language code pages
+Parsing [Languages] section, line 26
+   Reading file: D:\基于大模型的代码审查辅助工具设计与实现\其它\.tools\InnoSetup\Default.isl
+   Messages in script file
+Reading default messages from Default.isl
+Parsing [Languages] section, line 26
+   Reading file: D:\基于大模型的代码审查辅助工具设计与实现\其它\.tools\InnoSetup\Default.isl
+Parsing [LangOptions], [Messages], and [CustomMessages] sections
+   Messages in script file
+Reading [Code] section
+Parsing [Tasks] section, line 29
+Parsing [Icons] section, line 35
+Parsing [Icons] section, line 36
+Parsing [Run] section, line 39
+Parsing [Files] section, line 32
+Deleting ReviewDesk-0.1.0-Setup-win-x64.exe from output directory
+Creating setup files
+   Verification successful
+   Updating icons (Setup.exe)
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\LICENSE
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\README.md
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\ReviewDesk.exe
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\THIRD_PARTY_NOTICES.md
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\base_library.zip
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\libcrypto-3.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\libffi-8.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\libssl-3.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\LICENSE
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\python3.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\python314.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\select.pyd
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\sqlite3.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\THIRD_PARTY_NOTICES.md
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\unicodedata.pyd
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\VCRUNTIME140.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\VCRUNTIME140_1.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\_bz2.pyd
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\_ctypes.pyd
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\_decimal.pyd
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\_hashlib.pyd
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\_lzma.pyd
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\_socket.pyd
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\_sqlite3.pyd
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\_ssl.pyd
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\_zstd.pyd
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\licenses\GPL-3.0.txt
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\licenses\INNO-SETUP-LICENSE.txt
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\licenses\LGPL-3.0.txt
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\licenses\PYTHON-LICENSE.txt
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\licenses\Qt-for-Python-notices.html
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\licenses\PyInstaller\COPYING.txt
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\licenses\PySide6-Essentials\LicenseRef-Qt-Commercial.txt
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\licenses\shiboken6\LicenseRef-Qt-Commercial.txt
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\MSVCP140.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\MSVCP140_1.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\MSVCP140_2.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\opengl32sw.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\pyside6.abi3.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\Qt6Core.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\Qt6Gui.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\Qt6Network.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\Qt6Svg.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\Qt6Widgets.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\QtCore.pyd
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\QtGui.pyd
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\QtNetwork.pyd
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\QtWidgets.pyd
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\VCRUNTIME140.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\VCRUNTIME140_1.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\generic\qtuiotouchplugin.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\iconengines\qsvgicon.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\imageformats\qgif.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\imageformats\qicns.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\imageformats\qico.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\imageformats\qjpeg.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\imageformats\qsvg.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\imageformats\qtga.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\imageformats\qtiff.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\imageformats\qwbmp.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\imageformats\qwebp.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\networkinformation\qnetworklistmanager.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\platforms\qdirect2d.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\platforms\qminimal.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\platforms\qoffscreen.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\platforms\qwindows.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\styles\qmodernwindowsstyle.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\tls\qcertonlybackend.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\tls\qopensslbackend.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\plugins\tls\qschannelbackend.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_ar.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_bg.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_ca.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_cs.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_da.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_de.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_en.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_es.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_fa.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_fi.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_fr.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_gd.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_he.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_hr.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_hu.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_it.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_ja.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_ka.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_ko.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_lg.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_lv.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_nl.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_nn.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_pl.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_pt_BR.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_ru.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_sk.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_sv.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_tr.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_uk.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_zh_CN.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qtbase_zh_TW.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_ar.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_bg.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_ca.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_cs.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_da.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_de.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_en.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_es.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_fa.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_fi.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_fr.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_gd.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_gl.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_he.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_ar.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_bg.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_ca.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_cs.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_da.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_de.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_en.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_es.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_fr.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_gl.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_hr.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_hu.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_it.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_ja.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_ka.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_ko.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_nl.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_nn.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_pl.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_pt_BR.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_ru.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_sk.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_sl.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_sv.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_tr.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_uk.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_zh_CN.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_help_zh_TW.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_hr.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_hu.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_it.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_ja.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_ka.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_ko.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_lg.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_lt.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_lv.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_nl.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_nn.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_pl.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_pt_BR.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_pt_PT.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_ru.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_sk.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_sl.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_sv.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_tr.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_uk.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_zh_CN.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\PySide6\translations\qt_zh_TW.qm
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\resources\reviewdesk.ico
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\resources\reviewdesk.png
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\shiboken6\MSVCP140.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\shiboken6\Shiboken.pyd
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\shiboken6\shiboken6.abi3.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\shiboken6\VCRUNTIME140.dll
+   Compressing: D:\基于大模型的代码审查辅助工具设计与实现\其它\packaging\..\运行文件\ReviewDesk\_internal\shiboken6\VCRUNTIME140_1.dll
+   Compressing Setup program executable
+   Updating version info (Setup.exe)
+   Updating manifest (Setup.exe)
+
+
+Successful compile (33.688 sec). Resulting Setup program filename is:
+D:\基于大模型的代码审查辅助工具设计与实现\其它\安装包\ReviewDesk-0.1.0-Setup-win-x64.exe
+
+
+Algorithm : SHA256
+Hash      : 59F22DFE5FD2703C802AB3469E0D22831C25A6A88371D6AFE7B84AFE4E9F05E1
+Path      : D:\基于大模型的代码审查辅助工具设计与实现\其它\安装包\ReviewDesk-0.1.0-Setup-win-x64.exe
+
+
+

@@ -1,0 +1,26 @@
+{
+  "application_removed": true,
+  "uninstall_exit": 0,
+  "installer_exit": 0,
+  "smoke": {
+    "ok": true,
+    "version": "0.1.0",
+    "frozen": true,
+    "python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+    "files": 1,
+    "findings": 4,
+    "nodes": 8,
+    "edges": 8,
+    "data_dir": "D:\\基于大模型的代码审查辅助工具设计与实现\\verification\\installed-userdata",
+    "api_called": false,
+    "report_persisted": true,
+    "markdown_exported": true,
+    "json_exported": true
+  },
+  "isolated_path": "C:\\WINDOWS\\System32;C:\\WINDOWS",
+  "host_os": "Microsoft Windows NT 10.0.26200.0",
+  "application_exit": 0,
+  "preserved_user_report": true,
+  "pythonpath": "C:\\ReviewDesk-No-Python",
+  "other_physical_computer_tested": false
+}
